@@ -8,20 +8,52 @@ module.exports = function(grunt) {
 	 * our tasks
 	 */
 	grunt.initConfig({
-		concat: {
+		watch: {
+			files: ['Gruntfile.js','src/_assets/js/*.js'],
+			tasks: ['concat'],
 			options: {
-				separator: ";",
+				spawn: false,// speed up the reaction time
+				reload: true
 			},
+		},//watch
+		concat: {
 			dist: {
-				src: ['src/intro.js', 'src/project.js', 'src/outro.js'],
-				dest: 'dist/build.js',
+				src: ['src/_assets/js/index.js', 'src/_assets/js/index1.js'],
+				dest: 'dest/js/build.js',
 			},
-		},
+		},//concat
+		jade: {
+			compile: {
+				files: {
+					"dest/*" : ["src/jade/*jade",]
+				}
+			}
+		},//jade
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded'
+				}
+			},
+			files: {
+			  'main.css': 'main.sass',
+			},
+		}
 	});
 	/**
 	 * Load Tasks
 	 */
-	grunt.loadNpmTasks('grunt-contrib-conta');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	/// not configured yet
+	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-browser-sync');
+	/**
+	 * Default task
+	 * configure
+	 */
+	grunt.registerTask('default',['concat']);
 };
 
 
