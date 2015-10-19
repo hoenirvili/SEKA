@@ -2,6 +2,7 @@
 body {
 	background: #F7F7F7 none repeat scroll 0% 0%;
 }
+
 .logo-wrapper{
     margin-left: 22px;
 	width: 150px;
@@ -59,21 +60,3 @@ body {
 /**
 * NAVIGATION
 */
-
-.navbar-toggle {
-  float: right;
-  margin-right: 15px;
-}
-
-.navmenu {
-  z-index: 1;
-}
-
-.canvas {
-  position: relative;
-  left: 0;
-  z-index: 2;
-  min-height: 100%;
-  padding: 0 0 0 50px;
-  background: #fff;
-}
