@@ -1,31 +1,79 @@
-/**
- * The main wrapper that wraps around
- * the entire layout of the search form
- */
-.form-wrapper {
-	width: 700px;
-	height: 100px;
-	margin-top: 50px;
-	padding-top: 34px;
-	padding-left: 15px;
+
+body {
+	background: #F7F7F7 none repeat scroll 0% 0%;
 }
- /**
- * Search input design
- */ 
-.search {
-	width: 600px;
-	height: 35px;
-	margin-top: 1px;
-	border-radius: none;
+.logo-wrapper{
+    margin-left: 22px;
+	width: 150px;
+	height: 150px;
+	padding: 32px;
+	border : 2px solid blue;
 }
 
-#search-input[type="text"] {
-	padding: 10px;
-	border: none;
-	border-bottom: solid 2x #c9c9c9;
-	transition: border 0.3s;
+/**
+ *
+ * Search bar
+ *
+ */
+#custom-search-input {
+        margin-top: 200px;
+        margin-left: 150px;
 }
-#search-input[type="text"]:focus,
-#search-input[type="text"].focus{
-	border-bottom: solid 2px #969696;
+
+#custom-search-input button {
+    /*position: relative;*/
+    border-color: #fff;
+    color: #999996;
+    border-radius: 0;
+    padding: 4px 10px 4px 10px;
+	left: -37px;
+
+}
+
+.form-control{
+	border-radius: 0px;
+}
+.search-query:focus + button {
+    z-index: 3;
+}
+
+#custom-search-input button:focus,
+#custom-search-input button:hover{
+    background-color: #4CAE4C;
+	color: #fff;			
+}
+
+/**
+ * Wrapper text
+ * of searchbar
+ */
+ .wrapper-text {
+	wdith: auto;
+	height: 100px;
+	display: block;
+	margin-top: 100px;
+	margin-left: 50px;
+ 	color: #969696;
+ }
+ 
+/**
+* NAVIGATION
+*/
+
+.navbar-toggle {
+  float: right;
+  margin-right: 15px;
+}
+
+.navmenu {
+  z-index: 1;
+}
+
+.canvas {
+  position: relative;
+  left: 0;
+  z-index: 2;
+  min-height: 100%;
+  padding: 0 0 0 50px;
+  background: #fff;
 }

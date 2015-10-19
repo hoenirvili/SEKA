@@ -7,49 +7,62 @@
 		<meta name="viewport" content="width=device-width, inital-scale=1">
 		<!--Botstrap Link !-->
 		<link href="src/lib/bootstrap-3.3.5/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<!-- Our own dev css styles -->
 		<link rel="stylesheet" href="src/css/index.css" type="text/css">
+		<link rel="stylesheet" href="src/css/media.css" type="text/css">
 		<!-- Our own dev scripts -->
 		<script type="text/javascript" src="src/js/index.js"></script>
 	</head>
 	<body>
+
+
 		<div class="container-fluid">
 			<div class="row">
+				<!-- first section -->
 				<div class="col-md-2">
-					<h2>SEKA</h2>
+					<div class="row">
+						<div class="logo-wrapper">
+							<h2> SEKA </h2>
+						</div>
+					</div>
 				</div>
+				<!-- mid section -->
 				<div class="col-md-8">
-					<div class="form-wrapper">
-						<form action="#" method="GET" id="main-form">
-							<input type="search" class="search" id="search-input" placeholder="type in here..">
-							<button type"submit" class="btn btn-success">Search</button>
-						</form>
-					</div> 
+           			<div id="custom-search-input">
+                       	<div class="input-group col-md-8">
+                           	<input type="text" class="search-query form-control" placeholder="search.." />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                       	             <span class="glyphicon glyphicon-search"></span>
+                              	</button>
+                             </span>
+                        </div>
+                       	<div class="wrapper-texts">
+                    		<h6>Search Engine Analyzer for <a href=#>facebook</a>,<a href="">twitter</a> nd <a href="">duckduckgo</a></p>
+                   		</div> 
+                    </div>
 				</div>
-				<!-- right side nav-->
-				<div class="col-md-2">
-					<nav class="navbar navbar-default" role="navigation">
-						<div class="container">
-							<div class="navbar-header">
-								<button type="button" class="navbat-toggle" data-toggle="collapse" data-target="#navbar-container">
-									<span class="sr-only">Show and hide the nav</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div><!--navbar-header-->
 
-							<div class="collapse navbar-collapse" id="navbar-container">
-								<ul class="nav navbar-nav">
-									<li class="active"><a href="#">About</a></li>
-									<li><a href="#">App</a></li>
-									<li><a href="#">Help</a></li>
-								</ul><!--nav navbar-nav-->
-							</div><!-- navbar-container-->
-						</div><!--container-->
-					</nav><!--navbar default-->
+				<!-- thirds section-->
+				<div class="col-md-2">
+      					<div class="navbar navbar-default ">
+        					<button type="button" class="navbar-toggle" data-target=".navmenu" data-canvas=".canvas">
+          						<span class="icon-bar"></span>
+					        	<span class="icon-bar"></span>
+					        	<span class="icon-bar"></span>
+					        </button>
+					     </div>
 				</div><!--col-md-2-->
 			
-			
+
+
+
+
+
+
+
+
+
 			</div> <!--row-->
 		</div><!--container-fluid-->
 		<!--SCRIPT LINKS -->
