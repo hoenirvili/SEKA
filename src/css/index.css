@@ -7,15 +7,20 @@ body {
 }
 
 /**********************************************************
- * Main styles for logo, logo wrappers etc.
+ * Main styles for logo, logo wrappers bottom-logo-text etc.
  *
  *********************************************************/
-.logo-wrapper {
-    margin-left: 22px;
-	width: 150px;
-	height: 150px;
-	padding: 40px;
-	/*border : 2px solid blue;*/
+.wrapper-logo {
+    width: 300px;
+    height: 300px;
+}
+
+.wrapper-logo > #logo {
+    width: 250px;
+    height: 250px;
+}
+.bottom-logo-text {
+
 }
 /**********************************************************
  * Main styles for the navigation system, button nav
@@ -48,17 +53,17 @@ body {
 	border-radius: 0px;
 }
 .custom-search-input button:focus,
-.custom-search-input button:hover{
-    background-color: #4CAE4C;
-	color: #fff;			
-}
+.custom-search-input button:hover,
 .custom-search-input button:active{
-    background-color: #222222;
-    color: #fff;
+    background-color: #b05d39;
+	color: #fff;			
 }
 
 /**************************************************************
  * Main style for text wrappers, fields that contain text
  * styles , fonts for text etc..
  **************************************************************/
-
+.wrapper-text {
+    margin-top: 30px;
+    padding-right: 20px;
+}
