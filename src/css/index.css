@@ -29,29 +29,30 @@ body {
  * Main styles for search the actual search bar,
  * wrapper search bars etc..
  ***********************************************************/
-#custom-search-input {
+.custom-search-input {
         /*margin-top: 200px;*/
         /*margin-left: 150px;*/
 }
-#custom-search-input button {
-    /*position: relative;*/
+.custom-search-input button {
     border-color: #fff;
     color: #999996;
     border-radius: 0;
     padding: 4px 10px 4px 10px;
-	left: -37px;
+    left: -37px;
+}
 
+.input-group {
+    margin-left: 20px;
 }
 .form-control{
 	border-radius: 0px;
 }
-
-#custom-search-input button:active,
-#custom-search-input button:hover{
+.custom-search-input button:focus,
+.custom-search-input button:hover{
     background-color: #4CAE4C;
 	color: #fff;			
 }
-#custom-search-input button:focus{
+.custom-search-input button:active{
     background-color: #222222;
     color: #fff;
 }

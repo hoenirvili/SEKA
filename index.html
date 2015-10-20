@@ -4,8 +4,10 @@
 		<title>SEKA - Search Engine Keywords-based Analyzer</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, inital-scale=1">
-		<!--Botstrap Link !-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <!--Botstrap Link !-->
 		<link href="src/lib/bootstrap-3.3.5/css/bootstrap.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- Our own dev css styles -->
@@ -17,28 +19,35 @@
 	<body>
 		<div class="container-fluid">
 			<div class="row">
-
-
                 <!-- SEARCH -->
 				<div class="col-md-12">
-           			<div id="custom-search-input">
+           			<div class="custom-search-input">
                        	<div class="input-group">
 
-                           	<input type="text" class="search-query form-control" placeholder="search.." />
+                           	<input type="text" class="form-control" placeholder="search.." id="search-query" aria-describedby="search-bar" />
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                        	             <span class="glyphicon glyphicon-search"></span>
                               	</button>
                              </span>
 
-                        </div>
-                       	<!-- BOTTOM TEXT-->
-                        <div class="col-md-12 wrapper-texts">
-                    		<h6 class="text-center">Search Engine Analyzer for <a href=#>facebook</a>,<a href="">twitter</a> nd <a href="">duckduckgo</a></p>
-                   		</div> 
-                    </div><!--custom-search-intput-->
-				</div><!-- col-md-12-->
+                        </div><!--input-group-->
+                    </div><!--custom-seach-input-->
+                </div><!--col-md-12-->
 
+                <!-- BOTTOM TEXT-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="wrapper-texts">
+                            <h6 class="text-center">
+                                Search Engine Analyzer for
+                                <a href=#>facebook</a>
+                                ,<a href="">twitter</a>
+                                and <a href="">duckduckgo</a>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
 
 
             </div> <!--row-->
