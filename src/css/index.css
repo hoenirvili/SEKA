@@ -67,3 +67,40 @@ body {
     margin-top: 30px;
     padding-right: 20px;
 }
+
+/*Menu style*/
+.menu_sample {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  border: solid 1px;
+  transition: transform 0.1s ease-out;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 10px;
+  transition: left 1s ease-out;
+  margin-left: -2%;
+  margin-top: 150%;
+}
+
+/*transition*/
+.top_mar {
+    margin-top: 25%;
+}
+
+/* on toggle*/
+.content.pushed {
+  left: 225px;
+}
+
+.hide {
+  transform:translateX( -100px);
+}
