@@ -1,26 +1,38 @@
-
+/*********************************************************
+ * Main styles that will render on the entire page layout
+ * as body,p,h,nav,section tags or *
+ *********************************************************/
 body {
 	background: #F7F7F7 none repeat scroll 0% 0%;
 }
 
-.logo-wrapper{
+/**********************************************************
+ * Main styles for logo, logo wrappers etc.
+ *
+ *********************************************************/
+.logo-wrapper {
     margin-left: 22px;
 	width: 150px;
 	height: 150px;
 	padding: 40px;
 	/*border : 2px solid blue;*/
 }
+/**********************************************************
+ * Main styles for the navigation system, button nav
+ * nav menus etc.
+ **********************************************************/
 
-/**
- *
- * Search bar
- *
- */
+
+
+
+/***********************************************************
+ * Main styles for search the actual search bar,
+ * wrapper search bars etc..
+ ***********************************************************/
 #custom-search-input {
-        margin-top: 200px;
-        margin-left: 150px;
+        /*margin-top: 200px;*/
+        /*margin-left: 150px;*/
 }
-
 #custom-search-input button {
     /*position: relative;*/
     border-color: #fff;
@@ -30,33 +42,22 @@ body {
 	left: -37px;
 
 }
-
 .form-control{
 	border-radius: 0px;
 }
-.search-query:focus + button {
-    z-index: 3;
-}
 
-#custom-search-input button:focus,
+#custom-search-input button:active,
 #custom-search-input button:hover{
     background-color: #4CAE4C;
 	color: #fff;			
 }
+#custom-search-input button:focus{
+    background-color: #222222;
+    color: #fff;
+}
 
-/**
- * Wrapper text
- * of searchbar
- */
- .wrapper-text {
-	wdith: auto;
-	height: 100px;
-	display: block;
-	margin-top: 100px;
-	margin-left: 50px;
- 	color: #969696;
- }
- 
-/**
-* NAVIGATION
-*/
+/**************************************************************
+ * Main style for text wrappers, fields that contain text
+ * styles , fonts for text etc..
+ **************************************************************/
+
