@@ -3,7 +3,7 @@
  * as body,p,h,nav,section tags or *
  *********************************************************/
 body {
-	background: #F7F7F7 none repeat scroll 0% 0%;
+	background: #F7F7F7 none repeat scroll 0 0;
 }
 
 /**********************************************************
@@ -14,19 +14,36 @@ body {
     width: 300px;
     height: 300px;
 }
-
-.wrapper-logo > #logo {
-    width: 250px;
-    height: 250px;
+.logo {
+    width: 200px;
+    height: 200px;
+    background: url("../img/logo.svg") no-repeat center;
+    margin-left: 15%;
 }
 .bottom-logo-text {
-
+    margin-left: 40%;
+    position: relative;
+    bottom: 20px;
+    font-size: 20px;
+}
+.k-color {
+    color : #b53913;
+    display: inline-block;
+    margin-left: -5px;
 }
 /**********************************************************
  * Main styles for the navigation system, button nav
  * nav menus etc.
  **********************************************************/
+.menu{
+    border: 0;
+    margin-top: 10%;
+    padding: 5px 10px;
+}
 
+.menu > i{
+    color : #636464;
+}
 
 
 
@@ -34,10 +51,6 @@ body {
  * Main styles for search the actual search bar,
  * wrapper search bars etc..
  ***********************************************************/
-.custom-search-input {
-        /*margin-top: 200px;*/
-        /*margin-left: 150px;*/
-}
 .custom-search-input button {
     border-color: #fff;
     color: #999996;
@@ -50,7 +63,7 @@ body {
     margin-left: 20px;
 }
 .form-control{
-	border-radius: 0px;
+	border-radius: 0;
 }
 .custom-search-input button:focus,
 .custom-search-input button:hover,
@@ -58,49 +71,11 @@ body {
     background-color: #b05d39;
 	color: #fff;			
 }
-
 /**************************************************************
  * Main style for text wrappers, fields that contain text
  * styles , fonts for text etc..
  **************************************************************/
 .wrapper-text {
-    margin-top: 30px;
+    margin-top: 50px;
     padding-right: 20px;
-}
-
-/*Menu style*/
-.menu_sample {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100px;
-  border: solid 1px;
-  transition: transform 0.1s ease-out;
-}
-
-.content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  padding: 10px;
-  transition: left 1s ease-out;
-  margin-left: -2%;
-  margin-top: 150%;
-}
-
-/*transition*/
-.top_mar {
-    margin-top: 25%;
-}
-
-/* on toggle*/
-.content.pushed {
-  left: 225px;
-}
-
-.hide {
-  transform:translateX( -100px);
 }
