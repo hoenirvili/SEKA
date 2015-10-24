@@ -5,7 +5,6 @@
 body {
 	background: #F7F7F7 none repeat scroll 0 0;
 }
-
 /**********************************************************
  * Main styles for logo, logo wrappers bottom-logo-text etc.
  *
@@ -35,14 +34,24 @@ body {
  * Main styles for the navigation system, button nav
  * nav menus etc.
  **********************************************************/
-.menu{
+.menu {
     border: 0;
     margin-top: 10%;
     padding: 5px 10px;
+    background-color: #F7F7F7;
+    color: #696969;
+    -webkit-transition: 150ms ease-out 150ms;
+    -moz-transition: 150ms ease-out 150ms;
+    -o-transition: 150ms ease-out 150ms;
+    transition: 150ms ease-out 150ms;
 }
 
-.menu > i{
-    color : #636464;
+.menu:active,
+.menu:hover,
+.menu:focus{
+    background-color: rgba(93, 92, 91, 0.62);
+    color: #fff;
+    border-radius: 0;
 }
 
 
@@ -55,8 +64,8 @@ body {
     border-color: #fff;
     color: #999996;
     border-radius: 0;
-    padding: 4px 10px 4px 10px;
-    left: -37px;
+    padding: 9px 13px 9px 13px;
+    left: -44px;
 }
 
 .input-group {
@@ -67,10 +76,23 @@ body {
 }
 .custom-search-input button:focus,
 .custom-search-input button:hover,
-.custom-search-input button:active{
+.custom-search-input button:active {
     background-color: #b05d39;
-	color: #fff;			
+	color: #fff;
 }
+.search-bar {
+    border-color: rgba(105, 105, 105, 0.44);
+    box-shadow: none;
+    outline: none;
+    heigth: 100px;
+}
+.search-bar:focus,
+.search-bar:active {
+    box-shadow: none;
+    outline: none;
+    border-color: rgba(105, 105, 105, 0.44);
+}
+
 /**************************************************************
  * Main style for text wrappers, fields that contain text
  * styles , fonts for text etc..
