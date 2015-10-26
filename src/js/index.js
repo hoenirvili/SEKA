@@ -6,6 +6,11 @@
  */
 (function($) {
     /**
+     * Just internet explorer compatibility issues
+     * in case of anything else.
+     */
+    "use strict"
+    /**
      * function that check's if
      * we have the class it will remove
      * or if we don't have the class it will
