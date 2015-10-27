@@ -11,16 +11,16 @@
  * All other devices
  */
 @media(max-width: 320px) {
-    .bottom-search-text{
-        font-size: 0.2em;
-    }
+	.bottom-search-text{
+		font-size: 0.2em;
+	}
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-         .bottom-search-text {
-             font-size: 0.7em;
-         }
+		.bottom-search-text {
+			font-size: 0.7em;
+		}
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -29,5 +29,3 @@
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 12000px) {
 }
-
-

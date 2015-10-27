@@ -10,25 +10,25 @@ body {
  *
  *********************************************************/
 .wrapper-logo {
-    width: 300px;
-    height: 300px;
+	width: 300px;
+	height: 300px;
 }
 .logo {
-    width: 200px;
-    height: 200px;
-    background: url("../img/logo.svg") no-repeat center;
-    margin-left: 15%;
+	width: 200px;
+	height: 200px;
+	background: url("../img/logo.svg") no-repeat center;
+	margin-left: 15%;
 }
 .bottom-logo-text {
-    margin-left: 40%;
-    position: relative;
-    bottom: 20px;
-    font-size: 20px;
+	margin-left: 40%;
+	position: relative;
+	bottom: 20px;
+	font-size: 20px;
 }
 .k-color {
-    color : #b53913;
-    display: inline-block;
-    margin-left: -5px;
+	color : #b53913;
+	display: inline-block;
+	margin-left: -5px;
 }
 
 
@@ -44,72 +44,72 @@ body {
  * nav menus etc.
  **********************************************************/
 .menu-button{
-    border: 0;
-    margin-top: 10%;
-    padding: 5px 10px;
-    background-color: #F7F7F7;
-    color: #696969;
+	border: 0;
+	margin-top: 10%;
+	padding: 5px 10px;
+	background-color: #F7F7F7;
+	color: #696969;
 
 }
 
 .menu-button:active,
 .menu-button:hover,
 .menu-button:focus{
-    background-color: rgba(93, 92, 91, 0.62);
-    color: #fff;
-    border-radius: 0;
+	background-color: rgba(93, 92, 91, 0.62);
+	color: #fff;
+	border-radius: 0;
 }
 
 .menu {
-    overflow-x: hidden;
-    position: relative;
-    right: 0;
+	overflow-x: hidden;
+	position: relative;
+	right: 0;
 }
 
 .menu-open {
-    right: 210px;
+	right: 210px;
 }
 
 .menu-side, .menu {
 
-    -webkit-transtion: right 0.3s ease;
-    -moz-transition: right 0.3s ease;
-    -ms-transtion: right 0.3 ease;
-    -o-transition: right 0.3s ease;
+	-webkit-transtion: right 0.3s ease;
+	-moz-transition: right 0.3s ease;
+	-ms-transtion: right 0.3 ease;
+	-o-transition: right 0.3s ease;
 
-    transition: right 0.3s ease;
+	transition: right 0.3s ease;
 }
 
 .menu-open .menu-side {
-    right: 0;
+	right: 0;
 }
 
 .menu-side {
-    background-color: #F7F7F7;
-    color : #fff;
-    border: 1px solid #888;
-    position: fixed;
-    top: 0;
-    /**Hide the navigation*/
-    right: -209px;
-    width: 210px;
-    height: 100%;
-    padding: 10px;
-    /*just to make the navbar above the search bar*/
-    z-index: 10;
+	background-color: #F7F7F7;
+	color : #fff;
+	border: 1px solid #888;
+	position: fixed;
+	top: 0;
+	/**Hide the navigation*/
+	right: -209px;
+	width: 210px;
+	height: 100%;
+	padding: 10px;
+	/*just to make the navbar above the search bar*/
+	z-index: 10;
 }
 .hide-menu-button {
-    display: none;
+	display: none;
 }
 
 .menu-close {
-    border: 0;
-    margin-top: 6%;
-    padding: 5px 10px;
-    background-color: #F7F7F7;
-    color: #696969;
-    margin-right: 6px;
-    cursor: pointer;
+	border: 0;
+	margin-top: 6%;
+	padding: 5px 10px;
+	background-color: #F7F7F7;
+	color: #696969;
+	margin-right: 6px;
+	cursor: pointer;
 }
 
 
@@ -121,11 +121,11 @@ body {
  * wrapper search bars etc..
  ***********************************************************/
 .custom-search-input button {
-    border-color: #fff;
-    color: #999996;
-    border-radius: 0;
-    padding: 9px 13px 9px 13px;
-    left: -44px;
+	border-color: #fff;
+	color: #999996;
+	border-radius: 0;
+	padding: 9px 13px 9px 13px;
+	left: -44px;
 }
 
 .input-group {
@@ -137,20 +137,20 @@ body {
 .custom-search-input button:focus,
 .custom-search-input button:hover,
 .custom-search-input button:active {
-    background-color: #b05d39;
+	background-color: #b05d39;
 	color: #fff;
 }
 .search-bar {
-    border-color: rgba(105, 105, 105, 0.44);
-    box-shadow: none;
-    outline: none;
-    height: 50px;
+	border-color: rgba(105, 105, 105, 0.44);
+	box-shadow: none;
+	outline: none;
+	height: 50px;
 }
 .search-bar:focus,
 .search-bar:active {
-    box-shadow: none;
-    outline: none;
-    border-color: rgba(105, 105, 105, 0.44);
+	box-shadow: none;
+	outline: none;
+	border-color: rgba(105, 105, 105, 0.44);
 }
 
 /**************************************************************
@@ -158,6 +158,6 @@ body {
  * styles , fonts for text etc..
  **************************************************************/
 .wrapper-text {
-    margin-top: 50px;
-    padding-right: 20px;
+	margin-top: 50px;
+	padding-right: 20px;
 }
