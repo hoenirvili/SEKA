@@ -55,7 +55,7 @@ body {
 .menu-button:active,
 .menu-button:hover,
 .menu-button:focus{
-	background-color: rgba(93, 92, 91, 0.62);
+	background-color: #5d5c5b;
 	color: #fff;
 	border-radius: 0;
 }
@@ -71,13 +71,12 @@ body {
 }
 
 .menu-side, .menu {
-
-	-webkit-transtion: right 0.3s ease;
-	-moz-transition: right 0.3s ease;
-	-ms-transtion: right 0.3 ease;
-	-o-transition: right 0.3s ease;
-
 	transition: right 0.3s ease;
+	-o-transition: right 0.3s ease;
+	-webkit-transtion: right 0.3s ease;
+	-ms-transtion: right 0.3s ease;
+	-moz-transition: right 0.3s ease;
+
 }
 
 .menu-open .menu-side {
@@ -112,9 +111,25 @@ body {
 	cursor: pointer;
 }
 
-
-
-
+.list-menu {
+	margin-top: 67%;
+	/*margin-top: 3em;*/
+	/*padding-right: 1.5em;
+	padding-left: 1.5em;
+	padding-top: 20%;*/
+	list-style: none;
+}
+.heading-menu {
+	/*margin-top: 67%;*/
+	background-color: blue;
+}
+.list-menu > li {
+	/*padding-top: 50px;*/
+	/*color : #646464;*/
+}
+.list-menu > li>a {
+	color: #686868;
+}
 
 /***********************************************************
  * Main styles for search the actual search bar,
@@ -141,9 +156,7 @@ body {
 	color: #fff;
 }
 .search-bar {
-	border-color: rgba(105, 105, 105, 0.44);
 	box-shadow: none;
-	outline: none;
 	height: 50px;
 }
 .search-bar:focus,
