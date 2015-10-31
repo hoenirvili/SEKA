@@ -1,18 +1,3 @@
-<style type="text/css" rel="stylesheet">
-.mini-header {
-	color: red;
-	font-size: 13px;
-}
-.strateg {
-	font-size: 12px;
-}
-.first-head {
-	color : #19A0DA;
-}
-.logo {
-	margin-left: 300px;
-}
-</style>
 <p class="mini-header"> PLANUL PROIECTULUI TREBUIE PORTAT IN HTML CONFORM CERINTELOR</p>
 
 # SEKA
