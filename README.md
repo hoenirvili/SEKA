@@ -1,5 +1,18 @@
-<link type="text/css" rel="stylesheet" href="doc/readmestyle.css">
-
+<style type="text/css" rel="stylesheet">
+.mini-header {
+	color: red;
+	font-size: 13px;
+}
+.strateg {
+	font-size: 12px;
+}
+.first-head {
+	color : #19A0DA;
+}
+.logo {
+	margin-left: 300px;
+}
+</style>
 <p class="mini-header"> PLANUL PROIECTULUI TREBUIE PORTAT IN HTML CONFORM CERINTELOR</p>
 
 # SEKA
@@ -36,28 +49,28 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 		<ol>
 		<li> Vom folosi api-urile de la</li>
 			a. Duck duck go
-			</br>
+			<br>
 			b. Bing
-			</br>
+			<br>
 			c. google
-			</br>
+			<br>
 		</ol>
 		ii. Persone/companii
 			<ol>
 				<li>Vom folosi api-urile de la</li>
 				a. DuckDuckGo
-				</br>
+				<br>
 				b.Twitter
-				</br>
+				<br>
 				c.Linkedin
-				</br>
+				<br>
 			</ol>
 	</ol>
 	<li>Salvare info</li>
 	<ol>
 		<li>Vom salva</li>
 		a. In cookie
-		</br>
+		<br>
 		b.In Contul de Pocket al userului
 	</ol>
 </ol>
@@ -91,18 +104,18 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 
 ---------------------------------------------------
 1. Cum face user-ul o cautare ?
-	</br>
+	<br>
 	a. Pentru a cauta userul va folosi bara de search din mijlocul ecranului.
 2. Cum salveaza userul o cautare ?
-	</br>
+	<br>
 	a. Va trebui adauga o iconita care ii permite sa salveze cautarea
 3. Cum filtreaza userul cautarea pe un anumit tip de resurse ?
-	</br>
+	<br>
 	a. Va trebui adaugat un filtru cu ajutorul caruia poate sa filtreze in timp real rezultatele.
 4. Cum isi da seama userul de ce are de facut ?
-	</br>
+	<br>
 	a. Ar trebuii adaugate niste informatii la prima utilizare a site-ului (cookie)
-	</br>
+	<br>
 	b. Putem face un demo cu bootsrap tour sau ceva de genu
 
 	<p class="first-head">
@@ -115,35 +128,35 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 	<li> Finalizare design
 	<ol>
 			a. Adaugare iteme ce apar in urma search-ului
-			</br>
+			<br>
 			b. Creare meniu dreapta cu datele de salvare si eventual tur-ul boostrap(macar schita)
 	</ol>
 	<li>Implementare design css+html</li>
 	<ol>
 		a.	Implementare structura – stanga dreapta size fix (absolut pe mobil) container size fix, maxim 100% width,  centrat
-		</br>
+		<br>
 		b.	Implementare elemente
 		<ol>
 			i.	Logo
-			</br>
+			<br>
 			ii.	Bara search
-			</br>
+			<br>
 			iii.	Rezultate aparute in urma search-ului
-			</br>
+			<br>
 			iv.	Meniu stanga
-			</br>
+			<br>
 		</ol>
 		c.	Implementare still css
-		</br>
+		<br>
 		d.	Implementare animatii,hovere
 	</ol>
 	<li>Implementare functionalitate</li>
 	a.Implementare api-uri javascript pentru returnare date pe baza unui search
 		<ol>
 			i.	DuckDuckGo
-			</br>
+			<br>
 			ii. Bing
-			</br>
+			<br>
 			iii. Google
 			iv. Facebook
 			v. Linkedin
@@ -154,9 +167,9 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 			i. Posibilitatea de filtrare pe baza de parametrii
 		</ol>
 		c. Implementare functie de afisare a search+filter pe baza parametriilor get
-		</br>
+		<br>
 		d. Implementare functie de stocare/listare a url-urilor in cookie la cererea utilizatorilor
-		</br>
+		<br>
 		e. Implementare functie de stocare a url-urilor in pocket.
-		</br>
+		<br>
 </ol>
