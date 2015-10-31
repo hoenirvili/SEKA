@@ -1,6 +1,8 @@
+<link type="text/css" rel="stylesheet" href="doc/readmestyle.css">
+
 <p class="mini-header"> PLANUL PROIECTULUI TREBUIE PORTAT IN HTML CONFORM CERINTELOR</p>
 
-#SEKA
+# SEKA
 
 <div class="logo">
 	<img src="doc/logo.jpg" width=215 height=300 />
@@ -158,31 +160,3 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 		e. Implementare functie de stocare a url-urilor in pocket.
 		</br>
 </ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-.mini-header {
-	color: red;
-	font-size: 13px;
-}
-.strateg {
-	font-size: 12px;
-}
-.first-head {
-	color : #19A0DA;
-}
-.logo {
-	margin-left: 300px;
-}
-</style>
