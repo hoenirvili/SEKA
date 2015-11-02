@@ -43,3 +43,27 @@
 	 });
 
 })(jQuery);
+	
+	/*
+	 This function set up functions that we can customize for our slideshow  
+	*/
+	 $(function() {
+    $(".rslides").responsiveSlides({
+  auto: true,             
+  speed: 500,            
+  timeout: 4000,          
+  pager: false,           
+  nav: false,             
+  random: false,          
+  pause: false,           
+  pauseControls: false,    
+  prevText: "Previous",   
+  nextText: "Next",      
+  maxwidth: "1000",           
+  navContainer: "",       
+  manualControls: "",     
+  namespace: "rslides",   
+  before: function(){},   
+  after: function(){}     
+});
+  });
