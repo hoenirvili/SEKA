@@ -10,6 +10,8 @@ body {
  *
  *********************************************************/
 .wrapper-logo {
+	position: relative;
+	top: 35px;
 	width: 300px;
 	height: 300px;
 }
@@ -86,7 +88,7 @@ body {
 .menu-side {
 	background-color: #F7F7F7;
 	color : #fff;
-	border: 1px solid #888;
+	box-shadow:0 0 1px 1px #888;
 	position: fixed;
 	top: 0;
 	/**Hide the navigation*/
@@ -173,8 +175,4 @@ body {
 .wrapper-text {
 	margin-top: 10px;
 	padding-right: 20px;
-}
-
-.hide-text {
-	display: none;
 }

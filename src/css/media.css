@@ -16,14 +16,27 @@
 	}
 }
 
+@media (max-width: 711px) {
+	.wrapper-logo {
+		right: 10px;
+	}
+}
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-		.bottom-search-text {
-			font-size: 0.7em;
+		.wrapper-logo {
+			top: 70px;
+			margin-left: 150px;
+
 		}
 }
+/*@media (max-width : )*/
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (max-width: 992px) {
+	.wrapper-log {
+		position: absolute;
+		top: 70px;
+		margin-left: 150px;
+	}
 }
 
 /* Large devices (large desktops, 1200px and up) */

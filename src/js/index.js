@@ -27,8 +27,7 @@
 				arrows: false,
 				adaptiveHeight: true
 			 });
-
-		}
+	}
 
 	 function openMenu() {
 		var $this = $(this),
