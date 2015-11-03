@@ -18,28 +18,17 @@
 	 */
 
 	 function slideTextEffect() {
-			var text1 = $('.text1'),
-				text2 = $('.text2'),
-				text3 =  $('.text3');
-	/**
-	* I know this code is very bad written
-	* Spaghetti style what so ever but it almost does the job.
-	* i can't thing of a clever implementation to write now..
-	 */
-			setTimeout(function () {
-					text1.fadeToggle("slow",function() {
-						text1.fadeToggle("slow",function(){
-							text2.fadeToggle("slow",function() {
-								text2.fadeToggle("slow",function() {
-									text3.fadeToggle("slow",function(){
-										$(this).fadeToggle("slow");
-									});
-								});
-							});
-						});
-					});
-			}, 400);
-}
+			 $('.slick-animate').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+ 				autoplay: true,
+ 				autoplaySpeed: 3500,
+				accessibility: false,
+				arrows: false,
+				adaptiveHeight: true
+			 });
+
+		}
 
 	 function openMenu() {
 		var $this = $(this),
