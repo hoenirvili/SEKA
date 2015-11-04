@@ -38,9 +38,6 @@ body {
 
 
 
-
-
-
 /**********************************************************
  * Main styles for the navigation system, button nav
  * nav menus etc.
@@ -167,7 +164,6 @@ body {
 	outline: none;
 	border-color: rgba(105, 105, 105, 0.44);
 }
-
 /**************************************************************
  * Main style for text wrappers, fields that contain text
  * styles , fonts for text etc..

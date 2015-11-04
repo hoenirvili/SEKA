@@ -17,7 +17,13 @@
 	 * be added to the our button.
 	 */
 
+	/**
+	 * cache values
+	 */
 	var counter = 0;
+	// var searchButton = $("#search");
+	// searchButton.attr('window.location.href','result.html');
+
 	function changeText(){
 		var quotes = [3];
 
