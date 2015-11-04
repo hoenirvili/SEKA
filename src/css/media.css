@@ -11,9 +11,6 @@
  * All other devices
  */
 @media(max-width: 320px) {
-	.bottom-search-text{
-		font-size: 0.2em;
-	}
 }
 
 @media (max-width: 711px) {

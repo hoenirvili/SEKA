@@ -17,18 +17,37 @@
 	 * be added to the our button.
 	 */
 
-	 function slideTextEffect() {
-			 $('.slick-animate').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
- 				autoplay: true,
- 				autoplaySpeed: 3500,
-				accessibility: false,
-				arrows: false,
-				adaptiveHeight: true
-			 });
-	}
+	var counter = 0;
+	function changeText(){
+		var quotes = [3];
 
+		quotes[0] = "<h6 class=text-center > 							\
+			 			Search Engine Analyzer for 						\
+							<a href=#>facebook</a> 						\
+							<a href=#>twitter </a> 						\
+							and 										\
+							<a href=#> duckduckgo</a> 					\
+					</h6>";
+		quotes[1] = "<h6 class=text-center >							\
+		 				Search Engine Analyzer that is 					\
+							<a href=#>specialized</a>					\
+						 	to help you search some things..			\
+					</h6>";
+		quotes[2] = "<h6 class=text-center > 							\
+						This is another									\
+						<a href=#>example</a> 							\
+						of good search engine. 							\
+					</h6>"
+
+		if (counter > 2){
+			counter = 0;
+		}
+		document.getElementById("textslide").innerHTML = quotes[counter];
+		setTimeout(function(){
+			changeText()},
+		5000);
+		counter ++;
+	}
 	 function openMenu() {
 		var $this = $(this),
 			menu = $('.menu');
@@ -53,28 +72,6 @@
 	 $(document).ready(function() {
 		 $('.menu-button').on('click',openMenu);
 		 $('.menu-close').on('click', closeMenu);
-		 slideTextEffect();
+		 changeText();
 	 });
 })(jQuery);
-
-/*
-Slider
-*/
-
-        var counter = 0;
-
-        function changeText(){
-	        var quotes = new Array();
-
-	        quotes[0] = "<h6 class=text-center bottom-search-text> Search Engine Analyzer for <a href=#>facebook</a> <a href=#>twitter </a>and<a href=#> duckduckgo</a></h6>";
-	        quotes[1] = "<h6 class=text-center bottom-search-text> Search Engine Analyzer that is <a href=#>specialized</a> to help you search some things..</h6>";
-	        quotes[2] = "<h6 class=text-center bottom-search-text> This is another <a href=#>example</a> of good search engine. </h6>"
-
-	        if (counter > 2){
-	           counter = 0;
-	        }
-			document.getElementById("textslide").innerHTML = quotes[counter];
-			setTimeout(function(){changeText()},3000);
-	        counter ++;
-        }
-        
