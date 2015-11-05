@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SEKA
 Search Engine Keywords-based Analyzer
 =======
@@ -162,4 +161,3 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 		e. Implementare functie de stocare a url-urilor in pocket.
 		<br>
 </ol>
->>>>>>> 41373f3db9035ec139bf63ef44fc62946f354724
