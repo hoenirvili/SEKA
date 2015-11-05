@@ -1,0 +1,174 @@
+/*********************************************************
+ * Main styles that will render on the entire page layout
+ * as body,p,h,nav,section tags or *
+ *********************************************************/
+body {
+	background: #F7F7F7 none repeat scroll 0 0;
+}
+/**********************************************************
+ * Main styles for logo, logo wrappers bottom-logo-text etc.
+ *
+ *********************************************************/
+.wrapper-logo {
+	position: relative;
+	top: 35px;
+	width: 300px;
+	height: 300px;
+}
+.logo {
+	width: 200px;
+	height: 200px;
+	background: url("../img/logo.svg") no-repeat center;
+	margin-left: 15%;
+}
+.bottom-logo-text {
+	margin-left: 40%;
+	position: relative;
+	bottom: 20px;
+	font-size: 20px;
+}
+.k-color {
+	color : #b53913;
+	display: inline-block;
+	margin-left: -5px;
+}
+
+
+
+
+
+
+/**********************************************************
+ * Main styles for the navigation system, button nav
+ * nav menus etc.
+ **********************************************************/
+.menu-button{
+	border: 0;
+	margin-top: 10%;
+	padding: 5px 10px;
+	background-color: #F7F7F7;
+	color: #696969;
+
+}
+
+.menu-button:active,
+.menu-button:hover,
+.menu-button:focus{
+	background-color: #5d5c5b;
+	color: #fff;
+	border-radius: 0;
+}
+
+.menu {
+	overflow-x: hidden;
+	position: relative;
+	right: 0;
+}
+
+.menu-open {
+	right: 210px;
+}
+
+.menu-side, .menu {
+	transition: right 0.3s ease;
+	-o-transition: right 0.3s ease;
+	-webkit-transtion: right 0.3s ease;
+	-ms-transtion: right 0.3s ease;
+	-moz-transition: right 0.3s ease;
+
+}
+
+.menu-open .menu-side {
+	right: 0;
+}
+
+.menu-side {
+	background-color: #F7F7F7;
+	color : #fff;
+	box-shadow:0 0 1px 1px #888;
+	position: fixed;
+	top: 0;
+	/**Hide the navigation*/
+	right: -209px;
+	width: 210px;
+	height: 100%;
+	padding: 10px;
+	/*just to make the navbar above the search bar*/
+	z-index: 10;
+}
+.hide-menu-button {
+	display: none;
+}
+
+.menu-close {
+	border: 0;
+	margin-top: 6%;
+	padding: 5px 10px;
+	background-color: #F7F7F7;
+	color: #696969;
+	margin-right: 6px;
+	cursor: pointer;
+}
+
+.list-menu {
+	margin-top: 67%;
+	/*margin-top: 3em;*/
+	/*padding-right: 1.5em;
+	padding-left: 1.5em;
+	padding-top: 20%;*/
+	list-style: none;
+}
+.heading-menu {
+	/*margin-top: 67%;*/
+	background-color: blue;
+}
+.list-menu > li {
+	/*padding-top: 50px;*/
+	/*color : #646464;*/
+}
+.list-menu > li>a {
+	color: #686868;
+}
+
+/***********************************************************
+ * Main styles for search the actual search bar,
+ * wrapper search bars etc..
+ ***********************************************************/
+.custom-search-input button {
+	border-color: #fff;
+	color: #999996;
+	border-radius: 0;
+	padding: 9px 13px 9px 13px;
+	left: -44px;
+}
+
+.input-group {
+    margin-left: 20px;
+}
+.form-control{
+	border-radius: 0;
+}
+.custom-search-input button:focus,
+.custom-search-input button:hover,
+.custom-search-input button:active {
+	background-color: #b05d39;
+	color: #fff;
+}
+.search-bar {
+	box-shadow: none;
+	height: 50px;
+}
+.search-bar:focus,
+.search-bar:active {
+	box-shadow: none;
+	outline: none;
+	border-color: rgba(105, 105, 105, 0.44);
+}
+/**************************************************************
+ * Main style for text wrappers, fields that contain text
+ * styles , fonts for text etc..
+ **************************************************************/
+.wrapper-text {
+	margin-top: 40px;
+	padding-right: 20px;
+}

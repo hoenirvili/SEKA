@@ -1,0 +1,41 @@
+/**
+ * Bootstrap rules 768px, 992px and 12000px grid system
+ * But for other standard devices like smartphones and tablets,
+ * iphtone 4 (max-width 320px) && (max-height 480)
+ * iphone 5 (max-width: 320px) && (max-height: 568)
+ * iphone 6 (max-width: 375px) && (max-height: 627)
+ * ipad (max-width 768px) && (max-height: 1024)
+ */
+
+/**
+ * All other devices
+ */
+@media(max-width: 320px) {
+}
+
+@media (max-width: 711px) {
+	.wrapper-logo {
+		right: 10px;
+	}
+}
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+		.wrapper-logo {
+			top: 70px;
+			margin-left: 150px;
+
+		}
+}
+/*@media (max-width : )*/
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+	.wrapper-log {
+		position: absolute;
+		top: 70px;
+		margin-left: 150px;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 12000px) {
+}
