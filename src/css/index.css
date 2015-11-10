@@ -3,7 +3,12 @@
  * as body,p,h,nav,section tags or *
  *********************************************************/
 body {
-	background: #F7F7F7 none repeat scroll 0 0;
+	background: url("../img/bg-image.jpg");
+	background-size: cover;
+}
+.container {
+	background: url("../img/wrapper-bg.jpg");
+	background-size: cover;
 }
 /**********************************************************
  * Main styles for logo, logo wrappers bottom-logo-text etc.
@@ -11,18 +16,18 @@ body {
  *********************************************************/
 .wrapper-logo {
 	position: relative;
-	top: 35px;
+	top: 0px;
 	width: 300px;
 	height: 300px;
 }
 .logo {
-	width: 200px;
-	height: 200px;
+	width: 159px;
+	height: 206px;
 	background: url("../img/logo.svg") no-repeat center;
-	margin-left: 15%;
+
 }
 .bottom-logo-text {
-	margin-left: 40%;
+	margin-left: 18%;
 	position: relative;
 	bottom: 20px;
 	font-size: 20px;
@@ -53,8 +58,9 @@ body {
 
 .menu-button:active,
 .menu-button:hover,
-.menu-button:focus{
-	background-color: #5d5c5b;
+.menu-button:focus
+.menu-button:active:focus{
+	background-color: #200a05;
 	color: #fff;
 	border-radius: 0;
 }
@@ -83,7 +89,7 @@ body {
 }
 
 .menu-side {
-	background-color: #F7F7F7;
+	background-color: #200a05;
 	color : #fff;
 	box-shadow:0 0 1px 1px #888;
 	position: fixed;
@@ -104,15 +110,15 @@ body {
 	border: 0;
 	margin-top: 6%;
 	padding: 5px 10px;
-	background-color: #F7F7F7;
-	color: #696969;
+	background-color: #200a05;
+	color: #fff;
 	margin-right: 6px;
 	cursor: pointer;
 }
 
 .list-menu {
-	margin-top: 67%;
-	/*margin-top: 3em;*/
+	margin-top: 15%;
+	/* margin-top: 3em;*/
 	/*padding-right: 1.5em;
 	padding-left: 1.5em;
 	padding-top: 20%;*/
@@ -127,7 +133,14 @@ body {
 	/*color : #646464;*/
 }
 .list-menu > li>a {
-	color: #686868;
+	color: #fff;
+	font-size: 17px;
+}
+
+.btn-default:focus, .btn-default.focus {
+	 color: #fff;
+	 background-color: #e6e6e6;
+	 border-color: #8c8c8c;
 }
 
 /***********************************************************
@@ -154,6 +167,12 @@ body {
 	background-color: #b05d39;
 	color: #fff;
 }
+.btn-default:active:focus{
+	color: #fff;
+	background-color: #200a05;
+	border-color: #200a05;
+	outline: none;
+}
 .search-bar {
 	box-shadow: none;
 	height: 50px;
@@ -171,4 +190,20 @@ body {
 .wrapper-text {
 	margin-top: 40px;
 	padding-right: 20px;
+}
+.container-padding {
+	margin-bottom: 335px;
+}
+.menu button {
+	background: none;
+	color: #6f242b;
+	font-size: 36px;
+}
+
+/**************************************************************
+ * Search
+ **************************************************************/
+
+.search-action .wrapper-logo {
+	height: 85px;
 }
