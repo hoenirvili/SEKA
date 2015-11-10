@@ -56,9 +56,8 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 	<li>Salvare info</li>
 	<ol>
 		<li>Vom salva</li>
-		a. In cookie
 		<br>
-		b.In Contul de Pocket al userului
+		a.In Contul de Pocket al userului
 	</ol>
 </ol>
 
@@ -80,10 +79,10 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 
 ---------------------------------------------------
 
-<p class="strateg">Schelet</p>
+<p class="strateg">Mockup</p>
 
 ---------------------------------------------------
-![Alt text](doc/3IrE4G.png)
+![Alt text](doc/mockup.png)
 
 ---------------------------------------------------
 
@@ -92,7 +91,7 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 ---------------------------------------------------
 1. Cum face user-ul o cautare ?
 	<br>
-	a. Pentru a cauta userul va folosi bara de search din mijlocul ecranului.
+	a. Pentru a cauta userul va folosi o bara de search din mijlocul ecranului.
 2. Cum salveaza userul o cautare ?
 	<br>
 	a. Va trebui adauga o iconita care ii permite sa salveze cautarea
@@ -108,7 +107,10 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 	<p class="first-head">
 		Implementare
 	</p>
-
+5. Cum facem ca userul sa nu aiba probleme pe ecranele mai mici ?
+	a. Facem ca meniul sa poata fi inchis si deschis
+6. Cum ne asiguram ca userul stie ce item din lista a selectat ?
+	a. Folosim un hover cu un blur pentru a evidentia item-ul selectat. 
 
 
 <ol>
@@ -155,8 +157,6 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 		</ol>
 		c. Implementare functie de afisare a search+filter pe baza parametriilor get
 		<br>
-		d. Implementare functie de stocare/listare a url-urilor in cookie la cererea utilizatorilor
-		<br>
-		e. Implementare functie de stocare a url-urilor in pocket.
+		d. Implementare functie de stocare a url-urilor in pocket.
 		<br>
 </ol>
