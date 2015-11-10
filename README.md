@@ -1,7 +1,6 @@
-# SEKA
+﻿# SEKA
 Search Engine Keywords-based Analyzer
 =======
-##### PLANUL PROIECTULUI TREBUIE PORTAT IN HTML CONFORM CERINTELOR
 
 # SEKA
 
