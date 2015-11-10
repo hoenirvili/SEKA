@@ -21,16 +21,16 @@ body {
 	height: 300px;
 }
 .logo {
-	width: 159px;
-	height: 206px;
+	width: 80px;
+	height: 80px;
 	background: url("../img/logo.svg") no-repeat center;
 
 }
 .bottom-logo-text {
-	margin-left: 18%;
-	position: relative;
-	bottom: 20px;
-	font-size: 20px;
+    margin-left: 5%;
+    position: relative;
+    bottom: 12px;
+    font-size: 20px;
 }
 .k-color {
 	color : #b53913;
@@ -38,6 +38,18 @@ body {
 	margin-left: -5px;
 }
 
+.btn-green
+{
+    background-color:#59c699 ;
+    color:#fff;
+}
+
+form input[type="text"]
+{
+    color:#000;
+    font-family: "Lato";
+    font-size:29px;
+}
 
 
 
@@ -117,12 +129,9 @@ body {
 }
 
 .list-menu {
-	margin-top: 15%;
-	/* margin-top: 3em;*/
-	/*padding-right: 1.5em;
-	padding-left: 1.5em;
-	padding-top: 20%;*/
-	list-style: none;
+    margin-left: 10px;
+    list-style-type: none;
+    padding-left: 0;
 }
 .heading-menu {
 	/*margin-top: 67%;*/
@@ -134,7 +143,14 @@ body {
 }
 .list-menu > li>a {
 	color: #fff;
-	font-size: 17px;
+	font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.close-menu
+{
+    font-size:20px;
 }
 
 .btn-default:focus, .btn-default.focus {
@@ -206,4 +222,67 @@ body {
 
 .search-action .wrapper-logo {
 	height: 85px;
+}
+
+/**************************************************************
+ * Results
+ **************************************************************/
+
+.search-results-wrapper
+{
+    margin-top:30px;
+}
+
+.result-category
+{
+    padding-left:130px;
+    margin-bottom: 8px;
+    border-bottom:1px solid #b97b57;
+    background-repeat: no-repeat;
+    background-position: 60px 0px;
+}
+
+.web-results
+{
+    background-image: url('../img/web.png');
+}
+
+.company-results{
+    background-image: url('../img/company.png');
+}
+
+.others-results{
+    background-image: url('../img/others.png');
+}
+
+.result-category ul li
+{
+    list-style-type: none;
+    padding:5px;
+    margin-bottom: 10px;
+}
+.result-category ul li:hover
+{
+    background:rgba(255,255,255,0.5)
+}
+.result-category ul li .result-img,.result-category ul li .result-title
+{
+    float:left;
+}
+
+.result-category ul li .result-title a
+{
+    font-size: 29px;
+    font-family: "Lato";
+    padding-left: 10px;
+    line-height: 29px;
+    color: #000;
+}
+.result-category ul li .result-excerpt
+{
+    clear:both;
+    font-size:13px;
+    font-family: "Lato";
+    line-height: 16px;
+    padding:5px 0 0
 }
