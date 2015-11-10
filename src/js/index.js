@@ -25,6 +25,8 @@
 	// searchButton.attr('window.location.href','result.html');
 
 	function changeText(){
+
+        if($('#textslide').length) {
 		var quotes = [3];
 
 		quotes[0] = "<h6 class=text-center > 							\
@@ -48,11 +50,13 @@
 		if (counter > 2){
 			counter = 0;
 		}
-		document.getElementById("textslide").innerHTML = quotes[counter];
-		setTimeout(function(){
-			changeText()},
-		5000);
-		counter ++;
+            document.getElementById("textslide").innerHTML = quotes[counter];
+            setTimeout(function () {
+                    changeText()
+                },
+                5000);
+            counter++;
+        }
 	}
 	 function openMenu() {
 		var $this = $(this),

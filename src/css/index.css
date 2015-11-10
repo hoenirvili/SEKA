@@ -7,8 +7,7 @@ body {
 	background-size: cover;
 }
 .container {
-	background: url("../img/wrapper-bg.jpg");
-	background-size: cover;
+    background:rgba(194,187,202,0.78)
 }
 /**********************************************************
  * Main styles for logo, logo wrappers bottom-logo-text etc.
@@ -35,7 +34,7 @@ body {
 .k-color {
 	color : #b53913;
 	display: inline-block;
-	margin-left: -5px;
+	margin-left: 0px;
 }
 
 .btn-green
@@ -231,6 +230,7 @@ form input[type="text"]
 .search-results-wrapper
 {
     margin-top:30px;
+    padding-right:70px;
 }
 
 .result-category
