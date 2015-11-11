@@ -83,7 +83,7 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 <p class="strateg">Schelet</p>
 
 ---------------------------------------------------
-![Alt text](doc/3IrE4G.png)
+![Alt text](doc/mockup.png)
 
 ---------------------------------------------------
 
