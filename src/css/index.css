@@ -253,6 +253,7 @@ form input[type="text"]
 
 .others-results{
     background-image: url('../img/others.png');
+	margin-bottom: 70px;
 }
 
 .result-category ul li
