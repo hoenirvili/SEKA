@@ -129,6 +129,7 @@ form input[type="text"]
 
 .list-menu {
     margin-left: 10px;
+	margin-top: 20%;
     list-style-type: none;
     padding-left: 0;
 }
@@ -253,6 +254,7 @@ form input[type="text"]
 
 .others-results{
     background-image: url('../img/others.png');
+	margin-bottom: 70px;
 }
 
 .result-category ul li
