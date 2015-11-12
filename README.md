@@ -102,17 +102,18 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 	<br>
 	a. Ar trebuii adaugate niste informatii la prima utilizare a site-ului (cookie)
 	<br>
-	b. Putem face un demo cu bootsrap tour sau ceva de genu
-
-	<p class="first-head">
-		Implementare
-	</p>
+	b. Putem face un demo cu bootsrap tour.
+	
 5. Cum facem ca userul sa nu aiba probleme pe ecranele mai mici ?
 	a. Facem ca meniul sa poata fi inchis si deschis
 6. Cum ne asiguram ca userul stie ce item din lista a selectat ?
 	a. Folosim un hover cu un blur pentru a evidentia item-ul selectat. 
 
 
+
+<p class="first-head">
+		Implementare
+	</p>
 <ol>
 	<li> Finalizare design
 	<ol>
