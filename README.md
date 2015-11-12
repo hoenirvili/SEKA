@@ -104,9 +104,9 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 	<br>
 	b. Putem face un demo cu bootsrap tour.
 	
-5. Cum facem ca userul sa nu aiba probleme pe ecranele mai mici ?
+5. Cum facem ca userul sa nu aiba probleme pe ecranele mai mici ?<br>
 	a. Facem ca meniul sa poata fi inchis si deschis
-6. Cum ne asiguram ca userul stie ce item din lista a selectat ?
+6. Cum ne asiguram ca userul stie ce item din lista a selectat ?<br>
 	a. Folosim un hover cu un blur pentru a evidentia item-ul selectat. 
 
 
