@@ -3,3 +3,13 @@
 	font-style: normal;
 	margin-left: -5px;
 }
+.filter-status{
+	border-top: 1px solid #E7E7E7;
+	margin-top: 10px;
+	border-bottom: 1px solid #E7E7E7;
+	padding: 2px 0 2px 0
+}
+.filter-status > span {
+	margin-left: 18px;
+}
+
