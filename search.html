@@ -62,27 +62,61 @@
             <div class="col-md-9">
                 <div class="custom-search-input">
                     <form class="input-group" action="result.html" method="GET">
-                        <input type="text" class="form-control input-lg search-bar" placeholder="Search" id="search-query" aria-describedby="search-bar" value="Apple" />
+						<input type="text" class="form-control input-lg search-bar" placeholder="Search" id="search-query" aria-describedby="search-bar" value=""/>
+				<!--DropDown search filter-->
+				<div class="wrapper-filter">
+					<div class="button-group">
+							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+								<span class="glyphicon glyphicon-filter"></span>
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+
+							<li>
+								<a href="#" class="small" data-value="DuckDuckGo" tabIndex="-1">
+									<input type="checkbox"/>
+										&nbsp;DuckDuckGo
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="small" data-value="Bing" tabIndex="-1">
+									<input type="checkbox"/>
+									&nbsp;Bing
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="small" data-value="Google" tabIndex="-1">
+									<input type="checkbox"/>
+									&nbsp;Google
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="small" data-value="Facebook" tabIndex="-1">
+									<input type="checkbox"/>
+										&nbsp;Facebook 
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="small" data-value="Twitter" tabIndex="-1">
+									<input type="checkbox"/>
+										&nbsp;Twitter
+								</a>
+							</li>
+							</ul>
+						</div>
+					</div><!-- wrapper filer -->
+
 							<span class="input-group-btn">
 								<button class="btn btn-green" type="submit" id="search-button">
 									<i class="fa fa-search"></i>
                                 </button>
 							</span>
                     </form><!--input-group-->
-					<div class="filter-status">
-						<span>"search query"</span>
-						<span>number of results</span>
-						<span>span of about 23123</span>
-					</div>
-					<!-- TODO: make filter button pop-up -->
-					<!---TODO: move the filter in good place-->
-					<div class="filter-block">
-							<button class="btn">
-								<i class="fa fa-filter">filter</i>
-							</button>
-					</div>
                 </div><!--custom-seach-input-->
-
                 <div class="search-results-wrapper">
                     <div class="result-category web-results">
                         <ul>

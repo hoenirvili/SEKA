@@ -21,12 +21,12 @@
 	 * cache values
 	 */
 	var counter = 0;
+	var options= [];
 	// var searchButton = $("#search");
 	// searchButton.attr('window.location.href','result.html');
 
 	function changeText(){
-
-        if($('#textslide').length) {
+		if($('#textslide').length) {
 		var quotes = [3];
 
 		quotes[0] = "<h6 class=text-center > 							\
@@ -50,13 +50,12 @@
 		if (counter > 2){
 			counter = 0;
 		}
-            document.getElementById("textslide").innerHTML = quotes[counter];
-            setTimeout(function () {
-                    changeText()
-                },
-                5000);
-            counter++;
-        }
+			document.getElementById("textslide").innerHTML = quotes[counter];
+			setTimeout(function () {
+					changeText()
+				},5000);
+			counter++;
+		}
 	}
 	 function openMenu() {
 		var $this = $(this),
@@ -73,15 +72,48 @@
 		menu.toggleClass('menu-open');
 		//make button reappear
 		button.toggleClass('hide-menu-button');
-
 	}
 
+	//dropDownEvent just adds all the elements that was check into our
+	//contianer and loging them
+	function dropDownEvent() {
+		var $target = $(event.currentTarget),
+			val = $target.attr('data-value'),
+			$inp = $target.find('input'), 
+			idx;
+
+		if(( idx = options.indexOf(val)) > -1) {
+			options.splice(idx, 1);
+			setTimeout(function(){
+				$inp.prop('checked',false);
+			}, 0);
+		} else {
+			options.push(val);
+			setTimeout(function() {
+				$inp.prop('checked',true);
+			},0);
+		}
+		// this blur method removes the focus of the
+		// element that has been checked/clicked
+		$(event.target).blur();
+		//for debugging reasons
+		console.log(options);
+		// return false;
+		// replacing the return false statement
+		event.preventDefault();
+		event.stopPropagation();
+		// intersting enough when return false is triggered
+		// it also stops callback execution.
+	}
 	/**
 	 * If the document is loaded execute this function
 	 */
 	 $(document).ready(function() {
 		 $('.menu-button').on('click',openMenu);
 		 $('.menu-close').on('click', closeMenu);
+		 // animation
 		 changeText();
+		 // dropdown-menu event
+		 $('.dropdown-menu a').on('click', dropDownEvent);
 	 });
 })(jQuery);

@@ -58,31 +58,61 @@
 			<div class="custom-search-input">
 				<form class="input-group" action="search.html" method="GET">
 					<input type="text" class="form-control input-lg search-bar" placeholder="search.." id="search-query" aria-describedby="search-bar" />
-							<span class="input-group-btn">
-								<button class="btn btn-green" type="submit" id="search-button">
-									<i class="fa fa-search"></i>
-								</button>
-							</span>
-				</form><!--input-group-->
-				<!-- TODO: filter dropdown menu checker box -->
 				<!--DropDown search filter-->
-				<div class="dropdown">
-					<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
-						Test
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-						<li role="representation">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" value=""/>
-										Facebook
-								</label>
-							</div>
-						</li>
-					</ul>
-				</div>
+				<div class="wrapper-filter">
 
+					<!--TODO: replace div with span in order to align this mess-->
+
+					<div class="button-group">
+							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+								<span class="glyphicon glyphicon-filter"></span>
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+
+							<li>
+								<a href="#" class="small" data-value="DuckDuckGo" tabIndex="-1">
+									<input type="checkbox"/>
+										&nbsp;DuckDuckGo
+								</a>
+							</li>
+							
+							<li>
+								<a href="#" class="small" data-value="Bing" tabIndex="-1">
+									<input type="checkbox"/>
+									&nbsp;Bing
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="small" data-value="Google" tabIndex="-1">
+									<input type="checkbox"/>
+									&nbsp;Google
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="small" data-value="Facebook" tabIndex="-1">
+									<input type="checkbox"/>
+										&nbsp;Facebook 
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="small" data-value="Twitter" tabIndex="-1">
+									<input type="checkbox"/>
+										&nbsp;Twitter
+								</a>
+							</li>
+							</ul>
+						</div>
+					</div><!-- wrapper filer -->
+					<span class="input-group-btn">
+						<button class="btn btn-green" type="submit" id="search-button">
+							<i class="fa fa-search"></i>
+						</button>
+					</span>
+				</form><!--input-group-->
 			</div><!--custom-seach-input-->
 		</div><!--col-md-12-->
 		<div class="col-md-2"></div>

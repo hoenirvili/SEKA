@@ -105,7 +105,7 @@ form input[type="text"]
 	box-shadow:0 0 1px 1px #888;
 	position: fixed;
 	top: 0;
-	/**Hide the navigation*/
+	/*Hide the navigation*/
 	right: -209px;
 	width: 210px;
 	height: 100%;
@@ -161,7 +161,7 @@ form input[type="text"]
 
 /***********************************************************
  * Main styles for search the actual search bar,
- * wrapper search bars etc..
+ * wrapper search bars,filter etc..
  ***********************************************************/
 .custom-search-input button {
 	border-color: #fff;
@@ -169,6 +169,7 @@ form input[type="text"]
 	border-radius: 0;
 	padding: 9px 13px 9px 13px;
 	left: -44px;
+	bottom : 17px;
 }
 
 .input-group {
@@ -199,6 +200,15 @@ form input[type="text"]
 	outline: none;
 	border-color: rgba(105, 105, 105, 0.44);
 }
+.wrapper-filter {
+	position: relative;
+	z-index: 1001;
+	bottom: 43px;
+	left: 86%;
+	width: 53px;
+	height: 85px;
+}
+
 /**************************************************************
  * Main style for text wrappers, fields that contain text
  * styles , fonts for text etc..
