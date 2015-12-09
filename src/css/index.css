@@ -174,7 +174,7 @@ form input[type="text"]
 	border-radius: 0;
 	padding: 9px 13px 9px 13px;
 	left: -44px;
-	bottom : 17px;
+	bottom : 0px;
 }
 
 .input-group {
@@ -198,6 +198,7 @@ form input[type="text"]
 .search-bar {
 	box-shadow: none;
 	height: 50px;
+	padding-right: 65px;
 }
 .search-bar:focus,
 .search-bar:active {
@@ -207,14 +208,10 @@ form input[type="text"]
 }
 
 .wrapper-filter {
-	position: relative;
-	z-index: 1001;
-	bottom: 43px;
-	left: 86%;
-	width: 53px;
-	height: 85px;
+	float: right;
+	margin-right: 10px;
+	margin-top: -44px;
 }
-
 /**************************************************************
  * Main style for text wrappers, fields that contain text
  * styles , fonts for text etc..

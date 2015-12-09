@@ -63,19 +63,17 @@
 			<div class="col-md-8">
 				<div class="custom-search-input">
 					<form class="input-group" action="search.html" method="GET">
-						<input type="text" class="form-control input-lg search-bar" placeholder="search.." id="search-query" aria-describedby="search-bar" />
+						<input type="text" class="form-control input-lg search-bar" placeholder="search.." id="search-query" aria-describedby="search-bar"/>
+
+
 					<!--DropDown search filter-->
 					<div class="wrapper-filter">
-
-						<!-- TODO: make button responsiv-->
-
-						<div class="button-group">
+						<div class="input-group-btn">
 								<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
-									<span class="glyphicon glyphicon-filter"></span>
 									<span class="caret"></span>
 								</button>
-								<ul class="dropdown-menu">
 
+								<ul class="dropdown-menu">
 								<li>
 									<a href="#" class="small" data-value="DuckDuckGo" tabIndex="-1">
 										<input type="checkbox"/>
@@ -113,6 +111,7 @@
 								</ul>
 							</div>
 						</div><!-- wrapper filer -->
+						
 						<span class="input-group-btn">
 							<button class="btn btn-green" type="submit" id="search-button">
 								<i class="fa fa-search"></i>
