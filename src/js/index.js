@@ -21,7 +21,6 @@
 	 * cache values
 	 */
 	var counter = 0;
-	var options= [];
 	// var searchButton = $("#search");
 	// searchButton.attr('window.location.href','result.html');
 
@@ -29,23 +28,23 @@
 		if($('#textslide').length) {
 		var quotes = [3];
 
-		quotes[0] = "<h6 class=text-center > 							\
+		quotes[0] = "<h5 class=\"text-center slide-text-anime \">		\
 			 			Search Engine Analyzer for 						\
 							<a href=#>facebook</a> 						\
 							<a href=#>twitter </a> 						\
 							and 										\
 							<a href=#> duckduckgo</a> 					\
-					</h6>";
-		quotes[1] = "<h6 class=text-center >							\
+					</h5>";
+		quotes[1] = "<h5 class=\"text-center slide-text-anime \">		\
 		 				Search Engine Analyzer that is 					\
 							<a href=#>specialized</a>					\
 						 	to help you search some things..			\
-					</h6>";
-		quotes[2] = "<h6 class=text-center > 							\
+					</h5>";
+		quotes[2] = "<h5 class=\"text-center slide-text-anime \">		\
 						This is another									\
 						<a href=#>example</a> 							\
 						of good search engine. 							\
-					</h6>"
+					</h5>"
 
 		if (counter > 2){
 			counter = 0;
@@ -74,38 +73,7 @@
 		button.toggleClass('hide-menu-button');
 	}
 
-	//dropDownEvent just adds all the elements that was check into our
-	//contianer and loging them
-	function dropDownEvent() {
-		var $target = $(event.currentTarget),
-			val = $target.attr('data-value'),
-			$inp = $target.find('input'), 
-			idx;
-
-		if(( idx = options.indexOf(val)) > -1) {
-			options.splice(idx, 1);
-			setTimeout(function(){
-				$inp.prop('checked',false);
-			}, 0);
-		} else {
-			options.push(val);
-			setTimeout(function() {
-				$inp.prop('checked',true);
-			},0);
-		}
-		// this blur method removes the focus of the
-		// element that has been checked/clicked
-		$(event.target).blur();
-		//for debugging reasons
-		console.log(options);
-		// return false;
-		// replacing the return false statement
-		event.preventDefault();
-		event.stopPropagation();
-		// intersting enough when return false is triggered
-		// it also stops callback execution.
-	}
-	/**
+		/**
 	 * If the document is loaded execute this function
 	 */
 	 $(document).ready(function() {
@@ -113,7 +81,5 @@
 		 $('.menu-close').on('click', closeMenu);
 		 // animation
 		 changeText();
-		 // dropdown-menu event
-		 $('.dropdown-menu a').on('click', dropDownEvent);
 	 });
 })(jQuery);

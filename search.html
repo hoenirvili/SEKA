@@ -1,215 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>SEKA - Search Engine Keywords-based Analyzer</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--LIBS-->
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
-    <!--Botstrap Link !-->
-    <link href="src/lib/bootstrap-3.3.5/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!--SLICK
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
-    --->
-    <!-- Our own dev css styles -->
-    <link rel="stylesheet" href="src/css/index.css" type="text/css">
+	<title>SEKA - Search Engine Keywords-based Analyzer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--LIBS-->
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+	<!--Botstrap Link !-->
+	<link href="src/lib/bootstrap-3.3.5/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- Our own dev css styles -->
+	<link rel="stylesheet" href="src/css/index.css" type="text/css">
 	<link rel="stylesheet" href="src/css/search.css" type="text/css">
-    <link rel="stylesheet" href="src/css/media.css" type="text/css">
+	<link rel="stylesheet" href="src/css/media.css" type="text/css">
 </head>
+
+
 <body class="search-action">
-<div class="container-fluid">
-    <div class="container">
-        <!-- HEADER PAGE -->
-        <header class="row">
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <div class="wrapper-logo">
-                    <div class="logo"></div>
-                    <p class="bottom-logo-text">SE
-                        <i class="k-color-search">K</i>A
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-5"></div>
-            <!-- MENU HANDLER HERE -->
-            <div class="col-md-2 col-sm-2 col-xs-3">
-                <div class="menu">
-                    <button class="btn btn-default pull-right menu-button">
-                        <i class="fa fa-bars"></i>
-                    </button>
+	<div class="container-fluid">
+		<div class="container">
 
-                    <nav class="menu-side">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <i class ="fa fa-close pull-right close-menu menu-close"></i>
-                            </div>
 
-                            <div class="col-md-12">
-                                <ul class="list-menu">
-                                    <li><a href="#">Pocket</a></li>
-                                    <li><a href="#">Tour</a></li>
-                                </ul>
-                            </div><!-- col-md-12 -->
-                        </div><!--row-->
-                    </nav><!--menu-side-->
-                </div>
-            </div>
-        </header>
-        <!-- SEARCH -->
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-9">
-                <div class="custom-search-input">
-                    <form class="input-group" action="result.html" method="GET">
-						<input type="text" class="form-control input-lg search-bar" placeholder="Search" id="search-query" aria-describedby="search-bar" value=""/>
-				<!--DropDown search filter-->
-				<div class="wrapper-filter">
-					<div class="button-group">
-							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
-								<span class="glyphicon glyphicon-filter"></span>
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu">
+			<!-- HEADER PAGE -->
+			<header class="row">
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					<div class="wrapper-logo">
+						<div class="logo"></div>
+							<p class="bottom-logo-text">SE
+							<i class="k-color-search">K</i>A</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-5"></div>
 
-							<li>
-								<a href="#" class="small" data-value="DuckDuckGo" tabIndex="-1">
-									<input type="checkbox"/>
-										&nbsp;DuckDuckGo
-								</a>
-							</li>
-							
-							<li>
-								<a href="#" class="small" data-value="Bing" tabIndex="-1">
-									<input type="checkbox"/>
-									&nbsp;Bing
-								</a>
-							</li>
 
-							<li>
-								<a href="#" class="small" data-value="Google" tabIndex="-1">
-									<input type="checkbox"/>
-									&nbsp;Google
-								</a>
-							</li>
+				<!-- MENU HANDLER HERE -->
+				<div class="col-md-2 col-sm-2 col-xs-3">
+					<div class="menu">
+						<button class="btn btn-default pull-right menu-button">
+							<i class="fa fa-bars"></i>
+						</button>
+						<nav class="menu-side">
+							<div class="row">
+								<div class="col-md-12">
+									<i class ="fa fa-close pull-right close-menu menu-close"></i>
+								</div>
+								<div class="col-md-12">
+									<ul class="list-menu">
+										<li><a href="#">Pocket</a></li>
+										<li><a href="#">Tour</a></li>
+									</ul>
+								</div><!-- col-md-12 -->
+							</div><!--row-->
+						</nav><!--menu-side-->
+					</div><!--menu-->
+				</div><!--col-md-2 -->
+			</header>
 
-							<li>
-								<a href="#" class="small" data-value="Facebook" tabIndex="-1">
-									<input type="checkbox"/>
-										&nbsp;Facebook 
-								</a>
-							</li>
 
-							<li>
-								<a href="#" class="small" data-value="Twitter" tabIndex="-1">
-									<input type="checkbox"/>
-										&nbsp;Twitter
-								</a>
-							</li>
-							</ul>
-						</div>
-					</div><!-- wrapper filer -->
+
+
+			<!-- SEARCH -->
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-9">
+					<div class="custom-search-input">
+						<form class="input-group" action="search.html">
+							<input type="text" class="form-control input-lg search-bar" placeholder="Search" id="search-query" aria-describedby="search-bar" value=""/>
+							<!--DropDown search filter-->
+							<div class="wrapper-filter">
+								<div class="button-group">
+									<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-filter"></span>
+										<span class="caret"></span>
+									</button>
+
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#" class="small" data-value="DuckDuckGo" tabIndex="-1">
+												<input type="checkbox"/>
+													&nbsp;DuckDuckGo
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="small" data-value="Bing" tabIndex="-1">
+											<input type="checkbox"/>
+											&nbsp;Bing
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="small" data-value="Google" tabIndex="-1">
+											<input type="checkbox"/>
+											&nbsp;Google
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="small" data-value="Facebook" tabIndex="-1">
+											<input type="checkbox"/>
+											&nbsp;Facebook
+											</a>
+										</li>
+
+										<li>
+											<a href="#" class="small" data-value="Twitter" tabIndex="-1">
+											<input type="checkbox"/>
+											&nbsp;Twitter
+										</a>
+										</li>
+									</ul> <!--ul-->
+								</div><!--button-group-->
+							</div><!-- wrapper filer -->
 
 							<span class="input-group-btn">
 								<button class="btn btn-green" type="submit" id="search-button">
 									<i class="fa fa-search"></i>
-                                </button>
+								</button>
 							</span>
-                    </form><!--input-group-->
-                </div><!--custom-seach-input-->
-                <div class="search-results-wrapper">
-                    <div class="result-category web-results">
-                        <ul>
-                            <li>
-                                <div class="result-img">
-                                    <img src="src/img/1.jpg" />
-                                </div>
-                                <div class="result-title">
-                                    <a href="#">Apple Inc.</a>
-                                </div>
-                                <div class="result-excerpt">
-                                    Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer …
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="result-img">
-                                    <img src="src/img/2.jpg" />
-                                </div>
-                                <div class="result-title">
-                                    <a href="#">apple | eBay</a>
-                                </div>
-                                <div class="result-excerpt">
-                                    Find great deals on eBay for apple apple ipad. Shop with conf...
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="result-img">
-                                    <img src="src/img/3.jpg" />
-                                </div>
-                                <div class="result-title">
-                                    <a href="#">Apple Inc. - Wikipedia</a>
-                                </div>
-                                <div class="result-excerpt">
-                                    Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that des…
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="result-category company-results">
-                        <ul>
-                            <li>
-                                <div class="result-img">
-                                    <img src="src/img/4.jpg" />
-                                </div>
-                                <div class="result-title">
-                                    <a href="#">John Apple</a>
-                                </div>
-                                <div class="result-excerpt">
-                                    John Apple’s influence on the world of competitive swimming was vast. While his passing marked the end of an era, his influence will continue to be felt for years to come... https://ro.linkedin.com/
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="result-img">
-                                    <img src="src/img/5.jpg" />
-                                </div>
-                                <div class="result-title">
-                                    <a href="#">John Apple Swim Fund</a>
-                                </div>
-                                <div class="result-excerpt">
-                                    The John Apple Swim Fund encourages Lancaster County swimmers to pursue their dreams by awarding scholarships to those in need of financial support ...
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="result-category others-results">
-                        <ul>
-                            <li>
-                                <div class="result-img">
-                                    <img src="src/img/6.jpg" />
-                                </div>
-                                <div class="result-title">
-                                    <a href="#">Steve Jobs | FORBES</a>
-                                </div>
-                                <div class="result-excerpt">
-                                    Apple cofounder Steve Jobs finally succumbed to cancer at the age of 56 on October 5th, leaving behind a legacy that changed the computer, music...
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div><!--col-md-12-->
-            <div class="col-md-2"></div>
-        </div><!--row-->
-        <!--Slider-->
+						</form><!--input-group-->
+					</div><!--custom-seach-input-->
 
 
-    </div>
-</div><!--container-fluid ( MAIN-CONTAINER)-->
+
+
+					<!--RESULTS-->
+					<div class="search-results-wrapper">
+						<div class="result-category web-results">
+							<ul>
+								<li>
+									<div class="result-img">
+										<img src="src/img/1.jpg" />
+									</div>
+
+									<div class="result-title">
+										<a href="#">Apple Inc.</a>
+									</div>
+
+									<div class="result-excerpt">
+										Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer …
+									</div>
+								</li>
+
+								<li>
+									<div class="result-img">
+										<img src="src/img/2.jpg" />
+									</div>
+									<div class="result-title">
+										<a href="#">apple | eBay</a>
+									</div>
+									<div class="result-excerpt">
+										Find great deals on eBay for apple apple ipad. Shop with conf...
+									</div>
+								</li>
+
+								<li>
+									<div class="result-img">
+										<img src="src/img/3.jpg" />
+									</div>
+									<div class="result-title">
+										<a href="#">Apple Inc. - Wikipedia</a>
+									</div>
+									<div class="result-excerpt">
+										Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that des…
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="result-category company-results">
+							<ul>
+								<li>
+									<div class="result-img">
+										<img src="src/img/4.jpg" />
+									</div>
+									<div class="result-title">
+										<a href="#">John Apple</a>
+									</div>
+									<div class="result-excerpt">
+										John Apple’s influence on the world of competitive swimming was vast. While his passing marked the end of an era, his influence will continue to be felt for years to come... https://ro.linkedin.com/
+									</div>
+								</li>
+
+								<li>
+									<div class="result-img">
+										<img src="src/img/5.jpg" />
+									</div>
+									<div class="result-title">
+										<a href="#">John Apple Swim Fund</a>
+									</div>
+									<div class="result-excerpt">
+										The John Apple Swim Fund encourages Lancaster County swimmers to pursue their dreams by awarding scholarships to those in need of financial support ...
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="result-category others-results">
+							<ul>
+								<li>
+									<div class="result-img">
+										<img src="src/img/6.jpg" />
+									</div>
+									<div class="result-title">
+										<a href="#">Steve Jobs | FORBES</a>
+									</div>
+									<div class="result-excerpt">
+										Apple cofounder Steve Jobs finally succumbed to cancer at the age of 56 on October 5th, leaving behind a legacy that changed the computer, music...
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div><!--search result wrapper-->
+
+				</div><!--col-md-9-->
+				<div class="col-md-1"></div>
+			</div><!--row-->
+		</div><!--contianer-->
+	</div><!--container-fluid ( MAIN-CONTAINER)-->
 <!--SCRIPT LINKS -->
 <!--LIBS-->
 <!--Jquery Link !-->
@@ -224,6 +234,6 @@
 <!--End libs-->
 <!-- Our own dev scripts -->
 <script type="text/javascript" src="src/js/index.js"></script>
-
+<script type="text/javascript" src="src/js/search-action.js"></script>
 </body>
 </html>

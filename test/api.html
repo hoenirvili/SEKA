@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+	</head>
+	<script>
+		(function() {
+			"use strict"
+
+		$(document).ready(function() {
+			$.getJson("http://api.duckduckgo.com/?q=$var&format=json",function(duckResults){
+				$.each(duckResults.data, function() {
+					// data templeting section
+				})
+			});
+		});
+		}(jQury);
+	</script>
+	<body>
+	</body>
+</html>

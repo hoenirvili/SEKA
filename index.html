@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>SEKA - Search Engine Keywords-based Analyzer</title>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,120 +15,136 @@
 	<link rel="stylesheet" href="src/css/index.css" type="text/css">
 	<link rel="stylesheet" href="src/css/media.css" type="text/css">
 </head>
+
 <body>
+
 <div class="container-fluid">
-	<div class="container">
-	<!-- HEADER PAGE -->
-	<header class="row">
-		<div class="col-md-4 col-sm-4 col-xs-4">
-			<div class="wrapper-logo">
-				<div class="logo"></div>
-					<p class="bottom-logo-text">SE<span class="k-color">K</span>A
-				</p>
+	<div class="container main-search">
+
+		<!-- HEADER PAGE -->
+		<header class="row">
+			<div class="col-md-4 col-sm-4 col-xs-4">
+				<div class="wrapper-logo">
+					<div class="logo"></div>
+						<p class="bottom-logo-text">SE<span class="k-color">K</span>A
+					</p>
+				</div>
 			</div>
-		</div>
-		<div class="col-md-6 col-sm-6 col-xs-5"></div>
-		<!-- MENU HANDLER HERE -->
-		<div class="col-md-2 col-sm-2 col-xs-3">
-			<div class="menu">
-				<button class="btn btn-default pull-right menu-button">
-					<i class="fa fa-bars"></i>
-				</button>
+			<div class="col-md-6 col-sm-6 col-xs-5"></div>
+			<!-- MENU HANDLER HERE -->
+			<div class="col-md-2 col-sm-2 col-xs-3">
+				<div class="menu">
+					<button class="btn btn-default pull-right menu-button">
+						<i class="fa fa-bars"></i>
+					</button>
 
-				<nav class="menu-side">
-					<div class="row">
-						<div class="col-md-12">
-							<i class ="fa fa-close pull-right close-menu menu-close"></i>
-						</div>
+					<nav class="menu-side">
+						<div class="row">
+							<div class="col-md-12">
+								<i class ="fa fa-close pull-right close-menu menu-close"></i>
+							</div>
 
-						<div class="col-md-12">
-							<ul class="list-menu">
-								<li><a href="#">Pocket</a></li>
-								<li><a href="#">Tour</a></li>
-							</ul>
-						</div><!-- col-md-12 -->
-					</div><!--row-->
-				</nav><!--menu-side-->
+							<div class="col-md-12">
+								<ul class="list-menu">
+									<li><a href="#">Pocket</a></li>
+									<li><a href="#">Tour</a></li>
+								</ul>
+							</div><!-- col-md-12 -->
+						</div><!--row-->
+					</nav><!--menu-side-->
+				</div>
 			</div>
-		</div>
-	</header>
-	<!-- SEARCH -->
-	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-9">
-			<div class="custom-search-input">
-				<form class="input-group" action="search.html" method="GET">
-					<input type="text" class="form-control input-lg search-bar" placeholder="search.." id="search-query" aria-describedby="search-bar" />
-				<!--DropDown search filter-->
-				<div class="wrapper-filter">
+		</header>
 
-					<!--TODO: replace div with span in order to align this mess-->
 
-					<div class="button-group">
-							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
-								<span class="glyphicon glyphicon-filter"></span>
-								<span class="caret"></span>
+		<!-- SEARCH -->
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="custom-search-input">
+					<form class="input-group" action="search.html" method="GET">
+						<input type="text" class="form-control input-lg search-bar" placeholder="search.." id="search-query" aria-describedby="search-bar" />
+					<!--DropDown search filter-->
+					<div class="wrapper-filter">
+
+						<!-- TODO: make button responsiv-->
+
+						<div class="button-group">
+								<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-filter"></span>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+
+								<li>
+									<a href="#" class="small" data-value="DuckDuckGo" tabIndex="-1">
+										<input type="checkbox"/>
+											&nbsp;DuckDuckGo
+									</a>
+								</li>
+
+								<li>
+									<a href="#" class="small" data-value="Bing" tabIndex="-1">
+										<input type="checkbox"/>
+										&nbsp;Bing
+									</a>
+								</li>
+
+								<li>
+									<a href="#" class="small" data-value="Google" tabIndex="-1">
+										<input type="checkbox"/>
+										&nbsp;Google
+									</a>
+								</li>
+
+								<li>
+									<a href="#" class="small" data-value="Facebook" tabIndex="-1">
+										<input type="checkbox"/>
+											&nbsp;Facebook
+									</a>
+								</li>
+
+								<li>
+									<a href="#" class="small" data-value="Twitter" tabIndex="-1">
+										<input type="checkbox"/>
+											&nbsp;Twitter
+									</a>
+								</li>
+								</ul>
+							</div>
+						</div><!-- wrapper filer -->
+						<span class="input-group-btn">
+							<button class="btn btn-green" type="submit" id="search-button">
+								<i class="fa fa-search"></i>
 							</button>
-							<ul class="dropdown-menu">
+						</span>
+					</form><!--input-group-->
+				</div><!--custom-seach-input-->
+			</div><!--col-md-8-->
+			<div class="col-md-2"></div>
+		</div><!--row-->
 
-							<li>
-								<a href="#" class="small" data-value="DuckDuckGo" tabIndex="-1">
-									<input type="checkbox"/>
-										&nbsp;DuckDuckGo
-								</a>
-							</li>
-							
-							<li>
-								<a href="#" class="small" data-value="Bing" tabIndex="-1">
-									<input type="checkbox"/>
-									&nbsp;Bing
-								</a>
-							</li>
 
-							<li>
-								<a href="#" class="small" data-value="Google" tabIndex="-1">
-									<input type="checkbox"/>
-									&nbsp;Google
-								</a>
-							</li>
 
-							<li>
-								<a href="#" class="small" data-value="Facebook" tabIndex="-1">
-									<input type="checkbox"/>
-										&nbsp;Facebook 
-								</a>
-							</li>
+		<!--Slider-->
+		<!-- BOTTOM TEXT-->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="wrapper-text container-padding">
+					<div id="textslide"></div>
+				</div><!--wrapper-text-->
+			</div><!--col-md-12-->
+		</div> <!--row-->
 
-							<li>
-								<a href="#" class="small" data-value="Twitter" tabIndex="-1">
-									<input type="checkbox"/>
-										&nbsp;Twitter
-								</a>
-							</li>
-							</ul>
-						</div>
-					</div><!-- wrapper filer -->
-					<span class="input-group-btn">
-						<button class="btn btn-green" type="submit" id="search-button">
-							<i class="fa fa-search"></i>
-						</button>
-					</span>
-				</form><!--input-group-->
-			</div><!--custom-seach-input-->
-		</div><!--col-md-12-->
-		<div class="col-md-2"></div>
-	</div><!--row-->
-	<!--Slider-->
-	<!-- BOTTOM TEXT-->
-	<div class="row">
-		<div class="col-md-12">
-			<div class="wrapper-text container-padding">
-				<div id="textslide"></div>
-			</div><!--wrapper-text-->
-		</div><!--col-md-12-->
-	</div> <!--row-->
-</div>
+	</div><!--container-->
 </div><!--container-fluid ( MAIN-CONTAINER)-->
+
+
+
+
+
+
+
 <!--SCRIPT LINKS -->
 <!--LIBS-->
 <!--Jquery Link !-->
@@ -140,8 +157,12 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
 -->
 <!--End libs-->
-<!-- Our own dev scripts -->
+
+
+
+<!-- LOAD CUSTOM MODULES-->
 <script type="text/javascript" src="src/js/index.js"></script>
+<script type="text/javascript" src="src/js/search-action.js"></script>
 
 </body>
 </html>

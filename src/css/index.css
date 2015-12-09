@@ -6,8 +6,13 @@ body {
 	background: url("../img/bg-image.jpg");
 	background-size: cover;
 }
-.container {
-    background:rgba(194,187,202,0.78)
+.main-search{
+	background-image: url("../img/bg.svg");
+	background-position: center center;
+/*This is what makes the background image rescale based
+	on the container's size */
+	background-attachment: fixed;
+	background-size: cover;
 }
 /**********************************************************
  * Main styles for logo, logo wrappers bottom-logo-text etc.
@@ -200,6 +205,7 @@ form input[type="text"]
 	outline: none;
 	border-color: rgba(105, 105, 105, 0.44);
 }
+
 .wrapper-filter {
 	position: relative;
 	z-index: 1001;
@@ -225,9 +231,12 @@ form input[type="text"]
 	color: #6f242b;
 	font-size: 36px;
 }
-
+.slide-text-anime {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+}
 /**************************************************************
- * Search
+ * search
  **************************************************************/
 
 .search-action .wrapper-logo {
@@ -235,7 +244,7 @@ form input[type="text"]
 }
 
 /**************************************************************
- * Results
+ * results
  **************************************************************/
 
 .search-results-wrapper
@@ -290,7 +299,7 @@ form input[type="text"]
 .result-category ul li .result-title a
 {
     font-size: 29px;
-    font-family: "Lato";
+    font-family: "lato";
     padding-left: 10px;
     line-height: 29px;
     color: #000;
@@ -299,7 +308,7 @@ form input[type="text"]
 {
     clear:both;
     font-size:13px;
-    font-family: "Lato";
+    font-family: "lato";
     line-height: 16px;
     padding:5px 0 0
 }

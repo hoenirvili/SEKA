@@ -13,3 +13,85 @@
 	margin-left: 18px;
 }
 
+.container {
+  background:rgba(194,187,202,0.78);
+}
+
+/**************************************************************
+ * search
+ **************************************************************/
+
+.search-action .wrapper-logo {
+	height: 85px;
+}
+
+
+/**************************************************************
+ * results
+ **************************************************************/
+
+.search-results-wrapper
+{
+    margin-top:30px;
+    padding-right:70px;
+}
+
+.result-category
+{
+    padding-left:85px;
+    margin-bottom: 8px;
+    border-bottom:1px solid #b97b57;
+    background-repeat: no-repeat;
+    background-position: 40px 0px;
+}
+
+.web-results
+{
+    background-image: url('../img/web.png');
+}
+
+.company-results{
+    background-image: url('../img/company.png');
+}
+
+.others-results{
+    background-image: url('../img/others.png');
+	margin-bottom: 70px;
+}
+
+.result-category ul li
+{
+    list-style-type: none;
+    padding:5px;
+    margin-bottom: 10px;
+}
+.result-category ul li:hover
+{
+    background:rgba(255,255,255,0.5)
+}
+.result-category ul li .result-img,.result-category ul li .result-title
+{
+    float:left;
+}
+
+.result-category ul
+{
+    padding-left:45px;
+}
+
+.result-category ul li .result-title a
+{
+    font-size: 29px;
+    font-family: "lato";
+    padding-left: 10px;
+    line-height: 29px;
+    color: #000;
+}
+.result-category ul li .result-excerpt
+{
+    clear:both;
+    font-size:13px;
+    font-family: "lato";
+    line-height: 16px;
+    padding:5px 0 0
+}
