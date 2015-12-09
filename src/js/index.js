@@ -72,14 +72,18 @@
 		//make button reappear
 		button.toggleClass('hide-menu-button');
 	}
+	function loadAnim() {
+		$(".showbox").fadeOut("slow");
+	}
 
-		/**
+	/**
 	 * If the document is loaded execute this function
 	 */
 	 $(document).ready(function() {
-		 $('.menu-button').on('click',openMenu);
-		 $('.menu-close').on('click', closeMenu);
-		 // animation
-		 changeText();
+		$(document).load(loadAnim());
+		$('.menu-button').on('click',openMenu);
+		$('.menu-close').on('click', closeMenu);
+		// animation
+		changeText();
 	 });
 })(jQuery);
