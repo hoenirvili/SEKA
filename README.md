@@ -1,5 +1,4 @@
-﻿# SEKA
-Search Engine Keywords-based Analyzer
+﻿Search Engine Keywords-based Analyzer
 =======
 
 # SEKA
