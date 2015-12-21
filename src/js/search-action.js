@@ -91,7 +91,7 @@
 				case "Google":
 					break;
 				case "Facebook":
-					facebookRequest(queryString, url,token,type,limit);
+					facebookRequest(queryString, url, token, type, limit);
 					
 					break;
 				case "Bing":
@@ -101,49 +101,65 @@
 		} else {
 			//TODO Make all requests
 			//facebook
-			facebookRequest(queryString, url,token,type,limit);
+			facebookRequest(queryString, url, token, type, limit);
 		}
-	}	
+	}
+
+
+
+
+
 	// make facebook request inserting all elements into html
 	function facebookRequest(queryString, url, token, type, limit) {
 		//build the request
 		var req = url + queryString + type + limit + token;
-		var aboutReq;
+		var aboutReq = [];
+		var index;
 		//make the request
+		
 		$.getJSON(req, function(results){
-			console.log(results);
-			//TODO make request based on other request
-			return false;
-			
-			$.each(results.data ,function() {
-				$('.facebook-results > ul').append(
+			for(index = 0; index < results.data.length; index++) {
+				console.log('Aci');
+				aboutReq.push('https://graph.facebook.com/' + results.data[index].id + '/?fields=about' + token);
+
+					$('.facebook-results > ul').append(
 					'<li>'+
 						'<div class="result-img">' +
-							'<img src="http://graph.facebook.com/' + this.id + '/picture" height="50" width="50" alt="' + this.name+ '" />'+
+							'<img src="http://graph.facebook.com/' + results.data[index].id + '/picture" height="50" width="50" alt="' + results.data[index].name+ '" />'+
 						'</div>'+
 						'<div class="result-title">'+
-							'<a href="http://facebook.com/'+ this.id+' ">' + this.name + '</a>'+
+							'<a href="http://facebook.com/'+ results.data[index].id+' ">' + results.data[index].name + '</a>'+
 						'</div>'+
-					'</li>'
-				).appendTo('search-result-wrapper');
-			
-			});//each
+						'<div class="result-excerpt">'+ 
+						'</div>' +
+					'</li>').appendTo('.search-result-wrapper');
+			}//for
 
-			aboutReq = 'https://graph.facebook.com/'+this.id+'/?fields=about'+token;
-
-			$.getJSON(aboutReq, function(results) {
-				$.each(result, function() {
-					$('.facebook-results > ul').append(
-						'<div class="result-excerpt">'+
-						this.about +
-						'</div>'
-					).appendTo('search-result-wrapper');
-				});//each
-			});//getjson
-
-
+			about(aboutReq);
 		});//getJson
 	}
+
+
+	function about(urls) {
+		for(var index=0;i<urls.length; i++) {
+			$.getJSON(url, function(results) {
+				$('.li').append(
+					//TODO	:
+						).appendTo('.result-excerpt');
+				console.log(results.about);
+			});
+		}
+	}
+
+
+
+
+
+
+
+
+
+
 
 
 })(jQuery);
