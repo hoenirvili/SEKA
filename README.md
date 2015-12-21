@@ -1,7 +1,4 @@
-﻿Search Engine Keywords-based Analyzer
-=======
-
-# SEKA
+﻿# SEKA
 
 <div class="logo">
 	<img src="doc/logo.jpg" width=215 height=300 />
