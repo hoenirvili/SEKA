@@ -56,10 +56,9 @@
 			counter++;
 		}
 	}
-	 function openMenu() {
+	function openMenu() {
 		var $this = $(this),
 			menu = $('.menu');
-
 		menu.toggleClass('menu-open');
 		$this.toggleClass('hide-menu-button');
 	}

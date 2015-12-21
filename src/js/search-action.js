@@ -4,6 +4,39 @@
 
 	var options = [];
 
+
+	
+	function searchAction() {
+		// cache all jquery obj $(this)
+		// for performance reasons
+		var $this = $(this);
+		// it's a good practice to create and cache all
+		// local var in the top of the function/clouj etc..
+		var i;
+		var queryString = $('#search-query').val();
+		var filters = options.length;
+		var hrefPage = window.location.href;
+		// test if query string is empty
+		if (queryString !=="") {
+			// don't show the tooltip anymore
+			$('[data-toggle="tooltip"]').tooltip('destroy');
+
+			//redirect 
+			if (hrefPage.indexOf("search.html") <0)
+				window.location.href = "search.html";
+			filterSearchAction(queryString, filters)
+		// if query string is empty show error
+		} else {
+			$('[data-toggle="tooltip"]').tooltip()
+		} 
+	}
+
+	$(document).ready(function() {
+		$('.dropdown-menu a').on('click', dropDownEvent);
+		$('#search-button').on('click', searchAction);
+	});
+
+
 	//dropDownEvent just adds all the elements that was check into our
 	//contianer and loging them
 	function dropDownEvent() {
@@ -33,8 +66,18 @@
 		// intersting enough when return false is triggered
 		// it also stops callback execution.
 	}
+
 	function filterSearchAction(queryString, filters) {
+		//cache all vars
 		var i;
+
+		//FACEBOOK
+		var url		= "https://graph.facebook.com/search?q=",
+			token	= "&access_token=1523007798014505|NTm64aS3PIH_-Mfm8NAyQ1NGsp0",
+			type	= "&type=page",
+			limit	= "&limit=25";
+
+
 		if(filters) {
 			for (i=0; i<filters; i++) {
 				switch(options[i]) {
@@ -48,11 +91,8 @@
 				case "Google":
 					break;
 				case "Facebook":
-				// TODO: make facebook request
-					var token="1523007798014505%7CNTm64aS3PIH_-Mfm8NAyQ1NGsp0"
-					$.getJSON("https://graph.facebook.com/10152716010956729/photos?fields=source,picture,link,name&"+"&access_token="+token, function(data){
-						console.log(data);
-					});
+					facebookRequest(queryString, url,token,type,limit);
+					
 					break;
 				case "Bing":
 					break;	
@@ -60,33 +100,50 @@
 			}//for
 		} else {
 			//TODO Make all requests
-			console.log("make all request test");
+			//facebook
+			facebookRequest(queryString, url,token,type,limit);
 		}
 	}	
-	function searchAction() {
-		// cache all jquery obj $(this)
-		// for performance reasons
-		var $this = $(this);
-		// it's a good practice to create and cache all
-		// local var in the top of the function/clouj etc..
-		var i;
-		var queryString = $('#search-query').val();
-		// test if query string is empty
-		if (queryString !=="") {
-			var filters = options.length;
-			filterSearchAction(queryString, filters)
-		// if query string is empty show error
-		} else {
-			// init data toggle and show immediately
-			$('[data-toggle="tooltip"]').tooltip().tooltip('show');
-		}
+	// make facebook request inserting all elements into html
+	function facebookRequest(queryString, url, token, type, limit) {
+		//build the request
+		var req = url + queryString + type + limit + token;
+		var aboutReq;
+		//make the request
+		$.getJSON(req, function(results){
+			console.log(results);
+			//TODO make request based on other request
+			return false;
+			
+			$.each(results.data ,function() {
+				$('.facebook-results > ul').append(
+					'<li>'+
+						'<div class="result-img">' +
+							'<img src="http://graph.facebook.com/' + this.id + '/picture" height="50" width="50" alt="' + this.name+ '" />'+
+						'</div>'+
+						'<div class="result-title">'+
+							'<a href="http://facebook.com/'+ this.id+' ">' + this.name + '</a>'+
+						'</div>'+
+					'</li>'
+				).appendTo('search-result-wrapper');
+			
+			});//each
 
+			aboutReq = 'https://graph.facebook.com/'+this.id+'/?fields=about'+token;
+
+			$.getJSON(aboutReq, function(results) {
+				$.each(result, function() {
+					$('.facebook-results > ul').append(
+						'<div class="result-excerpt">'+
+						this.about +
+						'</div>'
+					).appendTo('search-result-wrapper');
+				});//each
+			});//getjson
+
+
+		});//getJson
 	}
 
-
-	$(document).ready(function() {
-		$('.dropdown-menu a').on('click', dropDownEvent);
-		$('#search-button').on('click', searchAction);
-	});
 
 })(jQuery);
