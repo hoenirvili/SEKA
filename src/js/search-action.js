@@ -3,7 +3,7 @@
 	"use strict"
 
 	var options = [];
-
+	//
 
 	
 	function searchAction() {
@@ -70,13 +70,11 @@
 	function filterSearchAction(queryString, filters) {
 		//cache all vars
 		var i;
-
 		//FACEBOOK
 		var url		= "https://graph.facebook.com/search?q=",
 			token	= "&access_token=1523007798014505|NTm64aS3PIH_-Mfm8NAyQ1NGsp0",
 			type	= "&type=page",
 			limit	= "&limit=25";
-
 
 		if(filters) {
 			for (i=0; i<filters; i++) {
@@ -91,7 +89,7 @@
 				case "Google":
 					break;
 				case "Facebook":
-					facebookRequest(queryString, url, token, type, limit);
+					facebookRequest(queryString, url, type, limit, token, callback);
 					
 					break;
 				case "Bing":
@@ -101,63 +99,46 @@
 		} else {
 			//TODO Make all requests
 			//facebook
-			facebookRequest(queryString, url, token, type, limit);
+			facebookRequest(queryString, url, type, limit, token, callback);
 		}
 	}
-
-
-
-
 
 	// make facebook request inserting all elements into html
-	function facebookRequest(queryString, url, token, type, limit) {
+	function facebookRequest(queryString, url, type, limit, token) {
+		var index;
 		//build the request
 		var req = url + queryString + type + limit + token;
-		var aboutReq = [];
-		var index;
-		//make the request
-		
+		var data1;
+		var data2;
+
 		$.getJSON(req, function(results){
+			data1 = results;
 			for(index = 0; index < results.data.length; index++) {
-				console.log('Aci');
-				aboutReq.push('https://graph.facebook.com/' + results.data[index].id + '/?fields=about' + token);
+				var rqurl = 'https://graph.facebook.com/' + results.data[index].id + '/?fields=about' + token;
+				$.getJSON(rqurl, function(resultData) {
+					data2 = resultData;
+					callback(data1, data2);
+				});
+			}
+		});
+		
+	}//function
 
-					$('.facebook-results > ul').append(
-					'<li>'+
-						'<div class="result-img">' +
-							'<img src="http://graph.facebook.com/' + results.data[index].id + '/picture" height="50" width="50" alt="' + results.data[index].name+ '" />'+
-						'</div>'+
-						'<div class="result-title">'+
-							'<a href="http://facebook.com/'+ results.data[index].id+' ">' + results.data[index].name + '</a>'+
-						'</div>'+
-						'<div class="result-excerpt">'+ 
-						'</div>' +
-					'</li>').appendTo('.search-result-wrapper');
-			}//for
-
-			about(aboutReq);
-		});//getJson
+	function callback(data1, data2) {
+		console.log(data1.data);
+		$('.facebook-results > ul').append(
+			'<li>'+
+				'<div class="result-img">'+
+					'<img src="http://graph.facebook.com/' + data1.data.id + '/picture" height="50" width="50" alt="' +data1.data.name+ '" />'+
+				'</div>'+
+				'<div class="result-title">'+
+					'<a href="http://facebook.com/'+data1.data.id+' ">' +data1.data.name + '</a>'+
+				'</div>'+
+				'<div class="result-excerpt">'+ 
+					data2.about+
+				'</div>'+
+			'</li>').appendTo('.search-result-wrapper');
 	}
-
-
-	function about(urls) {
-		for(var index=0;i<urls.length; i++) {
-			$.getJSON(url, function(results) {
-				$('.li').append(
-					//TODO	:
-						).appendTo('.result-excerpt');
-				console.log(results.about);
-			});
-		}
-	}
-
-
-
-
-
-
-
-
 
 
 
