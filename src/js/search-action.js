@@ -3,9 +3,14 @@
 	"use strict"
 
 	var options = [];
-	//
+	//FACEBOOK
+		var url		= "https://graph.facebook.com/search?q=",
+			token	= "&access_token=1523007798014505|NTm64aS3PIH_-Mfm8NAyQ1NGsp0",
+			type	= "&type=page",
+			limit	= "&limit=25";
 
-	
+
+
 	function searchAction() {
 		// cache all jquery obj $(this)
 		// for performance reasons
@@ -21,14 +26,14 @@
 			// don't show the tooltip anymore
 			$('[data-toggle="tooltip"]').tooltip('destroy');
 
-			//redirect 
+			//redirect
 			if (hrefPage.indexOf("search.html") <0)
 				window.location.href = "search.html";
 			filterSearchAction(queryString, filters)
 		// if query string is empty show error
 		} else {
 			$('[data-toggle="tooltip"]').tooltip()
-		} 
+		}
 	}
 
 	$(document).ready(function() {
@@ -42,7 +47,7 @@
 	function dropDownEvent() {
 		var $target = $(event.currentTarget),
 			val = $target.attr('data-value'),
-			$inp = $target.find('input'), 
+			$inp = $target.find('input'),
 			idx;
 
 		if(( idx = options.indexOf(val)) > -1) {
@@ -54,7 +59,7 @@
 			options.push(val);
 			setTimeout(function() {
 				$inp.prop('checked',true);
-			},0);
+			},0);// first in queue
 		}
 		// this blur method removes the focus of the
 		// element that has been checked/clicked
@@ -70,11 +75,6 @@
 	function filterSearchAction(queryString, filters) {
 		//cache all vars
 		var i;
-		//FACEBOOK
-		var url		= "https://graph.facebook.com/search?q=",
-			token	= "&access_token=1523007798014505|NTm64aS3PIH_-Mfm8NAyQ1NGsp0",
-			type	= "&type=page",
-			limit	= "&limit=25";
 
 		if(filters) {
 			for (i=0; i<filters; i++) {
@@ -89,58 +89,83 @@
 				case "Google":
 					break;
 				case "Facebook":
-					facebookRequest(queryString, url, type, limit, token, callback);
-					
+					facebookRequest(queryString, url, type, limit, token);
+
 					break;
 				case "Bing":
-					break;	
+					break;
 				}
 			}//for
 		} else {
 			//TODO Make all requests
 			//facebook
-			facebookRequest(queryString, url, type, limit, token, callback);
+			facebookRequest(queryString, url, type, limit, token);
 		}
 	}
 
 	// make facebook request inserting all elements into html
 	function facebookRequest(queryString, url, type, limit, token) {
-		var index;
 		//build the request
 		var req = url + queryString + type + limit + token;
-		var data1;
-		var data2;
 
-		$.getJSON(req, function(results){
-			data1 = results;
-			for(index = 0; index < results.data.length; index++) {
-				var rqurl = 'https://graph.facebook.com/' + results.data[index].id + '/?fields=about' + token;
-				$.getJSON(rqurl, function(resultData) {
-					data2 = resultData;
-					callback(data1, data2);
-				});
-			}
+		//make requests
+		var getData = $.ajax({
+			type: 'GET',
+			url: req,
+			datType: 'json',
 		});
-		
-	}//function
 
-	function callback(data1, data2) {
-		console.log(data1.data);
-		$('.facebook-results > ul').append(
-			'<li>'+
-				'<div class="result-img">'+
-					'<img src="http://graph.facebook.com/' + data1.data.id + '/picture" height="50" width="50" alt="' +data1.data.name+ '" />'+
-				'</div>'+
-				'<div class="result-title">'+
-					'<a href="http://facebook.com/'+data1.data.id+' ">' +data1.data.name + '</a>'+
-				'</div>'+
-				'<div class="result-excerpt">'+ 
-					data2.about+
-				'</div>'+
-			'</li>').appendTo('.search-result-wrapper');
+		getData.done(forEveryId);
+		getData.fail(errorRequest);
+
+
+
+		// $.getJSON(req, function(results) {
+		// 	var index, rqurl;
+		// 	for(index = 0; index < results.data.length; index++) {
+		// 		rqurl = 'https://graph.facebook.com/' + results.data[index].id + '/?fields=about' + token;
+		// 		$.getJSON(rqurl, function(resultData) {
+		// 			containerAbout.push(resultData.about);
+		// 		});
+		// 	}
+		// });
 	}
 
+function forEveryId(result) {
+	var i;
+	var getAbout;
+	for(i=0;i<result.data.length; i++) {
+		about = $.ajax({
+			type: 'GET',
+			url: 'https://graph.facebook.com/' + results.data[index].id + '/?fields=about' + token,
+			dataType: 'json',
+		});
 
+		about.done(appenToResult);
+		getData.fail(errorReqeust);
+	}
+}
+
+
+function errorRequest(data) {
+	return new Error("Unable to make this search");
+}
 
 
 })(jQuery);
+
+//
+//
+// container.push(results.data[index]);
+// $('.facebook-results > ul').append(
+// '<li>'+
+// 	'<div class="result-img">'+
+// 		'<img src="http://graph.facebook.com/' + results.data[index].id + '/picture" height="50" width="50" alt="' +results.data[index].name+ '" />'+
+// 	'</div>'+
+// 	'<div class="result-title">'+
+// 		'<a href="http://facebook.com/'+results.data[index].id+' ">' +results.data[index].name + '</a>'+
+// 	'</div>'+
+// 	'<div class="result-excerpt">'+
+//
+// 	'</div>'+
+// 	'</li>').appendTo('.search-result-wrapper');
