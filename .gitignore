@@ -85,3 +85,6 @@ crashlytics-build.properties
 
 #ternjs
 .tern-project
+
+#jshint
+.jshintrc

@@ -1,8 +1,12 @@
 {
-  "name": "seka",
-  "version": "0.0.1",
-  "description": "Search Engine Keywords-based Analyzer",
-  "main": "index.html",
+  "name": "SEKA",
+  "version": "1.0.0",
+  "description": "<div class=\"logo\"> \t<img src=\"doc/logo.jpg\" width=215 height=300 /> </div>",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,32 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/hoenirvili/SEKA.git"
   },
-  "contributors": [
-    {
-      "name": "hoenirvili",
-      "email": "hoenirvili@gmail.com",
-      "url": "https://github.com/hoenirvili",
-      "hireable": true
-    },
-    {
-      "name": "Andrei Bartic",
-      "email": "andreibartic@gmail.com",
-      "url": "https://github.com/andreibartic",
-      "hireable": true
-    },
-    {
-      "name": "Calara Ionut",
-      "email": "ionut.calara@gmail.com",
-      "url": "https://github.com/ionutcalara",
-      "hireable": false
-    }
-  ],
-  "license": [
-    {
-      "type": "GPL-2.0",
-      "url": "https://spdx.org/licenses/GPL-2.0.html#licenseText"
-    }
-  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/hoenirvili/SEKA/issues"
   },

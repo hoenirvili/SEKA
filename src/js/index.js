@@ -1,15 +1,15 @@
-/**
+/*
  * We pass our jquery object
  * into self invoking lambda function
  * We've making this lambda function a
  * self contain module.
  */
-(function($) {
+(function ($) {
 	/**
  	 * Just internet explorer compatibility issues
 	 * in case of anything else.
 	 */
-	 "use strict"
+	 "use strict";
 	 /**
 	 * function that check's if
 	 * we have the class it will remove
@@ -24,7 +24,7 @@
 	// var searchButton = $("#search");
 	// searchButton.attr('window.location.href','result.html');
 
-	function changeText(){
+	function changeText() {
 		if($('#textslide').length) {
 		var quotes = [3];
 
@@ -44,21 +44,21 @@
 						This is another									\
 						<a href=#>example</a> 							\
 						of good search engine. 							\
-					</h5>"
+					</h5>";
 
 		if (counter > 2){
 			counter = 0;
 		}
 			document.getElementById("textslide").innerHTML = quotes[counter];
 			setTimeout(function () {
-					changeText()
+					changeText();
 				},5000);
 			counter++;
 		}
 	}
 	function openMenu() {
 		var $this = $(this),
-			menu = $('.menu');
+		menu = $('.menu');
 		menu.toggleClass('menu-open');
 		$this.toggleClass('hide-menu-button');
 	}
@@ -71,6 +71,7 @@
 		//make button reappear
 		button.toggleClass('hide-menu-button');
 	}
+
 	function loadAnim() {
 		$(".showbox").fadeOut("slow");
 	}

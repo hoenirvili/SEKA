@@ -1,23 +1,12 @@
 (function($) {
 
-	"use strict"
+	"use strict";
 
 	var options = [];
-	//FACEBOOK
-		var url		= "https://graph.facebook.com/search?q=",
-			token	= "&access_token=1523007798014505|NTm64aS3PIH_-Mfm8NAyQ1NGsp0",
-			type	= "&type=page",
-			limit	= "&limit=25";
-
-
-
+	
 	function searchAction() {
-		// cache all jquery obj $(this)
-		// for performance reasons
-		var $this = $(this);
 		// it's a good practice to create and cache all
 		// local var in the top of the function/clouj etc..
-		var i;
 		var queryString = $('#search-query').val();
 		var filters = options.length;
 		var hrefPage = window.location.href;
@@ -29,10 +18,10 @@
 			//redirect
 			if (hrefPage.indexOf("search.html") <0)
 				window.location.href = "search.html";
-			filterSearchAction(queryString, filters)
+			filterSearchAction(queryString, filters);
 		// if query string is empty show error
 		} else {
-			$('[data-toggle="tooltip"]').tooltip()
+			$('[data-toggle="tooltip"]').tooltip();
 		}
 	}
 
@@ -73,6 +62,12 @@
 	}
 
 	function filterSearchAction(queryString, filters) {
+	//FACEBOOK
+		var url		= "https://graph.facebook.com/search?q=",
+			token	= "&access_token=1523007798014505|NTm64aS3PIH_-Mfm8NAyQ1NGsp0",
+			type	= "&type=page",
+			limit	= "&limit=25";
+
 		//cache all vars
 		var i;
 
@@ -90,9 +85,6 @@
 					break;
 				case "Facebook":
 					facebookRequest(queryString, url, type, limit, token);
-
-					break;
-				case "Bing":
 					break;
 				}
 			}//for
@@ -107,65 +99,43 @@
 	function facebookRequest(queryString, url, type, limit, token) {
 		//build the request
 		var req = url + queryString + type + limit + token;
-
 		//make requests
+		var temp;
+		var tempi;
 		var getData = $.ajax({
 			type: 'GET',
 			url: req,
 			datType: 'json',
+			success: function(result) {
+				var i;
+				temp = result;
+				for (i=0; i<result.data.length; i++) {
+					temp.data[result.data[i].id] = result.data[i];
+					$.ajax({
+						type: 'GET',
+						url: 'https://graph.facebook.com/' + result.data[i].id + '/?fields=about' + token,
+						dataType: 'json',
+						success: function(results) {
+							console.log(tempi);
+							console.log(results);
+							tempi = results.id;
+							 $('.facebook-results > ul').append(
+								'<li>'+
+								 	'<div class="result-img">'+
+										'<img src="http://graph.facebook.com/' + temp.data[tempi].id + '/picture" height="50" width="50" alt="' +temp.data[tempi].name+ '" />'+
+									'</div>'+
+									'<div class="result-title">'+
+										'<a href="http://facebook.com/'+temp.data[tempi].id+' ">' +temp.data[tempi].name + '</a>'+
+									'</div>'+
+									'<div class="result-excerpt">'+
+										results.about+
+									'</div>'+
+								'</li>').appendTo('.search-result-wrapper');
+						}//function
+					});
+				}
+			}
 		});
-
-		getData.done(forEveryId);
-		getData.fail(errorRequest);
-
-
-
-		// $.getJSON(req, function(results) {
-		// 	var index, rqurl;
-		// 	for(index = 0; index < results.data.length; index++) {
-		// 		rqurl = 'https://graph.facebook.com/' + results.data[index].id + '/?fields=about' + token;
-		// 		$.getJSON(rqurl, function(resultData) {
-		// 			containerAbout.push(resultData.about);
-		// 		});
-		// 	}
-		// });
 	}
-
-function forEveryId(result) {
-	var i;
-	var getAbout;
-	for(i=0;i<result.data.length; i++) {
-		about = $.ajax({
-			type: 'GET',
-			url: 'https://graph.facebook.com/' + results.data[index].id + '/?fields=about' + token,
-			dataType: 'json',
-		});
-
-		about.done(appenToResult);
-		getData.fail(errorReqeust);
-	}
-}
-
-
-function errorRequest(data) {
-	return new Error("Unable to make this search");
-}
-
-
 })(jQuery);
 
-//
-//
-// container.push(results.data[index]);
-// $('.facebook-results > ul').append(
-// '<li>'+
-// 	'<div class="result-img">'+
-// 		'<img src="http://graph.facebook.com/' + results.data[index].id + '/picture" height="50" width="50" alt="' +results.data[index].name+ '" />'+
-// 	'</div>'+
-// 	'<div class="result-title">'+
-// 		'<a href="http://facebook.com/'+results.data[index].id+' ">' +results.data[index].name + '</a>'+
-// 	'</div>'+
-// 	'<div class="result-excerpt">'+
-//
-// 	'</div>'+
-// 	'</li>').appendTo('.search-result-wrapper');
