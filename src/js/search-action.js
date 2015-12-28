@@ -102,7 +102,7 @@
 		//make requests
 		var temp;
 		var tempi;
-		var getData = $.ajax({
+		$.ajax({
 			type: 'GET',
 			url: req,
 			datType: 'json',
