@@ -1,4 +1,5 @@
-(function($) {
+define(['jquery','bootstrap'], function($,bootstrap) {
+(function($,bootstrap) {
 
 	"use strict";
 
@@ -13,7 +14,7 @@
 		// test if query string is empty
 		if (queryString !=="") {
 			// don't show the tooltip anymore
-			$('[data-toggle="tooltip"]').tooltip('destroy');
+			bootstrap.$('[data-toggle="tooltip"]').tooltip('destroy');
 
 			//redirect
 			if (hrefPage.indexOf("search.html") <0)
@@ -102,7 +103,7 @@
 		//make requests
 		var temp;
 		var tempi;
-		var getData = $.ajax({
+		$.ajax({
 			type: 'GET',
 			url: req,
 			datType: 'json',
@@ -137,5 +138,5 @@
 			}
 		});
 	}
-})(jQuery);
-
+})($, bootstrap);
+});
