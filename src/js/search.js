@@ -1,15 +1,11 @@
-define(['jquery','bootstrap'], function($,bootstrap) {
-(function($,bootstrap) {
-
+define('search', ['jquery','bootstrap','event', 'api'], function($, bootstrap, event, api) {
 	"use strict";
 
-	var options = [];
-	
-	function searchAction() {
+	var clickSearch = function() {
 		// it's a good practice to create and cache all
 		// local var in the top of the function/clouj etc..
 		var queryString = $('#search-query').val();
-		var filters = options.length;
+		var filters = event.options.length;
 		var hrefPage = window.location.href;
 		// test if query string is empty
 		if (queryString !=="") {
@@ -24,57 +20,20 @@ define(['jquery','bootstrap'], function($,bootstrap) {
 		} else {
 			$('[data-toggle="tooltip"]').tooltip();
 		}
-	}
+	};
 
-	$(document).ready(function() {
-		$('.dropdown-menu a').on('click', dropDownEvent);
-		$('#search-button').on('click', searchAction);
-	});
+	var searchAction = function() {
+		$('#search-button').on('click', clickSearch);
+	};
 
 
-	//dropDownEvent just adds all the elements that was check into our
-	//contianer and loging them
-	function dropDownEvent() {
-		var $target = $(event.currentTarget),
-			val = $target.attr('data-value'),
-			$inp = $target.find('input'),
-			idx;
-
-		if(( idx = options.indexOf(val)) > -1) {
-			options.splice(idx, 1);
-			setTimeout(function(){
-				$inp.prop('checked',false);
-			}, 0);
-		} else {
-			options.push(val);
-			setTimeout(function() {
-				$inp.prop('checked',true);
-			},0);// first in queue
-		}
-		// this blur method removes the focus of the
-		// element that has been checked/clicked
-		$(event.target).blur();
-		// return false;
-		// replacing the return false statement
-		event.preventDefault();
-		event.stopPropagation();
-		// intersting enough when return false is triggered
-		// it also stops callback execution.
-	}
-
-	function filterSearchAction(queryString, filters) {
-	//FACEBOOK
-		var url		= "https://graph.facebook.com/search?q=",
-			token	= "&access_token=1523007798014505|NTm64aS3PIH_-Mfm8NAyQ1NGsp0",
-			type	= "&type=page",
-			limit	= "&limit=25";
-
+	var filterSearchAction = function(queryString, filters) {
 		//cache all vars
 		var i;
 
 		if(filters) {
 			for (i=0; i<filters; i++) {
-				switch(options[i]) {
+				switch(event.options[i]) {
 
 				case "DuckDuckGo":
 					break;
@@ -85,19 +44,18 @@ define(['jquery','bootstrap'], function($,bootstrap) {
 				case "Google":
 					break;
 				case "Facebook":
-					facebookRequest(queryString, url, type, limit, token);
+					facebookRequest(queryString, api.facebook.url, api.facebok.type, api.facebook.limit, api.facebook.token);
 					break;
 				}
 			}//for
 		} else {
-			//TODO Make all requests
 			//facebook
-			facebookRequest(queryString, url, type, limit, token);
+			facebookRequest(queryString, api.facebook.url, api.facebook.type, api.facebook.limit, api.facebook.token);
 		}
-	}
+	};
 
 	// make facebook request inserting all elements into html
-	function facebookRequest(queryString, url, type, limit, token) {
+	var  facebookRequest = function(queryString, url, type, limit, token) {
 		//build the request
 		var req = url + queryString + type + limit + token;
 		//make requests
@@ -117,8 +75,6 @@ define(['jquery','bootstrap'], function($,bootstrap) {
 						url: 'https://graph.facebook.com/' + result.data[i].id + '/?fields=about' + token,
 						dataType: 'json',
 						success: function(results) {
-							console.log(tempi);
-							console.log(results);
 							tempi = results.id;
 							 $('.facebook-results > ul').append(
 								'<li>'+
@@ -137,6 +93,10 @@ define(['jquery','bootstrap'], function($,bootstrap) {
 				}
 			}
 		});
-	}
-})($, bootstrap);
+	};
+
+	return {
+		searchAction: searchAction
+	};
+
 });

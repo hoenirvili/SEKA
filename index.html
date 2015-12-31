@@ -149,7 +149,10 @@
 	// configuration file
 	require(['src/main'], function() {
 		//load our own library scripts
-		require( ['src/js/index.js'] );
+		require( ['application'], function(application) {
+			// start the application
+			application.start();
+		});
 	});
 </script>
 
