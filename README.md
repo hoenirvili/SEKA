@@ -1,5 +1,1 @@
 ﻿# SEKA
-
-
-
-## Refactoring branch
