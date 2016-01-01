@@ -1,6 +1,5 @@
 define("template", function() {
-	// PRIVATE SCOPE
-	var sliderQuotes = ["<h5 class=\"text-center slide-text-anime \">		\
+	this.quotes= ["<h5 class=\"text-center slide-text-anime \">			\
 							Search Engine Analyzer for 						\
 								<a href=#>facebook</a> 						\
 								<a href=#>twitter </a> 						\
@@ -17,8 +16,19 @@ define("template", function() {
 							<a href=#>example</a> 							\
 							of good search engine. 							\
 						</h5>"];
-	// PUBLIC SCOPE
-	return {
-		quotes: sliderQuotes
+	this.results = function (id, name, about) {
+	return		'<li>'+
+				'<div class="result-img">'+
+					'<img src="http://graph.facebook.com/' + id + '/picture" height="50" width="50" alt="' + name + '" />'+
+				'</div>'+
+				'<div class="result-title">'+
+					'<a href="http://facebook.com/'+ id +' ">' + name + '</a>'+
+				'</div>'+
+				'<div class="result-excerpt">'+
+					about +
+				'</div>'+
+				'</li>';
 	};
-});
+
+	return this;
+});// define

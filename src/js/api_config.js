@@ -1,4 +1,4 @@
-define('api', function() {
+define('apicfg', function() {
 	return {
 		facebook: {
 			url		: "https://graph.facebook.com/search?q=",
@@ -10,5 +10,4 @@ define('api', function() {
 		bing: {},
 		google: {},
 	};
-
 });

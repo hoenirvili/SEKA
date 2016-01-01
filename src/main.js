@@ -2,6 +2,11 @@
 // configuration for requireJs
 requirejs.config ({
 	baseUrl: "src",
+	shim : {
+		bootstrap: {
+			"deps": ['jquery']
+		}
+	},
 	paths: {
 		// requirejs plugins
 		domReady: "lib/require-2.1.22/plugin/domReady",
@@ -10,10 +15,10 @@ requirejs.config ({
 		bootstrap: 'lib/bootstrap-3.3.5/js/bootstrap.min',
 		// js
 		application: "js/application",
+		apicfg: "js/api_config",
 		template: "js/template",
-		animation: "js/animation",
+		dom: "js/dom",
 		search: "js/search",
-		event: "js/event",
-		apiConfigs: "js/api_config"
+		facebook: "js/facebook"
 	}
 });

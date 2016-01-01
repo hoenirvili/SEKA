@@ -146,13 +146,17 @@
 		</div>
 	</div>
 
-<script data-main="src/main" src="src/lib/require-2.1.22/require.js"></script>
-<script type="text/javascirpt">
-	//afte loading src/main
-	//configuration file
-	require(['src/main'], function() {
-		require( ['src/js/index.js', 'src/js/action.js']);
+<script src="src/lib/require-2.1.22/require.js" type="text/javascript"></script>
+<script type=text/javascript>
+	// afterloading src/main
+	// configuration file
+	require(["src/main"], function() {
+		// load our own library scripts
+		require(["application"], function(application) {
+			// start the application
+			application.start();
+		});
 	});
-
+</script>
 </body>
 </html>
