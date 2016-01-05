@@ -19,6 +19,7 @@ requirejs.config ({
 		template: "js/template",
 		dom: "js/dom",
 		search: "js/search",
-		facebook: "js/facebook"
+		facebook: "js/facebook",
+		google: "js/google",
 	}
 });

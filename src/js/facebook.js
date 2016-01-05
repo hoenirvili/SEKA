@@ -6,11 +6,21 @@ define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, 
 	// hold every id
 	var tempi;
 	
-
-	var request = function(queryString) {
+	//TODO : MAKE FACEBOOK CATEGORY
+	var request = function(queryString, category) {
 		//build the request
 		req = apicfg.facebook.url + queryString + apicfg.facebook.type + apicfg.facebook.limit + apicfg.facebook.token;
-		$.getJSON(req, getPageList);
+		switch(category.type) {
+			case "web": 
+				$.getJSON(req, getPageList);
+				break;
+			case "news":
+				break;
+			case "video":
+				break;
+			case "images":
+				break;
+		}
 	};
 
 	var getPageList = function(result) {
@@ -25,7 +35,7 @@ define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, 
 	var appendResults = function(results) {
 		tempi = results.id;
 		$('.facebook-results > ul').append(
-			template.results(temp.data[tempi].id, temp.data[tempi].name, results.about)
+			template.facebookResults(temp.data[tempi].id, temp.data[tempi].name, results.about)
 		).appendTo('.search-result-wrapper');
 	};
 

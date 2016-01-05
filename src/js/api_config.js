@@ -8,6 +8,16 @@ define('apicfg', function() {
 		},
 		duckduckgo: {},
 		bing: {},
-		google: {},
+		google: {
+			siteURL		: 'SEKA.com',
+			searchSite	: true,
+			type		: 'web',
+			append		: false,
+			perPage		: 8,
+			page		: 0,
+			url: 'http://ajax.googleapis.com/ajax/services/search/',
+			version		: 'v=1.0',
+			callback	: 'callback=?'
+		},
 	};
 });

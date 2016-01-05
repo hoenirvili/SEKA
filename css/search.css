@@ -95,3 +95,9 @@
     line-height: 16px;
     padding:5px 0 0
 }
+
+/* PAGINATION */
+.pagination{
+	position: relative;
+	left: 30%;
+}

@@ -7,7 +7,7 @@ $(document).ready(function() {
 		append		: false,
 		perPage		: 8,			
 		page		: 0				
-	}
+	};
 	
 
 	var arrow = $('<span>',{className:'arrow'}).appendTo('ul.icons');
@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 		config.type = el.attr('data-searchType');
 		$('#more').fadeOut();
-	});
+	});// ul
 	
 
 	$('#siteNameLabel').append(' '+config.siteURL);
@@ -54,7 +54,7 @@ $(document).ready(function() {
 	$('#searchSite,#searchWeb').change(function(){
 
 		
-		config.searchSite = this.id == 'searchSite';
+		config.searchSite = this.id === 'searchSite';
 	});
 	
 	
@@ -169,7 +169,7 @@ $(document).ready(function() {
 
 		this.toString = function(){
 			return arr.join('');
-		}
+		};
 	}
 	
 	

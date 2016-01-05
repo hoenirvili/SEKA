@@ -5,7 +5,12 @@ function($, template, search) {
 	
 	var counter = 0;
 	var options = [];
-	
+	var arrow = $('<span>',{className:'arrow'}).appendTo('ul.icons');
+
+	var category= {
+		type: 'web'
+	};
+
 	var searchAction = function() {
 		// it's a good practice to create and cache all
 		// local var in the top of the function/clouj etc..
@@ -20,7 +25,7 @@ function($, template, search) {
 			//redirect
 			if (hrefPage.indexOf("search.html") <0)
 				window.location.href = "search.html";
-			search.action(queryString,filters, options);
+			search.action(queryString, filters, options, category);
 		// if query string is empty show error
 		} else {
 			$('[data-toggle="tooltip"]').tooltip();
@@ -86,7 +91,29 @@ function($, template, search) {
 			$('.menu-close').on('click', toggleMenu);
 			$('.dropdown-menu a'). on('click', dropDownEvent);
 			$('#search-button').on('click', searchAction);
+			$('ul.icons li').on('click', filterCategory);
 		});
+	};
+	//TODO: MAKE FILTER APPEAR carrot
+	var filterCategory = function() {
+		var el = $(this);
+		
+		if(el.hasClass('active')) 
+			return false;
+
+		el.siblings().removeClass('active');
+		el.addClass('active');
+		arrow.stop().animate({
+		left		: el.position().left,
+			marginLeft	: (el.width()/2)-4
+		});
+
+		category.type =  el.attr('data-searchType');
+
+		//console.log(category.type);
+
+		$('#more').fadeOut();
+
 	};
 
 	return {
