@@ -1,42 +1,49 @@
-$(document).ready(function(){
-	
+$(document).ready(function() {
+   	
 	var config = {
 		siteURL		: 'SEKA.com',	
 		searchSite	: true,
 		type		: 'web',
 		append		: false,
-		perPage		: 8,			// ;omita impusa de google
-		page		: 0				// pagina de start
+		perPage		: 8,			
+		page		: 0				
 	}
 	
-	//sageata ce marcheaza tipul de cautare
-	var arrow = $('<span>',{className:'arrow'}).appendTo('ul.icons');//continutul precede metoda
+
+	var arrow = $('<span>',{className:'arrow'}).appendTo('ul.icons');
 	
 	$('ul.icons li').click(function(){
 		var el = $(this);
 		
 		if(el.hasClass('active')){
-			//iconita(tipul de cautare) e deja activ
+	
 			return false;
 		}
 		
-		el.siblings().removeClass('active'); //deselectam toate elementele li
+		el.siblings().removeClass('active');
 		el.addClass('active');
 		
-		//miscarea sagetii
+
 		arrow.stop().animate({
 			left		: el.position().left,
 			marginLeft	: (el.width()/2)-4
 		});
 		
-		//setam tipul de search
+
 		config.type = el.attr('data-searchType');
 		$('#more').fadeOut();
 	});
 	
-	$('#siteNameLabel').append(' '+config.siteURL); //adaugam domeniul site ului ca eticheta la primul radioButton
-	$('#searchSite').click();//SEKA.com devine activ
-	$('li.web').click();//webSearch devine activ
+
+	$('#siteNameLabel').append(' '+config.siteURL);
+	
+
+	$('#searchSite').click();	
+	
+
+	$('li.web').click();
+	
+
 	$('#s').focus();
 
 	$('#searchForm').submit(function(){
@@ -45,8 +52,8 @@ $(document).ready(function(){
 	});
 	
 	$('#searchSite,#searchWeb').change(function(){
-		////asteptam ca unul din radioButton sa fie selectat
-		//configuram searchSite true sau false
+
+		
 		config.searchSite = this.id == 'searchSite';
 	});
 	
@@ -54,15 +61,16 @@ $(document).ready(function(){
 	function googleSearch(settings){
 		
 
-		settings = $.extend({},config,settings); //adaugam proprietatile lui config
+		
+		settings = $.extend({},config,settings);
 		settings.term = settings.term || $('#s').val();
 		
 		if(settings.searchSite){
-				//limitam cautarile la un domeniu specific
+
 			settings.term = 'site:'+settings.siteURL+' '+settings.term;
 		}
 		
-		//url ul spre search api-ul de la google
+
 		var apiURL = 'http://ajax.googleapis.com/ajax/services/search/'+settings.type+'?v=1.0&callback=?';
 		var resultsDiv = $('#resultsDiv');
 		
@@ -73,16 +81,17 @@ $(document).ready(function(){
 			
 			if(results.length){
 				
-					//daca au fost returnate rezultate,le adaugam intr un pageContainer div,dupa care le punem in #resultaDiv
+		
+				
 				var pageContainer = $('<div>',{className:'pageContainer'});
 				
 				for(var i=0;i<results.length;i++){
-					// Creating a new result object and firing its toString method:
+				
 					pageContainer.append(new result(results[i]) + '');
 				}
 				
 				if(!settings.append){
-					//cand dam o noua cautare resultsDiv devine empty
+					
 					resultsDiv.empty();
 				}
 				
@@ -92,7 +101,7 @@ $(document).ready(function(){
 				
 				var cursor = r.responseData.cursor;
 				
-				//verificam daca exista mai multe pagini in results
+				
 				
 				if( +cursor.estimatedResultCount > (settings.page+1)*settings.perPage){
 					$('<div>',{id:'more'}).appendTo(resultsDiv).click(function(){
@@ -103,8 +112,7 @@ $(document).ready(function(){
 			}
 			else {
 				
-				//nu au fost gasite rezultate pentru search
-				
+			
 				resultsDiv.empty();
 				$('<p>',{className:'notFound',html:'No Results Were Found!'}).hide().appendTo(resultsDiv).fadeIn();
 			}
@@ -114,9 +122,10 @@ $(document).ready(function(){
 	function result(r){
 		
 		
+		
 		var arr = [];
 		
-		
+	
 		switch(r.GsearchResultClass){
 
 			case 'GwebSearch':
@@ -157,7 +166,7 @@ $(document).ready(function(){
 			break;
 		}
 		
-		
+
 		this.toString = function(){
 			return arr.join('');
 		}
