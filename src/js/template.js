@@ -71,52 +71,6 @@ define("template", function() {
 
 	}; //facebookResults
 	
-	this.googleResults = function(r) {
-		var arr = [];
-		
-	
-		switch(r.GsearchResultClass){
-
-			case 'GwebSearch':
-				arr = [
-					'<div class="webResult">',
-					'<h2><a href="',r.unescapedUrl,'" target="_blank">',r.title,'</a></h2>',
-					'<p>',r.content,'</p>',
-					'<a href="',r.unescapedUrl,'" target="_blank">',r.visibleUrl,'</a>',
-					'</div>'
-				];
-			break;
-			case 'GimageSearch':
-				arr = [
-					'<div class="imageResult">',
-					'<a target="_blank" href="',r.unescapedUrl,'" title="',r.titleNoFormatting,'" class="pic" style="width:',r.tbWidth,'px;height:',r.tbHeight,'px;">',
-					'<img src="',r.tbUrl,'" width="',r.tbWidth,'" height="',r.tbHeight,'" /></a>',
-					'<div class="clear"></div>','<a href="',r.originalContextUrl,'" target="_blank">',r.visibleUrl,'</a>',
-					'</div>'
-				];
-			break;
-			case 'GvideoSearch':
-				arr = [
-					'<div class="imageResult">',
-					'<a target="_blank" href="',r.url,'" title="',r.titleNoFormatting,'" class="pic" style="width:150px;height:auto;">',
-					'<img src="',r.tbUrl,'" width="100%" /></a>',
-					'<div class="clear"></div>','<a href="',r.originalContextUrl,'" target="_blank">',r.publisher,'</a>',
-					'</div>'
-				];
-			break;
-			case 'GnewsSearch':
-				arr = [
-					'<div class="webResult">',
-					'<h2><a href="',r.unescapedUrl,'" target="_blank">',r.title,'</a></h2>',
-					'<p>',r.content,'</p>',
-					'<a href="',r.unescapedUrl,'" target="_blank">',r.publisher,'</a>',
-					'</div>'
-				];
-			break;
-		}
-		return arr;
-	};
-
 
 	return this;
 });// define

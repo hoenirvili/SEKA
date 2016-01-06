@@ -5,9 +5,11 @@
 body {
 	background: url("../img/bg-image.jpg");
 	background-size: cover;
+	background-repeat: none;
+	background-attachment: fixed;
 }
 .main-search{
-	background-image: url("../img/bg.svg");
+	/*background-image: url("../img/bg.svg");*/
 	background-position: center center;
 /*This is what makes the background image rescale based
 	on the container's size */
@@ -231,6 +233,7 @@ form input[type="text"]
 .slide-text-anime {
 	font-family: 'Lato', sans-serif;
 	font-weight: 700;
+	color: #fffff0;
 }
 /**************************************************************
  * search
@@ -310,10 +313,6 @@ form input[type="text"]
     padding:5px 0 0
 }
 
-
-/**
-Loading
-**/
 
 
 .showbox {

@@ -1,9 +1,11 @@
-define("google", ["apicfg", "template"], function() {
+define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $) {
 
-	var request = function(queryString) {
-		console.log(queryString);
+
+	var request = function(queryString, category) {
+
 	};
 
+	
 	return {
 		request: request
 	};

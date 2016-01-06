@@ -3,9 +3,13 @@ define("dom",
 function($, template, search) {
 	"use strict";
 	
+	// for our animation
 	var counter = 0;
+	// array to store our options filter
 	var options = [];
-	var category= {
+	//category object
+
+	var category = {
 		type: 'web'
 	};
 
@@ -21,16 +25,13 @@ function($, template, search) {
 		destroyPreviousSearch();
 		// it's a good practice to create and cache all
 		// local var in the top of the function/clouj etc..
-		var queryString = $('#search-query').val();
-		var filters = options.length;
-		var hrefPage = window.location.href;
+		var queryString = $('#search-query').val(),
+			filters = options.length;
 		// test if query string is empty
-		if (queryString !=="") {
+		if (queryString !== "") {
 			// don't show the tooltip anymore
 			$('[data-toggle="tooltip"]').tooltip('destroy');
 			//redirect
-			if (hrefPage.indexOf("search.html") <0)
-				window.location.href = "search.html";
 			search.action(queryString, filters, options, category.type);
 		// if query string is empty show error
 		} else {
