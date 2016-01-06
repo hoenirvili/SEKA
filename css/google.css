@@ -89,16 +89,13 @@ li.videos:hover{ background-position:right bottom;}
 
 span.arrow{
 	/* The little arrow that moves below the icons */
-	
-	width:11px;
-	height:6px;
-	margin:21px 0 0 5px;
-	position:absolute;
-	background:url('img/arrow.png') no-repeat;
-	left:0;
+	width: 11px;
+	height: 6px;
+	margin: 21px 10 10 5px;
+	position: relative;
+	background: url('img/arrow.png') no-repeat;
+	left: 0;
 }
-
-
 /* The submit button */
 
 

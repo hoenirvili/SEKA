@@ -17,38 +17,43 @@ define("template", function() {
 							<a href=#>example</a> 							\
 							of good search engine. 							\
 						</h5>"];
-	this.facebookResults = function (id, name, about) {
-	return		'<li>'+
-				'<div class="result-img">'+
-					'<img src="http://graph.facebook.com/' + id + '/picture" height="50" width="50" alt="' + name + '" />'+
-				'</div>'+
-				'<div class="result-title">'+
-					'<a href="http://facebook.com/'+ id +' ">' + name + '</a>'+
-				'</div>'+
-				'<div class="result-excerpt">'+
-					about +
-				'</div>'+
-				'</li>';
-	};
 
-	this.pagination = 	'<ul class="pagination">' +
-							'<li>' +
-								'<a href="#" aria-label="Previous">' +
-									'<span aria-hidden="true">&laquo;</span>'+
-								'</a>'+
-							'</li>'+
-							'<li class="active" ><a href="#">1</a></li>'+
-							'<li><a href="#">2</a></li>'+
-							'<li><a href="#">3</a></li>'+
-							'<li><a href="#">4</a></li>'+
-							'<li><a href="#">5</a></li>'+
-							'<li>'+
-								'<a href="#" aria-label="Next">'+
-									'<span aria-hidden="true">&laquo;</span>'+
-								'</a>'+
-							'</li>'+
-						'</ul>';
+	this.facebookResults = function(id, name, about) {
 
+		var fullpage = function() {
+			return	'<li>'+
+					'<div class="result-img">'+
+						'<img src="http://graph.facebook.com/' + id + '/picture" height="50" width="50" alt="' + name + '" />'+
+					'</div>'+
+					'<div class="result-title">'+
+						'<a href="http://facebook.com/'+ id +' ">' + name + '</a>'+
+					'</div>'+
+					'<div class="result-excerpt">'+
+						about +
+					'</div>'+
+					'</li>';
+		};
+
+		var images = function() {
+			return 	'<li>'+
+				'<div class="result-images">'+
+						'<img src="http://graph.facebook.com/' + id + '/picture" height="50" width="50" alt="' + name + '" />'+
+					'</div>'+
+					'</li>';
+		};
+		// TODO ADD CONTENT  TEMPLATE
+		var videos = function() {
+
+		};
+
+		return {
+			fullpage: fullpage,
+			images: images,
+			videos: videos
+		};
+
+	}; //facebookResults
+	
 	this.googleResults = function(r) {
 		var arr = [];
 		
@@ -92,6 +97,7 @@ define("template", function() {
 				];
 			break;
 		}
+		return arr;
 	};
 
 

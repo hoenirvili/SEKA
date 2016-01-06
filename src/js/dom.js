@@ -5,8 +5,6 @@ function($, template, search) {
 	
 	var counter = 0;
 	var options = [];
-	var arrow = $('<span>',{className:'arrow'}).appendTo('ul.icons');
-
 	var category= {
 		type: 'web'
 	};
@@ -25,7 +23,7 @@ function($, template, search) {
 			//redirect
 			if (hrefPage.indexOf("search.html") <0)
 				window.location.href = "search.html";
-			search.action(queryString, filters, options, category);
+			search.action(queryString, filters, options, category.type);
 		// if query string is empty show error
 		} else {
 			$('[data-toggle="tooltip"]').tooltip();
@@ -94,7 +92,10 @@ function($, template, search) {
 			$('ul.icons li').on('click', filterCategory);
 		});
 	};
-	//TODO: MAKE FILTER APPEAR carrot
+
+	//TODO: fix carrot
+	var arrow = $('<span>',{className:'arrow'}).appendTo('ul.icons');
+
 	var filterCategory = function() {
 		var el = $(this);
 		
@@ -110,10 +111,7 @@ function($, template, search) {
 
 		category.type =  el.attr('data-searchType');
 
-		//console.log(category.type);
-
 		$('#more').fadeOut();
-
 	};
 
 	return {
