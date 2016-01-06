@@ -101,3 +101,8 @@
 	position: relative;
 	left: 30%;
 }
+
+iframe {
+	width: 500px;
+	height: 500px;
+}

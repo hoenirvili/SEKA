@@ -36,14 +36,31 @@ define("template", function() {
 
 		var images = function() {
 			return 	'<li>'+
-				'<div class="result-images">'+
-						'<img src="http://graph.facebook.com/' + id + '/picture" height="50" width="50" alt="' + name + '" />'+
+						'<div class="result-images">'+
+							'<img src="http://graph.facebook.com/' + about.id + '/picture" height="250" width="250" alt="' + name + '" />'+
+						'</div>'+
+						'<div class="result-excerpt">'+
+							about.created_time +
+						'</div>'+
+					'</li>'
+					;
+
+		};
+
+		var videos = function() {
+		return	'<li>'+
+					'<div class="result-img">'+
+						'<img src="' + about.icon +' " height="50" width="50" alt="' + name + '" />'+
+					'</div>'+
+					'<div class="result-title">'+
+						'<a href="http://facebook.com/'+ id +' ">' + name + '</a>'+
+					'</div>'+
+						about.embed_html +
+					'<div class="result-excerpt">'+
+						about.description +
 					'</div>'+
 					'</li>';
-		};
-		// TODO ADD CONTENT  TEMPLATE
-		var videos = function() {
-
+	
 		};
 
 		return {
