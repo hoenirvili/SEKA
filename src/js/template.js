@@ -1,6 +1,6 @@
 define("template", function() {
 
-	this.quotes= ["<h5 class=\"text-center slide-text-anime \">			\
+	this.quotes = ["<h5 class=\"text-center slide-text-anime \">			\
 							Search Engine Analyzer for 						\
 								<a href=#>facebook</a> 						\
 								<a href=#>twitter </a> 						\
@@ -19,7 +19,6 @@ define("template", function() {
 						</h5>"];
 
 	this.facebookResults = function(id, name, about) {
-
 		var fullpage = function() {
 			return	'<li>'+
 					'<div class="result-img">'+
@@ -64,9 +63,9 @@ define("template", function() {
 		};
 
 		return {
-			fullpage: fullpage,
-			images: images,
-			videos: videos
+				fullpage: fullpage,
+				images: images,
+				videos: videos
 		};
 
 	}; //facebookResults

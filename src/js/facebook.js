@@ -1,22 +1,22 @@
 define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, $) {
-		
+
 	// main request link
 	var req;
-	// hold the first json
-	var temp;
+	// hold the first json var temp;
 	// hold every id
 	var tempi;
-	
+	var temp;
+
 	var request = function(queryString, category) {
 		//build the request
 		req = apicfg.facebook.url + queryString + apicfg.facebook.type + apicfg.facebook.limit + apicfg.facebook.token;
 
 		switch(category) {
-			case "web": 
+			case "web":
 				$.getJSON(req, pageJSON);
 				break;
 			case "news":
-				//TODO implement news 
+				//TODO implement news
 				break;
 			case "video":
 				$.getJSON(req, videoJSON);
@@ -26,7 +26,7 @@ define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, 
 				break;
 		}
 	};
-	
+
 	/**
 	 * FULL PAGE CONTENT
 	 *
@@ -34,6 +34,7 @@ define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, 
 	var pageJSON = function(result) {
 		var i;
 		temp = result;
+		//loading animation
 		for (i=0; i<result.data.length; i++) {
 			temp.data[result.data[i].id] = result.data[i];
 			$.getJSON('https://graph.facebook.com/' + result.data[i].id + '/?fields=about' + apicfg.facebook.token, fullpageResults);
@@ -62,7 +63,7 @@ define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, 
 
 	var imageResult = function(results) {
 		tempi = results.id;
-		
+
 		if( results.photos !== undefined ) {
 			$('.facebook-results > ul').append(
 				template.facebookResults(temp.data[tempi].id, temp.data[tempi].name, results.photos.data[0]).images()

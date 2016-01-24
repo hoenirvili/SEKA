@@ -127,6 +127,6 @@ function($, template, search) {
 		init: function() {
 			animationLoading();
 			afterDoomLoading();
-		},
+		}
 	};
 });
