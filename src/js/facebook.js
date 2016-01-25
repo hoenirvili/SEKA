@@ -43,9 +43,8 @@ define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, 
 
 	var fullpageResults = function(results) {
 		tempi = results.id;
-		$('.facebook-results > ul').append(
-			template.facebookResults(temp.data[tempi].id, temp.data[tempi].name, results.about).fullpage()
-		).appendTo('.search-result-wrapper');
+		var html_append = template.facebookResults(temp.data[tempi].id, temp.data[tempi].name, results.about).fullpage()
+		$('.facebook-results > ul').append(html_append).appendTo('.search-result-wrapper');
 	};
 
 	/**

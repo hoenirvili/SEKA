@@ -1,7 +1,9 @@
 
-define ("search", ["facebook", "google","twitter","duckduckgo"], function(facebook, google,twitter,duckduckgo) {
+define ("search", ["facebook", "google","twitter","duckduckgo"], 
 
-var action = function(queryString, filters, options, category) {
+function(facebook, google, twitter, duckduckgo) {
+
+	var action = function(queryString, filters, options, category) {
 		//cache all vars
 		var i;
 		if(filters) {
