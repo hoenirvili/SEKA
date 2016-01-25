@@ -11,7 +11,12 @@ define('apicfg', function() {
 		google: {
 			url			: 'http://ajax.googleapis.com/ajax/services/search/',
 			version		: 'v=1.0',
-			callback	: 'callback=?'
+			callback	: 'callback=?',
+			searchSite  :  true,
+			type		:  'web',
+			append		:  false,
+			perPage		:  8,
+			page 		:  0
 		},
 	};
 });
