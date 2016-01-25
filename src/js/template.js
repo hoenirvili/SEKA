@@ -54,7 +54,10 @@ define("template", function() {
 					'</li>';
 		};
 
-		var images = function() {
+
+
+
+            var images = function() {
 			return 	'<li>'+
 						'<div class="result-images">'+
 							'<img src="http://graph.facebook.com/' + about.id + '/picture" height="250" width="250" alt="' + name + '" />'+
@@ -90,7 +93,26 @@ define("template", function() {
 		};
 
 	}; //facebookResults
-	
+
+    this.twitterResults = function(pictureUrl, username, text,profileUrl) {
+        var fullpage = function() {
+            return	'<li>'+
+                '<div class="result-img">'+
+                '<img src="'+pictureUrl+'" height="50" width="50" alt="' + username + '" />'+
+                '</div>'+
+                '<div class="result-title">'+
+                '<a href="'+profileUrl+'">' + username + '</a>'+
+                '</div>'+
+                '<div class="result-excerpt">'+
+                text +
+                '</div>'+
+                '</li>';
+        };
+        return {
+            fullpage: fullpage,
+        };
+
+    }; //facebookResults
 
 	return this;
 });// define

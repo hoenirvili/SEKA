@@ -1,4 +1,5 @@
-define ("search", ["facebook", "google", "duckduckgo"], function(facebook, google, duckduckgo) {
+
+define ("search", ["facebook", "google","twitter","duckduckgo"], function(facebook, google,twitter,duckduckgo) {
 
 var action = function(queryString, filters, options, category) {
 		//cache all vars
@@ -17,11 +18,15 @@ var action = function(queryString, filters, options, category) {
 					case "Facebook":
 						facebook.request(queryString, category);
 						break;
+                    case "Twitter":
+                        twitter.request(queryString, category);
+                        break;
 					}
 			}//for
 		} else {
 			facebook.request(queryString, category);
 			google.request(queryString, category);
+            twitter.request(queryString, category);
 			duckduckgo.request(queryString, category);
 		}
 	};

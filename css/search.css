@@ -40,25 +40,26 @@
 {
     padding-left:85px;
     margin-bottom: 8px;
-    border-bottom:1px solid #b97b57;
     background-repeat: no-repeat;
     background-position: 40px 0px;
 }
 
-.web-results
+.result-category ul li:last-child
 {
-    background-image: url('../img/web.png');
+    border-bottom:1px solid #b97b57;
 }
 
-.company-results{
-    background-image: url('../img/company.png');
+.facebook-results
+{
+    background-image: url('../img/facebook.png');
 }
 
-.others-results{
-    background-image: url('../img/others.png');
-	margin-bottom: 70px;
-}
 
+
+.twitter-results
+{
+    background-image: url('../img/twitter.png');
+}
 .result-category ul li
 {
     list-style-type: none;
