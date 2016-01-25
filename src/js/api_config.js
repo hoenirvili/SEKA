@@ -9,9 +9,16 @@ define('apicfg', function() {
 		duckduckgo: {},
 		bing: {},
 		google: {
-			url			: 'http://ajax.googleapis.com/ajax/services/search/',
+			url		: 'http://ajax.googleapis.com/ajax/services/search/',
 			version		: 'v=1.0',
 			callback	: 'callback=?'
 		},
+        twitter:
+        {
+            url		: 'search/tweets.json',
+            version		: '',
+            token       :'2594907146-SbFG8jbQdjzDNtdfJvJzXx5cA59H8uuffM09SmD',
+            callback	: ''
+        }
 	};
 });

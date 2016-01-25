@@ -21,5 +21,6 @@ requirejs.config ({
 		search: "js/search",
 		facebook: "js/facebook",
 		google: "js/google",
+        twitter:"js/twitter"
 	}
 });
