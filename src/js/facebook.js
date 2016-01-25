@@ -3,9 +3,9 @@ define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, 
 	// main request link
 	var req;
 	// hold the first json var temp;
+	var temp;
 	// hold every id
 	var tempi;
-	var temp;
 
 	var request = function(queryString, category) {
 		//build the request
@@ -13,6 +13,8 @@ define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, 
 
 		switch(category) {
 			case "web":
+				console.log(req);
+				console.log(category);
 				$.getJSON(req, pageJSON);
 				break;
 			case "news":
@@ -34,6 +36,7 @@ define("facebook", ["template", "apicfg", "jquery"], function(template, apicfg, 
 	var pageJSON = function(result) {
 		var i;
 		temp = result;
+		console.log(result);
 		//loading animation
 		for (i=0; i<result.data.length; i++) {
 			temp.data[result.data[i].id] = result.data[i];

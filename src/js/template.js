@@ -18,7 +18,28 @@ define("template", function() {
 							of good search engine. 							\
 						</h5>"];
 
+	this.duckduckgoResults = function(heading, picture, description) {
+		//method
+		var fullpage = 	function() {
+			return	'<li>'+
+					'<div class="result-img">'+
+						'<img src="'+ picture + '" height="50" width="50" />'+
+					'</div>'+
+					'<div class="result-title">'+
+						heading +
+					'</div>'+
+					'<div class="result-excerpt">'+
+						description+
+					'</div>'+
+					'</li>';
+		};
+		return {
+			fullpage:fullpage,
+		};
+	};//duckduckgoResults module
+
 	this.facebookResults = function(id, name, about) {
+
 		var fullpage = function() {
 			return	'<li>'+
 					'<div class="result-img">'+
