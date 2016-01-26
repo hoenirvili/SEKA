@@ -31,7 +31,7 @@ define("template", function() {
 		};
 
 		var fullpage = 	function() {
-
+			if(picture.length <=0) picture = "img/noimg.gif";
 
 			return	'<li>'+
 					'<div class="result-img">'+
@@ -45,8 +45,20 @@ define("template", function() {
 					'</div>'+
 					'</li>';
 		};
+        var images = function() {
+			return 	'<li>'+
+						'<div class="result-images">'+
+							'<img src="'+picture+'" height="250" width="250" alt="' + sanizeResult() + '" />'+
+						'</div>'+
+						'<div class="result-excerpt">'+
+							sanizeResult()+
+						'</div>'+
+					'</li>';
+		};
+
 		return {
 			fullpage:fullpage,
+			images:images
 		};
 	};//duckduckgoResults module
 
