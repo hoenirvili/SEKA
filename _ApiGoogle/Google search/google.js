@@ -107,6 +107,7 @@ $(document).ready(function() {
 				$('<p>',{className:'notFound',html:'No Results Were Found!'}).hide().appendTo(resultsDiv).fadeIn();
 			}
 		});
+	
 	}//--end googleSearch
 
 
