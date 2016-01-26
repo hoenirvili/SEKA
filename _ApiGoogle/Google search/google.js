@@ -65,16 +65,12 @@ $(document).ready(function() {
 		settings = $.extend({},config,settings);//settings primeste toate metodele, variabilele definite in config
 		settings.term =  settings.term || queryString;
 		
-		if(settings.searchSite){
-			//limitam cautarea la un singur demeniu
-			settings.term = 'site:'+settings.siteURL+' '+settings.term;
-		}
 		//URL-ul spre google ajax search api
 		var apiURL = 'http://ajax.googleapis.com/ajax/services/search/'+settings.type+'?v=1.0&callback=?';
 		var resultsDiv = $('#resultsDiv');		
 		$.getJSON(apiURL,{q:settings.term,rsz:settings.perPage,start:settings.page*settings.perPage},function(r){
 			var results = r.responseData.results;
-			$('#more').remove();//imi da elementul afara din dom
+			//$('#more').remove();//imi da elementul afara din dom
 			
 			if(results.length){
 				//daca au fost returnate rezultate, adauga le la pageContainer div
@@ -85,25 +81,26 @@ $(document).ready(function() {
 					pageContainer.append(new result(results[i]) + '');
 				}
 				
-				if(!settings.append){
-					//executata atunci cand rulam o noua cautare in loc sa apasam pe more
-					resultsDiv.empty();
-				}
+				// if(!settings.append){
+				// 	//executata atunci cand rulam o noua cautare in loc sa apasam pe more
+				// 	resultsDiv.empty();
+				// }
 				
+				//punem rezultatele din page container in resultsDiv
 				pageContainer.append('<div class="clear"></div>')
 							 .hide().appendTo(resultsDiv)
-							 .fadeIn('slow');
+							 .fadeIn('fast');
 				
-				var cursor = r.responseData.cursor;
+				//var cursor = r.responseData.cursor;
 				
 				//vedem daca mai sunt rezultate si le afisam cu more
 				
-				if( +cursor.estimatedResultCount > (settings.page+1)*settings.perPage){
-					$('<div>',{id:'more'}).appendTo(resultsDiv).click(function(){
-						googleSearch({append:true,page:settings.page+1});
-						$(this).fadeOut();
-					});
-				}
+				// if( +cursor.estimatedResultCount > (settings.page+1)*settings.perPage){
+				// 	$('<div>',{id:'more'}).appendTo(resultsDiv).click(function(){
+				// 		googleSearch({append:true,page:settings.page+1});
+				// 		$(this).fadeOut();
+				// 	});
+				// }
 			}
 			else {
 				resultsDiv.empty();
@@ -114,66 +111,7 @@ $(document).ready(function() {
 
 
 
-	
-	
 
-
-
-
-
-
-
-	// function googleSearch(settings){
-	// 	//daca functia nu ia nici un parametru atunci isi ia datele de la "config"		
-	// 	settings = $.extend({},config,settings);//settings primeste toate metodele, variabilele definite in config
-	// 	settings.term =  settings.term || $('#s').val();
-		
-	// 	if(settings.searchSite){
-	// 		//limitam cautarea la un singur demeniu
-	// 		settings.term = 'site:'+settings.siteURL+' '+settings.term;
-	// 	}
-	// 	//URL-ul spre google ajax search api
-	// 	var apiURL = 'http://ajax.googleapis.com/ajax/services/search/'+settings.type+'?v=1.0&callback=?';
-	// 	var resultsDiv = $('#resultsDiv');		
-	// 	$.getJSON(apiURL,{q:settings.term,rsz:settings.perPage,start:settings.page*settings.perPage},function(r){
-	// 		var results = r.responseData.results;
-	// 		$('#more').remove();//imi da elementul afara din dom
-			
-	// 		if(results.length){
-	// 			//daca au fost returnate rezultate, adauga le la pageContainer div
-	// 			//dupa care adauga-le la #resultsDiv		
-	// 			var pageContainer = $('<div>',{className:'pageContainer'});		
-	// 			for(var i=0;i<results.length;i++){
-	// 				//cream un nou rezultat 
-	// 				pageContainer.append(new result(results[i]) + '');
-	// 			}
-				
-	// 			if(!settings.append){
-	// 				//executata atunci cand rulam o noua cautare in loc sa apasam pe more
-	// 				resultsDiv.empty();
-	// 			}
-				
-	// 			pageContainer.append('<div class="clear"></div>')
-	// 						 .hide().appendTo(resultsDiv)
-	// 						 .fadeIn('slow');
-				
-	// 			var cursor = r.responseData.cursor;
-				
-	// 			//vedem daca mai sunt rezultate si le afisam cu more
-				
-	// 			if( +cursor.estimatedResultCount > (settings.page+1)*settings.perPage){
-	// 				$('<div>',{id:'more'}).appendTo(resultsDiv).click(function(){
-	// 					googleSearch({append:true,page:settings.page+1});
-	// 					$(this).fadeOut();
-	// 				});
-	// 			}
-	// 		}
-	// 		else {
-	// 			resultsDiv.empty();
-	// 			$('<p>',{className:'notFound',html:'No Results Were Found!'}).hide().appendTo(resultsDiv).fadeIn();
-	// 		}
-	// 	});
-	// }//--end googleSearch
 	
 	function result(r){
 		
