@@ -17,16 +17,28 @@ define("template", function() {
 							<a href=#>example</a> 							\
 							of good search engine. 							\
 						</h5>"];
-
-	this.duckduckgoResults = function(heading, picture, description) {
+	
+	this.duckduckgoResults = function(result, heading, picture, description) {
 		//method
+		var sanizeResult = function() {
+			var name, i, start  = result.indexOf("\">")+2, finish = result.indexOf("</a>");
+			name = result.charAt(start);
+			for(i = start+1; i<finish; i++) {
+				name += result.charAt(i);
+			}
+
+			return name;
+		};
+
 		var fullpage = 	function() {
+
+
 			return	'<li>'+
 					'<div class="result-img">'+
-						'<img src="'+ picture + '" height="50" width="50" />'+
+						'<img src="'+ picture + '" height="50" width="50" alt="image.png" />'+
 					'</div>'+
 					'<div class="result-title">'+
-						heading +
+						'<a href="'+heading+'">'+sanizeResult()+ '</a>'+
 					'</div>'+
 					'<div class="result-excerpt">'+
 						description+
@@ -39,6 +51,9 @@ define("template", function() {
 	};//duckduckgoResults module
 
 	this.facebookResults = function(id, name, about) {
+
+		if(about === undefined)
+			about= "No description";
 
 		var fullpage = function() {
 			return	'<li>'+
@@ -53,9 +68,6 @@ define("template", function() {
 					'</div>'+
 					'</li>';
 		};
-
-
-
 
             var images = function() {
 			return 	'<li>'+
@@ -108,6 +120,7 @@ define("template", function() {
                 '</div>'+
                 '</li>';
         };
+
         return {
             fullpage: fullpage,
         };

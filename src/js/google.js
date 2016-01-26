@@ -6,11 +6,9 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 
 			//daca functia nu ia nici un parametru atunci isi ia datele de la config(apicfg.google);
 			
-			
-			
 			switch(category){
 				case "web":
-						webSearch(settings,queryString);
+						
 					break;
 				case "news":
 					//TODO implement news
@@ -23,6 +21,9 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 					break;
 			}
 	};	
+	var webS = function(){
+		alert("Heiii:) Nu fi trist, vei reusi!!!!");
+	}
 	var webSearch = function(settings,queryString){
 			//daca functia nu ia nici un parametru atunci isi ia datele de la "config";
 			settings = $.extend({},apicfg.google,settings);
@@ -33,8 +34,8 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 			var resultsDiv = $('#resultsDiv');
 			
 			$.getJSON(apiURL,{q:settings.term,rsz:settings.perPage,start:settings.page*settings.perPage},function(r){
-				var results = r.responseData.results;
-			$('#more').remove();//imi da elementul afara din dom
+			var results = r.responseData.results;
+			//$('#more').remove();//imi da elementul afara din dom
 			
 			if(results.length){
 				//daca au fost returnate rezultate, adauga le la pageContainer div
@@ -64,10 +65,11 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 					];
 				break;
 			}
-	}
-
-	
-	
+	});
+	};
+	return {
+		request: request
+	};
 });
 
 
