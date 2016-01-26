@@ -22,7 +22,7 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 			}
 	};	
 	var webS = function(){
-		alert("Heiii:) Nu fi trist, vei reusi!!!!");
+		
 	}
 	var webSearch = function(settings,queryString){
 			//daca functia nu ia nici un parametru atunci isi ia datele de la "config";
