@@ -1,127 +1,145 @@
 $(document).ready(function() {
    	
 	var config = {
-		siteURL		: 'SEKA.com',	
+		siteURL		: 'tutorialzine.com',	// Change this to your site
 		searchSite	: true,
 		type		: 'web',
 		append		: false,
-		perPage		: 8,		//Maxim 8 rezultat pe pagina sunt admise de google	
-		page		: 0			//Pagina de start
-	};
+		perPage		: 8,			// A maximum of 8 is allowed by Google
+		page		: 0				// The start page
+	}
 	
-//sageata mica ce marcheaza tipul de cautare
+	// The small arrow that marks the active search icon:
 	var arrow = $('<span>',{className:'arrow'}).appendTo('ul.icons');
-	//functia pentru ul, tipul de cautare
+	
 	$('ul.icons li').click(function(){
 		var el = $(this);
 		
-		if(el.hasClass('active')){//verifica daca exista clasa
-			//iconita este deja activa,exit
+		if(el.hasClass('active')){
+			// The icon is already active, exit
 			return false;
 		}
 		
-		el.siblings().removeClass('active');//siblings: returneaza toate elementele frate si le sterge clasa active
+		el.siblings().removeClass('active');
 		el.addClass('active');
 		
-		//Miscarea sagetii sub iconite
+		// Move the arrow below this icon
 		arrow.stop().animate({
 			left		: el.position().left,
 			marginLeft	: (el.width()/2)-4
 		});
 		
-		//setam in variabila config tipul de cautare pe baza atributului din data-searchType
+		// Set the search type
 		config.type = el.attr('data-searchType');
-
-		//Metoda se schimbă treptat opacitatea , pentru elementele selectate , de la vizibil la ascuns ( efect fading ) .
 		$('#more').fadeOut();
-	});// end-ul
+	});
 	
-	//adaugam site ul nostru ca si label pentru primul radio button
-	$('#siteNameLabel').append(' '+config.siteURL);//append-insereaza continut la sfarsitul elementelor selectate
+	// Adding the site domain as a label for the first radio button:
+	$('#siteNameLabel').append(' '+config.siteURL);
 	
-	//facem primul radio button activ
+	// Marking the Search tutorialzine.com radio as active:
 	$('#searchSite').click();	
 	
-	//categoria web este activa
+	// Marking the web search icon as active:
 	$('li.web').click();
 	
-	//ne focusam asupra textbox ului
+	// Focusing the input text box:
 	$('#s').focus();
 
-	//cand dam submit la form se apeleaza functia googleSearch();
-	
 	$('#searchForm').submit(function(){
-		googleSearch({},"Ceva");//{append:true,page:settings.page+0},"Ceva"
+		googleSearch({},"Ceva");
 		return false;
 	});
 	
 	$('#searchSite,#searchWeb').change(function(){
-		//ascultam sa se schimbe unul din butoane
-		config.searchSite = this.id === 'searchSite';
+		// Listening for a click on one of the radio buttons.
+		// config.searchSite is either true or false.
+		
+		config.searchSite = this.id == 'searchSite';
 	});
 	
+	
 	function googleSearch(settings,queryString){
-		//daca functia nu ia nici un parametru atunci isi ia datele de la "config"		
-		settings = $.extend({},config,settings);//settings primeste toate metodele, variabilele definite in config
-		settings.term =  settings.term || queryString;
 		
-		//URL-ul spre google ajax search api
-		var apiURL = 'http://ajax.googleapis.com/ajax/services/search/'+settings.type+'?v=1.0&callback=?';
-		var resultsDiv = $('#resultsDiv');		
+		// If no parameters are supplied to the function,
+		// it takes its defaults from the config object above:
+		
+		settings = $.extend({},config,settings);
+		settings.term = settings.term || queryString;
+		
+		if(settings.searchSite){
+			// Using the Google site:example.com to limit the search to a
+			// specific domain:
+			settings.term = 'site:'+settings.siteURL+' '+settings.term;
+		}
+		
+		// URL of Google's AJAX search API
+		var apiURL = 'http://ajax.googleapis.com/ajax/services/search/'+'news'+'?v=1.0&callback=?';
+		var resultsDiv = $('#resultsDiv');
+		
 		$.getJSON(apiURL,{q:settings.term,rsz:settings.perPage,start:settings.page*settings.perPage},function(r){
+			
 			var results = r.responseData.results;
-			//$('#more').remove();//imi da elementul afara din dom
+			$('#more').remove();
 			
 			if(results.length){
-				//daca au fost returnate rezultate, adauga le la pageContainer div
-				//dupa care adauga-le la #resultsDiv		
-				var pageContainer = $('<div>',{className:'pageContainer'});		
+				
+				// If results were returned, add them to a pageContainer div,
+				// after which append them to the #resultsDiv:
+				
+				var pageContainer = $('<div>',{className:'pageContainer'});
+				
 				for(var i=0;i<results.length;i++){
-					//cream un nou rezultat 
+					// Creating a new result object and firing its toString method:
 					pageContainer.append(new result(results[i]) + '');
 				}
 				
-				// if(!settings.append){
-				// 	//executata atunci cand rulam o noua cautare in loc sa apasam pe more
-				// 	resultsDiv.empty();
-				// }
+				if(!settings.append){
+					// This is executed when running a new search, 
+					// instead of clicking on the More button:
+					resultsDiv.empty();
+				}
 				
-				//punem rezultatele din page container in resultsDiv
 				pageContainer.append('<div class="clear"></div>')
 							 .hide().appendTo(resultsDiv)
-							 .fadeIn('fast');
+							 .fadeIn('slow');
 				
-				//var cursor = r.responseData.cursor;
+				var cursor = r.responseData.cursor;
 				
-				//vedem daca mai sunt rezultate si le afisam cu more
+				// Checking if there are more pages with results, 
+				// and deciding whether to show the More button:
 				
-				// if( +cursor.estimatedResultCount > (settings.page+1)*settings.perPage){
-				// 	$('<div>',{id:'more'}).appendTo(resultsDiv).click(function(){
-				// 		googleSearch({append:true,page:settings.page+1});
-				// 		$(this).fadeOut();
-				// 	});
-				// }
+				if( +cursor.estimatedResultCount > (settings.page+1)*settings.perPage){
+					$('<div>',{id:'more'}).appendTo(resultsDiv).click(function(){
+						googleSearch({append:true,page:settings.page+1});
+						$(this).fadeOut();
+					});
+				}
 			}
 			else {
+				
+				// No results were found for this search.
+				
 				resultsDiv.empty();
 				$('<p>',{className:'notFound',html:'No Results Were Found!'}).hide().appendTo(resultsDiv).fadeIn();
 			}
+			result(r);
 		});
+	}
 	
-	}//--end googleSearch
+});
 
 
-
-
-	
 	function result(r){
 		
-		//in aceasta functie cream un obiect pentru fiecare rezultat 
+		// This is class definition. Object of this class are created for
+		// each result. The markup is generated by the .toString() method.
 		
 		var arr = [];
-	
+		
+		// GsearchResultClass is passed by the google API
 		switch(r.GsearchResultClass){
-			//clasa GsearchResultClass este pasata de google API
+
 			case 'GwebSearch':
 				arr = [
 					'<div class="webResult">',
@@ -160,11 +178,8 @@ $(document).ready(function() {
 			break;
 		}
 		
-
+		// The toString method.
 		this.toString = function(){
 			return arr.join('');
-		};
+		}
 	}
-	
-	
-});
