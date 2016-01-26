@@ -18,6 +18,13 @@ function($, template, search) {
 		if(oneResult) {
 			oneResult.remove();
 		}
+		// TODO(BARTIC):
+		// Please mitigate the google template system 
+		// to make it like the other searches, facebook, duckduckgo..
+		var googleResult = $('#resultsDiv > div');
+		if(googleResult) {
+			googleResult.remove();
+		}
 	};
 
 	var searchAction = function() {
@@ -91,9 +98,22 @@ function($, template, search) {
 		$(".showbox").fadeOut("slow");
 	};
 
+	var buttonEnter = function() {
+		var button = $('#search-button');
+		var field = $('html');
+		if(button && field) {
+			field.keyup(function(event) {
+				if(event.keyCode === 13) {
+					button.click();
+				}
+			});//field
+		}//if
+	}
+
 	var afterDoomLoading = function() {
 		$(document).ready(function() {
 			slideTextChange();
+			buttonEnter();	
 			$('.menu-button').on('click', toggleMenu);
 			$('.menu-close').on('click', toggleMenu);
 			$('.dropdown-menu a'). on('click', dropDownEvent);
@@ -114,7 +134,7 @@ function($, template, search) {
 		el.siblings().removeClass('active');
 		el.addClass('active');
 		arrow.stop().animate({
-		left		: el.position().left,
+			left		: el.position().left,
 			marginLeft	: (el.width()/2)-4
 		});
 

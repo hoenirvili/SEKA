@@ -1,10 +1,6 @@
 define("duckduckgo", ["template", "apicfg", "jquery"], 
 
 function(template, apicfg, $) {
-// main request link var req;
-// hold the first json var temp;
-// hold every id //var tempi;
-// var temp;
 
 	var request = function(queryString, category) {
 		// build the request

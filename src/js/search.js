@@ -27,7 +27,7 @@ function(facebook, google, twitter, duckduckgo) {
 			}//for
 		} else {
 			facebook.request(queryString, category);
-			google.request(queryString, category);
+			google.request({}, queryString, category);
             twitter.request(queryString, category);
 			duckduckgo.request(queryString, category);
 		}
