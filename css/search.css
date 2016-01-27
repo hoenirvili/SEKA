@@ -54,21 +54,24 @@
     background-image: url('../img/facebook.png');
 }
 
+.duckduckgo-results {
+	background-image: url('../img/duckduckgo.png');
 
+}
 
-.twitter-results
-{
+.twitter-results {
     background-image: url('../img/twitter.png');
 }
+
 .result-category ul li
 {
     list-style-type: none;
-    padding:5px;
+    padding: 5px;
     margin-bottom: 10px;
 }
 .result-category ul li:hover
 {
-    background:rgba(255,255,255,0.5)
+    background: rgba(255,255,255,0.5)
 }
 .result-category ul li .result-img,.result-category ul li .result-title
 {
@@ -91,7 +94,7 @@
 .result-category ul li .result-excerpt
 {
     clear:both;
-    font-size:13px;
+    font-size: 13px;
     font-family: "lato";
     line-height: 16px;
     padding:5px 0 0

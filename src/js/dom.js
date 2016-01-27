@@ -16,9 +16,17 @@ function($, template, search,bootstrap,pocket,suri) {
 
 
 	var destroyPreviousSearch = function() {
-		var oneResult = $('.web-results > ul > li');
-		if(oneResult) {
-			oneResult.remove();
+		var res = [
+			$('.facebook-results> ul > li'),
+			$('.duckduckgo-results > ul > li'),
+			$('.twitter-results > ul > li'),
+			$('.google-results > ul')
+		], i, resLen = res.length;
+		
+		for(i=0;i<resLen;i++) {	
+			if(res[i]) {
+				res[i].remove();
+			}
 		}
 	};
 
@@ -110,11 +118,24 @@ function($, template, search,bootstrap,pocket,suri) {
 		$(".showbox").fadeOut("slow");
 	};
 
+	var buttonEnter = function() {
+		var button = $('#search-button');
+		var field = $('html');
+		if(button && field) {
+			field.keyup(function(event) {
+				if(event.keyCode === 13) {
+					button.click();
+				}
+			});//field
+		}//if
+	}
+
 	var afterDoomLoading = function() {
 		$(document).ready(function() {
 			slideTextChange();
             checkForPocket();
             checkForVars();
+			buttonEnter();
 			$('.menu-button').on('click', toggleMenu);
 			$('.menu-close').on('click', toggleMenu);
 			$('.dropdown-menu a'). on('click', dropDownEvent);
@@ -137,7 +158,7 @@ function($, template, search,bootstrap,pocket,suri) {
 		el.addClass('active');
 
 		arrow.stop().animate({
-		left		: el.position().left,
+			left		: el.position().left,
 			marginLeft	: (el.width()/2)-4
 		});
 
