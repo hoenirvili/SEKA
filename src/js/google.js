@@ -45,11 +45,11 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 					pageContainer.append(new result(results[i]) + '');
 				}
 				
-				// if(!settings.append){
-				// 	// This is executed when running a new search, 
-				// 	// instead of clicking on the More button:
-				// 	resultsDiv.empty();
-				// }
+				if(!settings.append){
+					// This is executed when running a new search, 
+					// instead of clicking on the More button:
+					resultsDiv.empty();
+				}
 				
 				pageContainer.append('<div class="clear"></div>')
 							 .hide().appendTo(resultsDiv)
