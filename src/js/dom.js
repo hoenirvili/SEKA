@@ -14,16 +14,17 @@ function($, template, search) {
 	};
 
 	var destroyPreviousSearch = function() {
-		var oneResult = $('.web-results > ul > li');
-		if(oneResult) {
-			oneResult.remove();
-		}
-		// TODO(BARTIC):
-		// Please mitigate the google template system 
-		// to make it like the other searches, facebook, duckduckgo..
-		var googleResult = $('#resultsDiv > div');
-		if(googleResult) {
-			googleResult.remove();
+		var res = [
+			$('.facebook-results> ul > li'),
+			$('.duckduckgo-results > ul > li'),
+			$('.twitter-results > ul > li'),
+			$('.google-results > ul')
+		], i, resLen = res.length;
+		
+		for(i=0;i<resLen;i++) {	
+			if(res[i]) {
+				res[i].remove();
+			}
 		}
 	};
 

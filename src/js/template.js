@@ -138,7 +138,7 @@ define("template", function() {
             fullpage: fullpage,
         };
 
-    }; //facebookResults
+    }; //twiite Results
 
 	return this;
 });// define
