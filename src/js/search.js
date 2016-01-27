@@ -12,8 +12,6 @@ function(facebook, google, twitter, duckduckgo) {
 					case "DuckDuckGo":
 						duckduckgo.request(queryString, category);
 						break;
-					case "Bing":
-						break;
 					case "Google":
 						google.request({},queryString, category);
 						break;
@@ -23,6 +21,9 @@ function(facebook, google, twitter, duckduckgo) {
                     case "Twitter":
                         twitter.request(queryString, category);
                         break;
+                    case "Instagram":
+                    	alert("good");
+                    	break;
 					}
 			}//for
 		} else {
