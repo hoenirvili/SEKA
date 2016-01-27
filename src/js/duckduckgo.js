@@ -1,10 +1,6 @@
 define("duckduckgo", ["template", "apicfg", "jquery"], 
 
 function(template, apicfg, $) {
-// main request link var req;
-// hold the first json var temp;
-// hold every id //var tempi;
-// var temp;
 
 	var request = function(queryString, category) {
 		// build the request
@@ -16,7 +12,7 @@ function(template, apicfg, $) {
 					apicfg.duckduckgo.no_html[1]+
 					apicfg.duckduckgo.misc;
 		
-		console.log(req);	
+		//console.log(req);	
 		switch(category) {
 			case "web":
 				$.ajax({
@@ -31,6 +27,12 @@ function(template, apicfg, $) {
 			case "video":
 				break;
 			case "images":
+				$.ajax({
+					type:'POST',
+					dataType:'jsonp',
+					url: req,
+					success: imageJSON
+				});
 				break;
 		}
 	};
@@ -38,14 +40,7 @@ function(template, apicfg, $) {
 	 * FULL PAGE CONTENT
 	 */
 	var pageJSON = function(result) {
-		var i, lenResult = result.RelatedTopics.length;
-		//temp = result;
-		
-		console.log(result.Topics);
-		//TODO:  repair cod
-		var topicLen = result.Topics;
-		// UNDEFINED
-		var topic = result.Topics;
+		var i, lenResult = result.RelatedTopics.length, topics;
 
 		for(i=0; i<lenResult; i++) {
 			//if everything is define just show them
@@ -59,22 +54,46 @@ function(template, apicfg, $) {
 							result.RelatedTopics[i].Icon.URL,
 							result.RelatedTopics[i].Text).fullpage();
 					$('.duckduckgo-results > ul').append(html_append).appendTo('.search-result-wrapper');
+			}//if
+
+			if(result.RelatedTopics[i].hasOwnProperty('Topics')) {
+				topics = result.RelatedTopics[i].Topics;
+				appendEveryTopic(topics);
 			}
 		}//for
-		/**
-		for(i=0; i<topicLen; i++) {
-			if( topic[i].FirstURL &&
-				topic[i].Icon.URL &&
-				topic[i].Text &&
-				topic[i].Result) {
-					html_append = template.duckduckgoResults(
-						topic[i].FirstURL,
-						topic[i].Icon.URL,
-						topic[i].Text,
-						topic[i].Result).fullpage();
-				$('.duckduckgo-results > ul').append(html_append).appendTo('.search-result-wrapper');
+	};
+	var appendEveryTopic = function(topics) {
+		for(var i=0;i<topics.length; i++) {
+			var topic_append = template.duckduckgoResults(
+				topics[i].Result, topics[i].FirstURL, 
+				topics[i].Icon.URL, topics[i].Text).fullpage();
+				$('.duckduckgo-results > ul').append(topic_append).appendTo('.search-result-wrapper');
+		}//for
+	};//func
+
+
+	/**
+	 * IMAGE PAGE CONTENT
+	 */
+	var imageJSON = function(result) {
+		var i, lenResult = result.RelatedTopics.length, topics;
+		//TODO: image undefined
+		for(i=0; i<lenResult; i++) {
+			//if everything is define just show them
+			if(result.RelatedTopics[i].Icon.URL && result.RelatedTopics[i].Result) {
+				var html_append = template.duckduckgoResults(
+							result.RelatedTopics[i].Result,
+							result.RelatedTopics[i].FirstURL,
+							result.RelatedTopics[i].Icon.URL,
+							result.RelatedTopics[i].Text).images();
+					$('.duckduckgo-results > ul').append(html_append).appendTo('.search-result-wrapper');
+			}//if
+
+			if(result.RelatedTopics[i].hasOwnProperty('Topics')) {
+				topics = result.RelatedTopics[i].Topics;
+				console.log(topics);
 			}
-		}*/
+		}//for
 	};
 
 	return {
