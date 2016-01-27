@@ -100,6 +100,29 @@
     padding:5px 0 0
 }
 
+li{
+      list-style-type: none;
+      margin: 0 0 15px 0;
+}
+.newsResult :hover{
+
+    background: rgba(255,255,255,0.5)
+}
+.result-title a{
+    font-size: 20px;
+    font-family: "lato";
+    padding-left: 10px;
+    line-height: 29px;
+    color: #000;
+}
+.result-excerpt{
+    clear:both;
+    font-size: 13px;
+    font-family: "lato";
+    line-height: 16px;
+    padding:5px 0 0;
+    text-indent: 40px;
+}
 /* PAGINATION */
 .pagination{
 	position: relative;

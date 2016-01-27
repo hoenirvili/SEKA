@@ -119,13 +119,14 @@ function result(r){
 			break;
 				case 'GnewsSearch':
 				arr = [
-					'<li>'+
+					'<li class="newsResult">'+
 						'<div class="result-title">'+
 							'<a href="',r.unescapedUrl,'" target="_blank">',r.title,'</a>'+ 						
 						'</div>'+
 						'<div class="result-excerpt">'+
 							r.content+
-						'</div>'+			
+						'</div>'+		
+						'<a href="',r.unescapedUrl,'" target="_blank">',r.publisher,'</a>',	
 					'<li>'
 				];
 			break;
@@ -138,3 +139,12 @@ function result(r){
 
 
 
+// case 'GnewsSearch':
+// 				arr = [
+// 					'<div class="webResult">',
+// 					'<h2><a href="',r.unescapedUrl,'" target="_blank">',r.title,'</a></h2>',
+// 					'<p>',r.content,'</p>',
+// 					'<a href="',r.unescapedUrl,'" target="_blank">',r.publisher,'</a>',
+// 					'</div>'
+// 				];
+// 			break;
