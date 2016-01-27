@@ -19,6 +19,7 @@ define("template", function() {
 						</h5>"];
 	
 	this.duckduckgoResults = function(result, heading, picture, description) {
+		
 		//method
 		var sanizeResult = function() {
 			var name, i, start  = result.indexOf("\">")+2, finish = result.indexOf("</a>");
@@ -30,9 +31,9 @@ define("template", function() {
 			return name;
 		};
 
+
 		var fullpage = 	function() {
 			if(picture.length <=0) picture = "img/noimg.gif";
-
 			return	'<li>'+
 					'<div class="result-img">'+
 						'<img src="'+ picture + '" height="50" width="50" alt="image.png" />'+
