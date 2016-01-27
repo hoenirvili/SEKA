@@ -22,6 +22,8 @@ requirejs.config ({
 		facebook: "js/facebook",
 		google: "js/google",
         twitter:"js/twitter",
-		duckduckgo:"js/duckduckgo"
+		duckduckgo:"js/duckduckgo",
+        suri:"js/suri",
+        pocket:"js/pocket"
 	}
 });

@@ -1,6 +1,6 @@
 define("dom", 
-["jquery", "template", "search", "bootstrap"], 
-function($, template, search) {
+["jquery", "template", "search", "bootstrap","pocket","suri"],
+function($, template, search,bootstrap,pocket,suri) {
 	"use strict";
 	
 	// for our animation
@@ -12,6 +12,8 @@ function($, template, search) {
 	var category = {
 		type: 'web'
 	};
+
+
 
 	var destroyPreviousSearch = function() {
 		var oneResult = $('.web-results > ul > li');
@@ -38,6 +40,23 @@ function($, template, search) {
 			$('[data-toggle="tooltip"]').tooltip();
 		}
 	};
+
+    var checkForPocket=function()
+    {
+        if(suri.getURLParameter('dopocket')!==null)
+        {
+            suri.changeUrlParam('dopocket',null);
+            pocket.addItem()
+        }
+    }
+
+    var checkForVars=function()
+    {
+       if(suri.getURLParameter('s')!==null)
+       {
+           searchAction();
+       }
+    }
 
 	var dropDownEvent = function () {
 			var $target = $(event.currentTarget),
@@ -94,11 +113,14 @@ function($, template, search) {
 	var afterDoomLoading = function() {
 		$(document).ready(function() {
 			slideTextChange();
+            checkForPocket();
+            checkForVars();
 			$('.menu-button').on('click', toggleMenu);
 			$('.menu-close').on('click', toggleMenu);
 			$('.dropdown-menu a'). on('click', dropDownEvent);
 			$('#search-button').on('click', searchAction);
 			$('ul.icons li').on('click', filterCategory);
+            $('#save_to_pocket').on('click', pocket.init);
 		});
 	};
 
@@ -113,13 +135,16 @@ function($, template, search) {
 
 		el.siblings().removeClass('active');
 		el.addClass('active');
+
 		arrow.stop().animate({
 		left		: el.position().left,
 			marginLeft	: (el.width()/2)-4
 		});
 
 		category.type =  el.attr('data-searchType');
-
+        if(category.type!==null) {
+            suri.changeUrlParam('filter', category.type)
+        }
 		$('#more').fadeOut();
 	};
 
