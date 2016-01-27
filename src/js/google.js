@@ -29,7 +29,7 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 		settings.term = settings.term || queryString;
 		
 		//URL-ul de la google ajax search api
-		var apiURL = 'http://ajax.googleapis.com/ajax/services/search/'+category+'?v=1.0&callback=?';
+		var apiURL = 'https://ajax.googleapis.com/ajax/services/search/'+category+'?v=1.0&callback=?';
 		var resultsDiv = $('.google-results');
 		
 		$.getJSON(apiURL,{q:settings.term,rsz:settings.perPage,start:settings.page*settings.perPage},function(r){

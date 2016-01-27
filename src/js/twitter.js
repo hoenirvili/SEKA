@@ -15,8 +15,12 @@ define("twitter", ["template", "apicfg", "jquery"], function(template, apicfg, $
 
         // twitter doesn't support calls from javascript directly
         //see https://twittercommunity.com/t/any-possible-way-to-call-authorized-twitter-api-method-directly-from-javascript/8014
-        $.getJSON('src/php/twitter_proxy.php?url='+encodeURIComponent(req), pageJSON);
 
+        switch(category) {
+            case "web":
+                $.getJSON('src/php/twitter_proxy.php?url=' + encodeURIComponent(req), pageJSON);
+                break;
+        }
     };
 
     /**
@@ -27,7 +31,6 @@ define("twitter", ["template", "apicfg", "jquery"], function(template, apicfg, $
         var i;
         temp = result;
         //loading animation
-        console.log(result);
         for (i=0; i<result.statuses.length; i++) {
             username=result.statuses[i].user.screen_name;
             image=result.statuses[i].user.profile_image_url_https;

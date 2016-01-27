@@ -75,35 +75,35 @@ session_start();
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="#" class="small" data-value="DuckDuckGo" tabIndex="-1">
-                                            <input type="checkbox"/>
+                                            <input <?php if(isset($_GET['DuckDuckGo'])) echo 'checked'; ?> type="checkbox"/>
                                             &nbsp;DuckDuckGo
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="#" class="small" data-value="Bing" tabIndex="-1">
-                                            <input type="checkbox"/>
+                                            <input <?php if(isset($_GET['Bing'])) echo 'checked'; ?> type="checkbox"/>
                                             &nbsp;Bing
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="#" class="small" data-value="Google" tabIndex="-1">
-                                            <input type="checkbox"/>
+                                            <input <?php if(isset($_GET['Google'])) echo 'checked'; ?> type="checkbox"/>
                                             &nbsp;Google
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="#" class="small" data-value="Facebook" tabIndex="-1">
-                                            <input type="checkbox"/>
+                                            <input <?php if(isset($_GET['Facebook'])) echo 'checked'; ?> type="checkbox"/>
                                             &nbsp;Facebook
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="#" class="small" data-value="Twitter" tabIndex="-1">
-                                            <input type="checkbox"/>
+                                            <input <?php if(isset($_GET['Twitter'])) echo 'checked'; ?> type="checkbox"/>
                                             &nbsp;Twitter
                                         </a>
                                     </li>
@@ -119,10 +119,10 @@ session_start();
                 </div><!--custom-seach-input-->
 
                 <ul class="icons">
-                    <li class="web <?php if(isset($_GET['filter'])&&$_GET['filter']=='web') echo ' active ' ?>"  title="Web Search" data-searchType="web">Web</li>
-                    <li class="images<?php if(isset($_GET['filter'])&&$_GET['filter']=='images') echo ' active ' ?>" title="Image Search" data-searchType="images">Images</li>
-                    <li class="news<?php if(isset($_GET['filter'])&&$_GET['filter']=='news') echo ' active ' ?>" title="News Search" data-searchType="news">News</li>
-                    <li class="videos<?php if(isset($_GET['filter'])&&$_GET['filter']=='videos') echo ' active ' ?>" title="Video Search" data-searchType="video">Videos</li>
+                    <li class="web <?php if(isset($_GET['category'])&&$_GET['category']=='web') echo ' active ' ?>"  title="Web Search" data-searchType="web">Web</li>
+                    <li class="images<?php if(isset($_GET['category'])&&$_GET['category']=='images') echo ' active ' ?>" title="Image Search" data-searchType="images">Images</li>
+                    <li class="news<?php if(isset($_GET['category'])&&$_GET['category']=='news') echo ' active ' ?>" title="News Search" data-searchType="news">News</li>
+                    <li class="videos<?php if(isset($_GET['category'])&&$_GET['category']=='videos') echo ' active ' ?>" title="Video Search" data-searchType="video">Videos</li>
                 </ul>
 
 
@@ -133,6 +133,14 @@ session_start();
                         </ul>
                     </div>
                     <div class="result-category web-results twitter-results">
+                        <ul>
+                        </ul>
+                    </div>
+                    <div class="result-category web-results google-results">
+                        <ul>
+                        </ul>
+                    </div>
+                    <div class="result-category web-results duckduckgo-results">
                         <ul>
                         </ul>
                     </div>

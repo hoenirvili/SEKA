@@ -8,7 +8,7 @@ define("suri",[], function() {
 
     var changeUrlParam=function(param, value) {
         var currentURL = window.location.href+'&';
-        var change = new RegExp('('+param+')=(.*)&', 'g');
+        var change = new RegExp('('+param+')=([^&]*)&', 'g');
         if(value!==null) {
             var newURL = currentURL.replace(change, '$1=' + value + '&');
         }else
