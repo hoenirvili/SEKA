@@ -11,7 +11,7 @@
 ##Filtrare
 > Pentru a filtra rezultatele folositi icon-urile de sub casuta de cautare.
                          
-![Alt text](fitru.png)
+![Alt text](filtru.png)
 
 ##Selectare Retea
 > Pentru a selecta reteaua/retelele pe care sa se faca cautarea folositi iconita de langa butonul de cautare si marcati casutele din dreptul fiecarei retele in care doriti sa se faca cautarea. 
