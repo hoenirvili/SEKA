@@ -108,8 +108,9 @@ Criterias<br/>
 <tr><td>3</td><td>2</td><td>1</td></tr>
 </tbody>
 </table>
-
-Optiunea aleasa este b. S
+<br>
+Optiunea aleasa este b. Vom afisa iconite sub bara de search si userul va da click pentru a alege tipu de rezultate.
+<br>
 	<p class="first-head">
 		Implementare
 	</p>
