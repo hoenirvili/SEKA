@@ -62,7 +62,7 @@ define("dom",
                 category.type = suri.getURLParameter('category');
             }
 
-            var params = ['Bing', 'Facebook', 'DuckDuckGo', 'Google', 'Twitter'];
+            var params = ['Instagram', 'Facebook', 'DuckDuckGo', 'Google', 'Twitter'];
             for (var i in params) {
                 var param=suri.getURLParameter(params[i])
                 if ( param!== null) {

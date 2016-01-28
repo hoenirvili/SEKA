@@ -144,6 +144,10 @@ session_start();
                         <ul>
                         </ul>
                     </div>
+                    <div class="result-category web-results instagram-results">
+                        <ul>
+                        </ul>
+                    </div>
 
                 </div><!--search result wrapper-->
 
