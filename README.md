@@ -77,7 +77,7 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 <p class="strateg">Schelet</p>
 
 ---------------------------------------------------
-![Alt text](doc/3IrE4G.png)
+![Alt text](doc/mockup.png)
 
 ---------------------------------------------------
 
@@ -88,15 +88,15 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 <br/>
 Question : Cum poate face userul sa filtreze rezultatele, in functie de ce cauta (stiri,imagini,video) ?
 <br/>
-Options
-a) Putem face pagini separate, pentru fiecare tip de cautare
-b) Putem afisa iconite reprezentative pe care userul sa dea click ca sa selecteze tipul de rezultate. 
+Options<br/>
+a) Putem face pagini separate, pentru fiecare tip de cautare<br/>
+b) Putem afisa iconite reprezentative pe care userul sa dea click ca sa selecteze tipul de rezultate. <br/>
 <br/>
 
-Criterias
-1. Usor de folosit
-2. Ubicuitate
-3. Usor de implementat
+Criterias<br/>
+1. Usor de folosit<br/>
+2. Ubicuitate<br/>
+3. Usor de implementat<br/>
 
 <table>
 <thead>
