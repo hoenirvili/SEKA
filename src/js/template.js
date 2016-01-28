@@ -71,10 +71,10 @@ define("template", function() {
 		var fullpage = function() {
 			return	'<li>'+
 					'<div class="result-img">'+
-						'<img src="http://graph.facebook.com/' + id + '/picture" height="50" width="50" alt="' + name + '" />'+
+						'<img src="https://graph.facebook.com/' + id + '/picture" height="50" width="50" alt="' + name + '" />'+
 					'</div>'+
 					'<div class="result-title">'+
-						'<a href="http://facebook.com/'+ id +' ">' + name + '</a>'+
+						'<a href="https://facebook.com/'+ id +' ">' + name + '</a>'+
 					'</div>'+
 					'<div class="result-excerpt">'+
 						about +
@@ -85,7 +85,7 @@ define("template", function() {
             var images = function() {
 			return 	'<li>'+
 						'<div class="result-images">'+
-							'<img src="http://graph.facebook.com/' + about.id + '/picture" height="250" width="250" alt="' + name + '" />'+
+							'<img src="https://graph.facebook.com/' + about.id + '/picture" height="250" width="250" alt="' + name + '" />'+
 						'</div>'+
 						'<div class="result-excerpt">'+
 							about.created_time +
@@ -101,7 +101,7 @@ define("template", function() {
 						'<img src="' + about.icon +' " height="50" width="50" alt="' + name + '" />'+
 					'</div>'+
 					'<div class="result-title">'+
-						'<a href="http://facebook.com/'+ id +' ">' + name + '</a>'+
+						'<a href="https://facebook.com/'+ id +' ">' + name + '</a>'+
 					'</div>'+
 						about.embed_html +
 					'<div class="result-excerpt">'+

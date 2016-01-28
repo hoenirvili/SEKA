@@ -1,7 +1,7 @@
 
-define ("search", ["facebook", "google","twitter","duckduckgo"], 
+define ("search", ["facebook", "google","twitter","duckduckgo","suri"], function(facebook, google,twitter,duckduckgo,suri) {
 
-function(facebook, google, twitter, duckduckgo) {
+
 
 	var action = function(queryString, filters, options, category) {
 		//cache all vars
@@ -32,8 +32,10 @@ function(facebook, google, twitter, duckduckgo) {
             twitter.request(queryString, category);
 			duckduckgo.request(queryString, category);
 		}
-	};
 
+    suri.changeUrlParam('s',queryString);
+
+	};
 	return {
 		action: action
 	};
