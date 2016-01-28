@@ -1,5 +1,5 @@
 
-define ("search", ["facebook", "google","twitter","duckduckgo","suri"], function(facebook, google,twitter,duckduckgo,suri) {
+define ("search", ["facebook", "google","twitter","duckduckgo","suri","instagram"], function(facebook, google,twitter,duckduckgo,suri,instagram) {
 
 
 
@@ -12,6 +12,9 @@ define ("search", ["facebook", "google","twitter","duckduckgo","suri"], function
 					case "DuckDuckGo":
 						duckduckgo.request(queryString, category);
 						break;
+					case "Instagram":
+                    	instagram.request(queryString,category);
+                    	break;
 					case "Google":
 						google.request({},queryString, category);
 						break;
@@ -21,9 +24,7 @@ define ("search", ["facebook", "google","twitter","duckduckgo","suri"], function
                     case "Twitter":
                         twitter.request(queryString, category);
                         break;
-                    case "Instagram":
-                    	alert("good");
-                    	break;
+                    
 					}
 			}//for
 		} else {
@@ -31,6 +32,7 @@ define ("search", ["facebook", "google","twitter","duckduckgo","suri"], function
 			google.request({}, queryString, category);
             twitter.request(queryString, category);
 			duckduckgo.request(queryString, category);
+			instagram.request(queryString,category);
 		}
 
     suri.changeUrlParam('s',queryString);

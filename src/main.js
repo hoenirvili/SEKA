@@ -24,6 +24,7 @@ requirejs.config ({
         twitter:"js/twitter",
 		duckduckgo:"js/duckduckgo",
         suri:"js/suri",
-        pocket:"js/pocket"
+        pocket:"js/pocket",
+        instagram: "js/instagram"
 	}
 });

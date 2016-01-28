@@ -81,9 +81,9 @@ session_start();
                                     </li>
 
                                     <li>
-                                        <a href="#" class="small" data-value="Bing" tabIndex="-1">
-                                            <input <?php if(isset($_GET['Bing'])) echo 'checked'; ?> type="checkbox"/>
-                                            &nbsp;Bing
+                                        <a href="#" class="small" data-value="Instagram" tabIndex="-1">
+                                            <input <?php if(isset($_GET['Instagram'])) echo 'checked'; ?> type="checkbox"/>
+                                            &nbsp;Instagram
                                         </a>
                                     </li>
 
@@ -167,6 +167,7 @@ if(isset($_SESSION['pocket_user_id']))
 }
 ?>
 <script src="src/lib/require-2.1.22/require.js" type="text/javascript"></script>
+<script src="src/lib/jquery-min/jquery-min.js"  type="text/javascript" ></script>
 <script type=text/javascript>
     // afterloading src/main
     // configuration file

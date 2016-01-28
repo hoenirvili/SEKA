@@ -1,10 +1,7 @@
-define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $) {
-
-	
+define("google", ["apicfg", "template", "jquery"], function(apicfg, tempalte, $) {
 
 	var request = function(settings,queryString,category) {
 			
-			//daca functia nu ia nici un parametru atunci isi ia datele de la config(apicfg.google);
 			
 			switch(category){
 				case "web":
@@ -13,10 +10,10 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 				case "news":
 					googleSearch(settings,queryString,category);
 					break;
-			case "video":
+				case "video":
 					googleSearch(settings,queryString,category);
 				break;
-			case "images":
+				case "images":
 					googleSearch(settings,queryString,category)
 				break;
 			}
@@ -46,8 +43,7 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 				}
 				
 				if(!settings.append){
-					// This is executed when running a new search, 
-					// instead of clicking on the More button:
+					//executat ca rulam o noua cautare in loc sa apasam de mai multe ori pe more
 					resultsDiv.empty();
 				}
 				
@@ -55,7 +51,7 @@ define("google", ["apicfg", "template", "jquery",], function(apicfg, tempalte, $
 							 .hide().appendTo(resultsDiv)
 							 .fadeIn('slow');
 				
-				//var cursor = r.responseData.cursor;
+				// var cursor = r.responseData.cursor;
 				
 				// Checking if there are more pages with results, 
 				// and deciding whether to show the More button:

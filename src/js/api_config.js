@@ -18,7 +18,7 @@ define('apicfg', function() {
 			no_html : ["&no_html=0", "&no_html=1"],
 			misc: "&t=SEKA"
 		},
-		bing: {},
+		instagram: {},
 		google: {
 			url		: 'http://ajax.googleapis.com/ajax/services/search/',
 			version		: 'v=1.0',
