@@ -38,28 +38,21 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 		<li> Vom folosi api-urile de la</li>
 			a. Duck duck go
 			<br>
-			b. Bing
+			b. Twitter
 			<br>
-			c. google
+			c. Google
 			<br>
+			c. Facebook
+            <br>
+            c. Instagram
+            <br>
 		</ol>
-		ii. Persone/companii
-			<ol>
-				<li>Vom folosi api-urile de la</li>
-				a. DuckDuckGo
-				<br>
-				b.Twitter
-				<br>
-				c.Linkedin
-				<br>
-			</ol>
+	
 	</ol>
 	<li>Salvare info</li>
 	<ol>
 		<li>Vom salva</li>
-		a. In cookie
-		<br>
-		b.In Contul de Pocket al userului
+		a.In Contul de Pocket al userului
 	</ol>
 </ol>
 
@@ -91,21 +84,32 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 <p class="strateg">QOC & Suprafata</p>
 
 ---------------------------------------------------
-1. Cum face user-ul o cautare ?
-	<br>
-	a. Pentru a cauta userul va folosi bara de search din mijlocul ecranului.
-2. Cum salveaza userul o cautare ?
-	<br>
-	a. Va trebui adauga o iconita care ii permite sa salveze cautarea
-3. Cum filtreaza userul cautarea pe un anumit tip de resurse ?
-	<br>
-	a. Va trebui adaugat un filtru cu ajutorul caruia poate sa filtreze in timp real rezultatele.
-4. Cum isi da seama userul de ce are de facut ?
-	<br>
-	a. Ar trebuii adaugate niste informatii la prima utilizare a site-ului (cookie)
-	<br>
-	b. Putem face un demo cu bootsrap tour sau ceva de genu
+1. Filtrare tip de cautare
+<br/>
+Question : Cum poate face userul sa filtreze rezultatele, in functie de ce cauta (stiri,imagini,video) ?
+<br/>
+Options
+a) Putem face pagini separate, pentru fiecare tip de cautare
+b) Putem afisa iconite reprezentative pe care userul sa dea click ca sa selecteze tipul de rezultate. 
+<br/>
 
+Criterias
+1. Usor de folosit
+2. Ubicuitate
+3. Usor de implementat
+
+<table>
+<thead>
+<tr><td>Criteria</td><td>opt. a</td><td>opt b.</td></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>2</td><td>1</td><td>2</td></tr>
+<tr><td>3</td><td>2</td><td>1</td></tr>
+</tbody>
+</table>
+
+Optiunea aleasa este b. S
 	<p class="first-head">
 		Implementare
 	</p>
@@ -143,12 +147,11 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 		<ol>
 			i.	DuckDuckGo
 			<br>
-			ii. Bing
+			ii. Instagram
 			<br>
-			iii. Google
-			iv. Facebook
-			v. Linkedin
-			vi. Twitter
+			iii. Google<br>
+			iv. Facebook<br>
+			vi. Twitter<br>
 		</ol>
 		b.Implementare functie de transformare si concatenare a rezultatelor pentru afisare
 		<ol>
@@ -156,8 +159,6 @@ Dezvoltaţi o aplicaţie Web responsivă ce permite căutarea de resurse de inte
 		</ol>
 		c. Implementare functie de afisare a search+filter pe baza parametriilor get
 		<br>
-		d. Implementare functie de stocare/listare a url-urilor in cookie la cererea utilizatorilor
-		<br>
-		e. Implementare functie de stocare a url-urilor in pocket.
+		d. Implementare functie de stocare a url-urilor in pocket.
 		<br>
 </ol>
