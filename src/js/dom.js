@@ -19,7 +19,8 @@ define("dom",
                 $('.facebook-results> ul > li'),
                 $('.duckduckgo-results > ul > li'),
                 $('.twitter-results > ul > li'),
-                $('.google-results > ul')
+                $('.google-results > ul'),
+				$('.instagram-results > ul')
             ], i, resLen = res.length;
 
             for (i = 0; i < resLen; i++) {
