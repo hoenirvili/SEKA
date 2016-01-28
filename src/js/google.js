@@ -30,45 +30,50 @@ define("google", ["apicfg", "template", "jquery"], function(apicfg, tempalte, $)
 		var resultsDiv = $('.google-results');
 		
 		$.getJSON(apiURL,{q:settings.term,rsz:settings.perPage,start:settings.page*settings.perPage},function(r){
-			
-			var results = r.responseData.results;
-			$('#more').remove();
-			
-			if(results.length){
-	
-				//daca sunt rezultate atunci ele sunt adaugate in pageContainer iar apoi in resultsDiv
-				var pageContainer = $('<div>',{className:'pageContainer'});
-				for(var i=0;i<results.length;i++){
-					pageContainer.append(new result(results[i]) + '');
-				}
-				
-				if(!settings.append){
-					//executat ca rulam o noua cautare in loc sa apasam de mai multe ori pe more
-					resultsDiv.empty();
-				}
-				
-				pageContainer.append('<div class="clear"></div>')
-							 .hide().appendTo(resultsDiv)
-							 .fadeIn('slow');
-				
-				// var cursor = r.responseData.cursor;
-				
-				// Checking if there are more pages with results, 
-				// and deciding whether to show the More button:
-				
-				// if( +cursor.estimatedResultCount > (settings.page+1)*settings.perPage){
-				// 	$('<div>',{id:'more'}).appendTo(resultsDiv).click(function(){
-				// 		googleSearch({append:true,page:settings.page+1});
-				// 		$(this).fadeOut();
-				// 	});
-				// }
-			}
-			else {
-				// Nu s-au gasit rezultate
-				resultsDiv.empty();
-				$('<p>',{className:'notFound',html:'No Results Were Found!'}).hide().appendTo(resultsDiv).fadeIn();
-			}
-			result(r);
+
+            if( r.responseData) {
+                var results = r.responseData.results;
+                $('#more').remove();
+
+                if (results.length) {
+
+                    //daca sunt rezultate atunci ele sunt adaugate in pageContainer iar apoi in resultsDiv
+                    var pageContainer = $('<div>', {className: 'pageContainer'});
+                    for (var i = 0; i < results.length; i++) {
+                        pageContainer.append(new result(results[i]) + '');
+                    }
+
+                    if (!settings.append) {
+                        //executat ca rulam o noua cautare in loc sa apasam de mai multe ori pe more
+                        resultsDiv.empty();
+                    }
+
+                    pageContainer.append('<div class="clear"></div>')
+                        .hide().appendTo(resultsDiv)
+                        .fadeIn('slow');
+
+                    // var cursor = r.responseData.cursor;
+
+                    // Checking if there are more pages with results,
+                    // and deciding whether to show the More button:
+
+                    // if( +cursor.estimatedResultCount > (settings.page+1)*settings.perPage){
+                    // 	$('<div>',{id:'more'}).appendTo(resultsDiv).click(function(){
+                    // 		googleSearch({append:true,page:settings.page+1});
+                    // 		$(this).fadeOut();
+                    // 	});
+                    // }
+                }
+                else {
+                    // Nu s-au gasit rezultate
+                    resultsDiv.empty();
+                    $('<p>', {
+                        className: 'notFound',
+                        html: 'No Results Were Found!'
+                    }).hide().appendTo(resultsDiv).fadeIn();
+                }
+                result(r);
+            }
 		});
 	}
 
